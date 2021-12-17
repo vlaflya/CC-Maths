@@ -2,11 +2,10 @@
 import { _decorator, Component, Node, Label, Button} from 'cc';
 import { IconsHolder } from './IconsHolder';
 import { Helper } from './Helper';
-import { Math } from './Math';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math3')
-export class Math3 extends Math {
+export class Math3 extends Component {
     @property({type: Node}) container1: Node
     @property({type: Node}) container2: Node
     @property({type: Label}) label1: Label
@@ -15,12 +14,11 @@ export class Math3 extends Math {
     private currentSum: number
     start () {
     }
-    init(json: string){
-        let inf: information = JSON.parse(json)
-        let count1: number = inf.count1
-        let count2: number = inf.count2
-        let iconName1: string = inf.iconName1
-        let iconName2: string = inf.iconName2
+    init(){
+        let count1: number
+        let count2: number
+        let iconName1: string
+        let iconName2: string
         this.currentSum = count1 + count2
         this.label1.string = count1.toString()
         this.label2.string = count2.toString()
@@ -49,10 +47,4 @@ export class Math3 extends Math {
     setWin(){
         console.log("Math3 Win")
     }
-}
-class information{
-    count1: number
-    count2: number
-    iconName1: string
-    iconName2: string
 }

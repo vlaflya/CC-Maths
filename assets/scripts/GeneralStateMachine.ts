@@ -24,6 +24,10 @@ export class GeneralStateMachine{
         return this.currentState.name == name
     }
 
+    getStateName(): string{
+        return this.currentState.name
+    }
+
     addState(name: string, config?:{onEnter?: () => void, onUpdate?: (dt:number) => void, onExit?: () => void}){
         const context = this.context
         this.states.set(name,{

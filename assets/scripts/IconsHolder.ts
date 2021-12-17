@@ -10,7 +10,7 @@ export class IconsHolder extends Component {
     onLoad(){
         IconsHolder.Instance = this
     }
-    public setIconConfiguration(target: Node, iconCount: number, iconName: string){
+    public setIconConfiguration(target: Node, iconCount: number, iconName: string): Node{
         let config: Node = instantiate(this.configurations[iconCount])
         config.setParent(target)
         config.setPosition(new Vec3(0,0,0))
@@ -24,5 +24,6 @@ export class IconsHolder extends Component {
         config.children.forEach(child => {
             child.getComponent(Sprite).spriteFrame = frame
         });
+        return config
     }
 }

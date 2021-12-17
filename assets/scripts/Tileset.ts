@@ -11,7 +11,7 @@ export class Tileset extends Component {
     private Math: Math1
     init(Math1: Math1, reversed){
         this.Math = Math1
-        if(reversed){
+        if(!reversed){
             this.tileCount = this.node.children.length
             this.countAdd = -1
         }
@@ -35,6 +35,7 @@ export class Tileset extends Component {
         if(Number(customEventData) == this.tileCount){
             let button: Node = event.target
             this.tileCount += this.countAdd
+            this.Math.setTile(Number(customEventData))
             button.destroy()
             if(this.tileCount == 0){
                 this.Math.setWin()

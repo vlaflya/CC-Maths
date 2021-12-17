@@ -1,11 +1,10 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3 } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label } from 'cc';
 import { Tileset } from './Tileset';
-import { Math } from './Math';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math1')
-export class Math1 extends Math {
+export class Math1 extends Component {
     @property({type: CCInteger}) tileNumber: number
     @property({type: [Prefab]}) tilePrefabs3: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs4: Array<Prefab> = []
@@ -15,13 +14,15 @@ export class Math1 extends Math {
     @property({type: [Prefab]}) tilePrefabs8: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs9: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs10: Array<Prefab> = []
+    @property({type: [Label]}) labels: Array<Label> = []
 
-    start () {
-    }
-    public init(json: string){
-        let inf: information = JSON.parse(json)
-        let tileNumber: number
+    public init(count: number, rev: string){
+        let tileNumber: number = count
         let reversed: boolean
+        if(rev == "no")
+            reversed = true
+        else
+            reversed = false
         let prefab: Prefab
         switch(tileNumber){
             case(3):{
@@ -70,12 +71,13 @@ export class Math1 extends Math {
         tile.setPosition(new Vec3(0,0,0))
         tile.getComponent(Tileset).init(this, reversed)   
     }
+    private currentTile = 0
+    public setTile(count: number){
+        this.labels[this.currentTile].string = count.toString()
+        this.currentTile++
+    }
     setWin(){
         console.log("Math1 Win")
     }
-}
-class information{
-    tileNumber: number
-    reverced: boolean
 }
 

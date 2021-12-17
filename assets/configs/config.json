@@ -1,0 +1,10 @@
+[
+    {
+        "stage1count": 3,
+        "stage1revereced": "yes",
+        "stage2choice": "fish1-1-2-3,fish2-4-5-6,fish3-7-8-9",
+        "constructorConfig": "diamond_6",
+        "stage3": "3+2",
+        "stage3Icons": "fish1,fish2"
+    }
+]

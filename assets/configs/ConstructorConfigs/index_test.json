@@ -1,0 +1,122 @@
+[
+    {
+        "name": "1_bat_3",
+        "startVoice": "load/tutorial/constr_tutor_01",
+        "endVoice" : "praise/tutorial/constr_final_01"
+    },
+    {
+        "name": "2_ship_4",
+        "startVoice": "load/tutorial/constr_tutor_02",
+        "endVoice" : "praise/normal/constr_final_02"
+    },
+    {
+        "name": "3_fox_5",
+        "startVoice": "load/normal/constr_start_01",
+        "endVoice" : "praise/normal/common_final_01_01|praise/normal/common_final_01_02|praise/normal/common_final_01_03|praise/normal/common_final_02_01|praise/normal/common_final_02_02|praise/normal/common_final_02_03|praise/normal/common_final_03_01|praise/normal/common_final_03_02|praise/normal/common_final_03_03|praise/normal/common_final_07_01|praise/normal/common_final_07_02|praise/normal/common_final_07_03"
+    },
+    {
+        "name": "4_diamond_6",
+        "startVoice": "load/normal/constr_start_02",
+        "endVoice" : "praise/normal/common_final_08_01|praise/normal/common_final_08_02|praise/normal/common_final_08_03|praise/normal/common_final_10_01|praise/normal/common_final_10_02|praise/normal/common_final_10_03|praise/normal/common_final_11_01|praise/normal/common_final_11_02|praise/normal/common_final_11_03|praise/normal/common_final_12_01|praise/normal/common_final_12_02|praise/normal/common_final_12_03"
+    },
+    {
+        "name": "5_fish_6",
+        "startVoice": "load/tutorial/constr_tutor_03",
+        "endVoice" : "praise/normal/common_finalC_04_01|praise/normal/common_finalC_04_02|praise/normal/common_finalC_04_03|praise/normal/common_finalC_05_01|praise/normal/common_finalC_05_02|praise/normal/common_finalC_05_03|praise/normal/common_finalC_13_01|praise/normal/common_finalC_13_02|praise/normal/common_finalC_13_03"
+    },
+    {
+        "name": "6_butterfly_5",
+        "startVoice": "load/tutorial/constr_tutor_05",
+        "endVoice" : "praise/normal/constr_final_03"
+    },
+    {
+        "name": "7_fox_6",
+        "startVoice": "load/normal/constr_start_03",
+        "endVoice" : "praise/normal/common_final_01_01|praise/normal/common_final_01_02|praise/normal/common_final_01_03|praise/normal/common_final_02_01|praise/normal/common_final_02_02|praise/normal/common_final_02_03|praise/normal/common_final_03_01|praise/normal/common_final_03_02|praise/normal/common_final_03_03|praise/normal/common_final_07_01|praise/normal/common_final_07_02|praise/normal/common_final_07_03"
+    },
+    {
+        "name": "8_wolf_7",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_02",
+        "endVoice" : "praise/normal/common_final_08_01|praise/normal/common_final_08_02|praise/normal/common_final_08_03|praise/normal/common_final_10_01|praise/normal/common_final_10_02|praise/normal/common_final_10_03|praise/normal/common_final_11_01|praise/normal/common_final_11_02|praise/normal/common_final_11_03|praise/normal/common_final_12_01|praise/normal/common_final_12_02|praise/normal/common_final_12_03"
+    },
+    {
+        "name": "9_cat_8",
+        "startVoice": "load/normal/constr_start_02|load/normal/constr_start_03",
+        "endVoice" : "praise/normal/constr_final_04"
+    },
+    {
+        "name": "10_heart_7",
+        "startVoice": "load/tutorial/constr_tutor_04",
+        "endVoice" : "praise/normal/common_finalC_04_01|praise/normal/common_finalC_04_02|praise/normal/common_finalC_04_03|praise/normal/common_finalC_05_01|praise/normal/common_finalC_05_02|praise/normal/common_finalC_05_03|praise/normal/common_finalC_13_01|praise/normal/common_finalC_13_02|praise/normal/common_finalC_13_03"
+    },
+    {
+        "name": "11_vz_5",
+        "startVoice": "load/tutorial/constr_tutor_06",
+        "endVoice" : "praise/normal/common_final_01_01|praise/normal/common_final_01_02|praise/normal/common_final_01_03|praise/normal/common_final_02_01|praise/normal/common_final_02_02|praise/normal/common_final_02_03|praise/normal/common_final_03_01|praise/normal/common_final_03_02|praise/normal/common_final_03_03|praise/normal/common_final_07_01|praise/normal/common_final_07_02|praise/normal/common_final_07_03"
+    },
+    {
+        "name": "12_cat_7",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_03",
+        "endVoice" : "praise/normal/common_final_08_01|praise/normal/common_final_08_02|praise/normal/common_final_08_03|praise/normal/common_final_10_01|praise/normal/common_final_10_02|praise/normal/common_final_10_03|praise/normal/common_final_11_01|praise/normal/common_final_11_02|praise/normal/common_final_11_03|praise/normal/common_final_12_01|praise/normal/common_final_12_02|praise/normal/common_final_12_03"
+    },
+    {
+        "name": "13_wolf_8",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_02",
+        "endVoice" : "praise/normal/constr_final_02|praise/normal/constr_final_03"
+    },
+    {
+        "name": "14_owl_9",
+        "startVoice": "load/normal/constr_start_02|load/normal/constr_start_03",
+        "endVoice" : "praise/normal/common_final_01_01|praise/normal/common_final_01_02|praise/normal/common_final_01_03|praise/normal/common_final_02_01|praise/normal/common_final_02_02|praise/normal/common_final_02_03|praise/normal/common_final_03_01|praise/normal/common_final_03_02|praise/normal/common_final_03_03|praise/normal/common_final_07_01|praise/normal/common_final_07_02|praise/normal/common_final_07_03"
+    },
+    {
+        "name": "15_horse_8",
+        "startVoice": "load/normal/constr_startC",
+        "endVoice" : "praise/normal/common_finalC_04_01|praise/normal/common_finalC_04_02|praise/normal/common_finalC_04_03|praise/normal/common_finalC_05_01|praise/normal/common_finalC_05_02|praise/normal/common_finalC_05_03|praise/normal/common_finalC_13_01|praise/normal/common_finalC_13_02|praise/normal/common_finalC_13_03"
+    },
+    {
+        "name": "16_bird_4",
+        "startVoice": "load/tutorial/constr_tutor_07",
+        "endVoice" : "praise/normal/common_final_08_01|praise/normal/common_final_08_02|praise/normal/common_final_08_03|praise/normal/common_final_10_01|praise/normal/common_final_10_02|praise/normal/common_final_10_03|praise/normal/common_final_11_01|praise/normal/common_final_11_02|praise/normal/common_final_11_03|praise/normal/common_final_12_01|praise/normal/common_final_12_02|praise/normal/common_final_12_03"
+    },
+    {
+        "name": "17_swan 8",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_03",
+        "endVoice" : "praise/normal/constr_final_03|praise/normal/constr_final_04"
+    },
+    {
+        "name": "18_bear_9",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_02",
+        "endVoice" : "praise/normal/common_final_01_01|praise/normal/common_final_01_02|praise/normal/common_final_01_03|praise/normal/common_final_02_01|praise/normal/common_final_02_02|praise/normal/common_final_02_03|praise/normal/common_final_03_01|praise/normal/common_final_03_02|praise/normal/common_final_03_03|praise/normal/common_final_07_01|praise/normal/common_final_07_02|praise/normal/common_final_07_03"
+    },
+    {
+        "name": "19_lion_10",
+        "startVoice": "load/normal/constr_start_02|load/normal/constr_start_03",
+        "endVoice" : "praise/normal/common_final_08_01|praise/normal/common_final_08_02|praise/normal/common_final_08_03|praise/normal/common_final_10_01|praise/normal/common_final_10_02|praise/normal/common_final_10_03|praise/normal/common_final_11_01|praise/normal/common_final_11_02|praise/normal/common_final_11_03|praise/normal/common_final_12_01|praise/normal/common_final_12_02|praise/normal/common_final_12_03"
+    },
+    {
+        "name": "20_owl_9",
+        "startVoice": "load/normal/constr_startC",
+        "endVoice" : "praise/normal/common_finalC_04_01|praise/normal/common_finalC_04_02|praise/normal/common_finalC_04_03|praise/normal/common_finalC_05_01|praise/normal/common_finalC_05_02|praise/normal/common_finalC_05_03|praise/normal/common_finalC_13_01|praise/normal/common_finalC_13_02|praise/normal/common_finalC_13_03"
+    },
+    {
+        "name": "21_diamond_6",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_03|load/normal/constr_startC",
+        "endVoice" : "praise/normal/constr_final_02|praise/normal/constr_final_04"
+    },
+    {
+        "name": "22_cat_8",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_02|load/normal/constr_start_03|load/normal/constr_startC",
+        "endVoice" : "praise/normal/common_final_01_01|praise/normal/common_final_01_02|praise/normal/common_final_01_03|praise/normal/common_final_02_01|praise/normal/common_final_02_02|praise/normal/common_final_02_03|praise/normal/common_final_03_01|praise/normal/common_final_03_02|praise/normal/common_final_03_03|praise/normal/common_final_07_01|praise/normal/common_final_07_02|praise/normal/common_final_07_03"
+    },
+    {
+        "name": "23_owl_9",
+        "startVoice": "load/normal/constr_startC",
+        "endVoice" : "praise/normal/common_finalC_04_01|praise/normal/common_finalC_04_02|praise/normal/common_finalC_04_03|praise/normal/common_finalC_05_01|praise/normal/common_finalC_05_02|praise/normal/common_finalC_05_03|praise/normal/common_finalC_13_01|praise/normal/common_finalC_13_02|praise/normal/common_finalC_13_03"
+    },	
+    {
+        "name": "24_lion_10",
+        "startVoice": "load/normal/constr_start_01|load/normal/constr_start_02|load/normal/constr_start_03|load/normal/constr_startC",
+        "endVoice" : "praise/normal/constr_final_02|praise/normal/constr_final_03"
+    }
+]
