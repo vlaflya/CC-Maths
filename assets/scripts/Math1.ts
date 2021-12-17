@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label } from 'cc';
+import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 const { ccclass, property } = _decorator;
 
@@ -77,7 +78,7 @@ export class Math1 extends Component {
         this.currentTile++
     }
     setWin(){
-        console.log("Math1 Win")
+        GameStateMachine.Instance.winState()
     }
 }
 

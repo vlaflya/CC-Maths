@@ -17,7 +17,7 @@ export class GameStateMachine extends Component {
     private constructorConfig: string
     private stage3: string
     private stage3Icons: string
-    public static Instance
+    public static Instance: GameStateMachine
     @property({type: JsonAsset}) config: JsonAsset
     @property({type: Math1}) math1: Math1
     @property({type: Math2}) math2: Math2
@@ -25,6 +25,7 @@ export class GameStateMachine extends Component {
     @property({type: Node}) contr: Node
     @property({type: GridGenerator}) gridGenerator: GridGenerator 
     start () {
+        GameStateMachine.Instance = this
         this.stateMachine = new GeneralStateMachine(this, "Game")
         this.stateMachine
         .addState("Math1", {onEnter: this.onMath1Enter, onExit: this.onMath1Exit})
@@ -56,10 +57,12 @@ export class GameStateMachine extends Component {
         this.stateMachine.setState("Math2")
     }
     onMath2Enter(){
-        this.math2.node.active = false
+        this.math2.node.active = true
         this.math2.init(this.stage2choice)
     }
-    onMath2Exit(){}
+    onMath2Exit(){
+
+    }
     onMath3Enter(){}
     onMath3Exit(){}
     onConstructorEnter(){}
