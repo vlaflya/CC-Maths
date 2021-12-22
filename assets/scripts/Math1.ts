@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 const { ccclass, property } = _decorator;
@@ -7,6 +7,8 @@ const { ccclass, property } = _decorator;
 @ccclass('Math1')
 export class Math1 extends Component {
     @property({type: CCInteger}) tileNumber: number
+    @property({type: Color}) disableColor: Color
+    @property({type: Color}) activeColor: Color
     @property({type: [Prefab]}) tilePrefabs3: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs4: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs5: Array<Prefab> = []
@@ -24,6 +26,18 @@ export class Math1 extends Component {
             reversed = false
         else
             reversed = true
+        if(reversed){
+            for(let i = 0; i < count ; i++){
+                this.labels[i].color = this.disableColor
+                this.labels[i].string = (count - i).toString()
+            }
+        }
+        else{
+            for(let i = 0; i < count ; i++){
+                this.labels[i].color = this.disableColor
+                this.labels[i].string = (i+1).toString()
+            }
+        }
         let prefab: Prefab
         switch(tileNumber){
             case(3):{
@@ -74,7 +88,7 @@ export class Math1 extends Component {
     }
     private currentTile = 0
     public setTile(count: number){
-        this.labels[this.currentTile].string = count.toString()
+        this.labels[this.currentTile].color = this.activeColor
         this.currentTile++
     }
     setWin(){

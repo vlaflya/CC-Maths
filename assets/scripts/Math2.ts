@@ -51,7 +51,9 @@ export class Math2 extends Component {
             st += config[c]
         }
         ar.push(Number(st))
-        
+        for(let i = 0; i < this.buttons.length; i++){
+            this.buttons[i].interactable = true
+        }
         this.currentOption = ar[0]
         if(this.currentIcons != null)
             this.currentIcons.destroy()
@@ -66,6 +68,11 @@ export class Math2 extends Component {
     callback(event, customEventData){
         if(Number(customEventData) == this.currentOption)
             this.setWin()
+        else{
+            console.log(event);
+            let button: Node = event.target
+            button.getComponent(Button).interactable = false
+        }
     }
     setWin(){
         if(this.currentCycle == this.cycles.length - 1){

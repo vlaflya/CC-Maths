@@ -64,7 +64,7 @@ export class GameStateMachine extends Component {
     }
     onMath2Exit(fireflyCount?){
         this.math2.node.active = false
-        this.stateMachine.setState("Constructor", fireflyCount)
+        this.stateMachine.setState("Constructor", fireflyCount + 1)
     }
     
     onConstructorEnter(fireflyCount?){
@@ -101,6 +101,7 @@ export class GameStateMachine extends Component {
     }
 }
 interface levelInfo{
+    level: number
     stage1count: number
     stage1reverced: string
     stage2choice: string
