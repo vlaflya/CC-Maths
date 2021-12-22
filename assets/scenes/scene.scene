@@ -100,7 +100,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 4
@@ -195,6 +195,13 @@
     "_enabled": true,
     "__prefab": null,
     "tileNumber": 3,
+    "disableColor": {
+      "__type__": "cc.Color",
+      "r": 158,
+      "g": 155,
+      "b": 155,
+      "a": 255
+    },
     "tilePrefabs3": [
       {
         "__uuid__": "cac90031-4df9-4191-bbaa-96a0c8096139",
@@ -1885,7 +1892,7 @@
         "__id__": 128
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 133

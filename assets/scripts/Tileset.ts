@@ -33,9 +33,8 @@ export class Tileset extends Component {
     }
     
     callback(event, customEventData){
-        // console.log(Number(customEventData));
+        let button: Node = event.target
         if(Number(customEventData) == this.tileCount){
-            let button: Node = event.target
             if(this.reverced)
                 this.tileCount--
             else
