@@ -61,8 +61,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 1127,
-      "y": 148,
+      "x": 0,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -116,8 +116,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -200,
-      "y": 150,
+      "x": -342.551,
+      "y": 212.079,
       "z": 0
     },
     "_lrot": {
@@ -285,8 +285,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 100
+      "width": 332,
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -317,13 +317,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 83,
+      "r": 255,
       "g": 255,
-      "b": 186,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -389,7 +389,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -454,8 +454,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 200,
-      "y": 150,
+      "x": -341.463,
+      "y": -25.889,
       "z": 0
     },
     "_lrot": {
@@ -622,8 +622,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 100
+      "width": 332,
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -653,13 +653,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 114,
-      "g": 170,
+      "r": 255,
+      "g": 255,
       "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -724,7 +724,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -789,8 +789,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 200,
-      "y": -150,
+      "x": -341.463,
+      "y": -264.96,
       "z": 0
     },
     "_lrot": {
@@ -957,8 +957,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 100
+      "width": 332,
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -989,12 +989,12 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 88,
-      "b": 248,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -1059,7 +1059,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -1124,8 +1124,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -200,
-      "y": -150,
+      "x": 318.471,
+      "y": -267.26,
       "z": 0
     },
     "_lrot": {
@@ -1292,8 +1292,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 100
+      "width": 332,
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1323,13 +1323,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 224,
-      "g": 163,
-      "b": 224,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -1394,7 +1394,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -1459,8 +1459,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 150,
+      "x": 318.44,
+      "y": 209.779,
       "z": 0
     },
     "_lrot": {
@@ -1628,8 +1628,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 100
+      "width": 332,
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1660,13 +1660,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 132,
-      "g": 139,
-      "b": 219,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -1732,7 +1732,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -1797,8 +1797,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": -150,
+      "x": 317.291,
+      "y": -28.142,
       "z": 0
     },
     "_lrot": {
@@ -1966,8 +1966,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 100
+      "width": 332,
+      "height": 240
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1998,13 +1998,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 245,
-      "g": 163,
-      "b": 59,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -2070,7 +2070,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "983e3410-64fa-43ac-b0c8-cf307fe9ca22@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -2135,8 +2135,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": -12.646,
+      "y": 241.417,
       "z": 0
     },
     "_lrot": {
@@ -2303,8 +2303,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 200
+      "width": 332,
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2334,13 +2334,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 248,
+      "r": 255,
       "g": 255,
-      "b": 88,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -2405,7 +2405,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -2470,8 +2470,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 200,
-      "y": 0,
+      "x": -11.527,
+      "y": -118.409,
       "z": 0
     },
     "_lrot": {
@@ -2638,8 +2638,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 200
+      "width": 332,
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2669,13 +2669,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 39,
-      "g": 235,
-      "b": 211,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -2740,7 +2740,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -2805,8 +2805,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -250,
-      "y": 0,
+      "x": -12.032,
+      "y": 62.079,
       "z": 0
     },
     "_lrot": {
@@ -2973,8 +2973,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 200
+      "width": 332,
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3004,13 +3004,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 109,
-      "g": 120,
-      "b": 252,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -3075,7 +3075,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
@@ -3140,8 +3140,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -150,
-      "y": 0,
+      "x": -9.748,
+      "y": -297.539,
       "z": 0
     },
     "_lrot": {
@@ -3308,8 +3308,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 200
+      "width": 332,
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3339,13 +3339,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 211,
-      "g": 213,
-      "b": 230,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
@@ -3410,7 +3410,7 @@
       "a": 255
     },
     "_normalSprite": {
-      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+      "__uuid__": "5226e964-0e2d-49e4-9a75-cb0a48382a4a@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": {
