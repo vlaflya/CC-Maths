@@ -25,7 +25,7 @@ export class Math3 extends Component {
     private currentIcons1: Node = null
     private currentIcons2: Node = null
     start () {
-        this.init("3*fish1+2*fish2-3-7,5*pig1+1*pig2-8-5")
+        // this.init("3*fish1+2*fish2-3-7,5*pig1+1*pig2-8-5")
     }
     init(config: string){
         console.log(config);
