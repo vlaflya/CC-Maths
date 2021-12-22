@@ -21,8 +21,7 @@ export class Bridge extends Component {
     win(){
         this.levelCount++
         if(this.levelCount == this.maxLevels){
-            console.log("Win!");
-            return
+            this.levelCount = 0
         }
         director.loadScene("scene")
     }

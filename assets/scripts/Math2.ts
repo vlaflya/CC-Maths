@@ -10,6 +10,8 @@ export class Math2 extends Component {
     @property({type: [Button]}) buttons: Array<Button> = []
     @property({type: [Prefab]}) configurations: Array<Prefab> = []
     @property({type: [SpriteFrame]}) objects: Array<SpriteFrame> = []
+    @property({type: Node}) cont: Node
+    
     private currentIcons: Node = null
     private currentOption: number = 0
 
@@ -57,7 +59,7 @@ export class Math2 extends Component {
         this.currentOption = ar[0]
         if(this.currentIcons != null)
             this.currentIcons.destroy()
-        this.currentIcons = IconsHolder.Instance.setIconConfiguration(this.node, ar[0] , name)
+        this.currentIcons = IconsHolder.Instance.setIconConfiguration(this.cont, ar[0] , name)
         this.buttons = Helper.shuffleArray(this.buttons)
         for(let i = 0; i < this.buttons.length; i++){
             let r: number

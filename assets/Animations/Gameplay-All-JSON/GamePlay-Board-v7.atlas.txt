@@ -1,0 +1,580 @@
+
+GamePlay-Board-v7.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Button-1
+  rotate: false
+  xy: 868, 185
+  size: 71, 62
+  orig: 73, 64
+  offset: 1, 1
+  index: -1
+Button-2
+  rotate: false
+  xy: 78, 70
+  size: 71, 62
+  orig: 73, 64
+  offset: 1, 1
+  index: -1
+Light-Particle-01
+  rotate: false
+  xy: 562, 921
+  size: 12, 11
+  orig: 12, 11
+  offset: 0, 0
+  index: -1
+antenna-01
+  rotate: false
+  xy: 210, 252
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+antenna-02
+  rotate: false
+  xy: 868, 166
+  size: 30, 15
+  orig: 30, 15
+  offset: 0, 0
+  index: -1
+antenna-03
+  rotate: false
+  xy: 334, 206
+  size: 36, 31
+  orig: 36, 31
+  offset: 0, 0
+  index: -1
+antenna-04
+  rotate: false
+  xy: 228, 28
+  size: 54, 76
+  orig: 54, 77
+  offset: 0, 0
+  index: -1
+antenna-05
+  rotate: false
+  xy: 341, 371
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+antenna-06
+  rotate: false
+  xy: 417, 57
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+antenna-07
+  rotate: false
+  xy: 643, 78
+  size: 60, 60
+  orig: 60, 60
+  offset: 0, 0
+  index: -1
+antenna-08
+  rotate: false
+  xy: 194, 6
+  size: 30, 52
+  orig: 30, 52
+  offset: 0, 0
+  index: -1
+antenna-09
+  rotate: false
+  xy: 944, 83
+  size: 76, 72
+  orig: 76, 72
+  offset: 0, 0
+  index: -1
+antenna-flash-01
+  rotate: 270
+  xy: 272, 5
+  size: 73, 95
+  orig: 73, 95
+  offset: 0, 0
+  index: -1
+desk-01
+  rotate: false
+  xy: 85, 22
+  size: 19, 24
+  orig: 19, 24
+  offset: 0, 0
+  index: -1
+desk-02
+  rotate: false
+  xy: 478, 284
+  size: 43, 27
+  orig: 44, 28
+  offset: 1, 1
+  index: -1
+desk-03
+  rotate: false
+  xy: 4, 570
+  size: 13, 27
+  orig: 13, 27
+  offset: 0, 0
+  index: -1
+desk-04
+  rotate: false
+  xy: 295, 118
+  size: 72, 81
+  orig: 72, 81
+  offset: 0, 0
+  index: -1
+desk-05
+  rotate: false
+  xy: 793, 75
+  size: 103, 37
+  orig: 124, 37
+  offset: 0, 0
+  index: -1
+desk-06
+  rotate: false
+  xy: 543, 93
+  size: 54, 17
+  orig: 54, 17
+  offset: 0, 0
+  index: -1
+desk-07
+  rotate: false
+  xy: 61, 22
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+desk-08
+  rotate: false
+  xy: 223, 408
+  size: 29, 46
+  orig: 29, 46
+  offset: 0, 0
+  index: -1
+desk-09
+  rotate: false
+  xy: 475, 76
+  size: 65, 35
+  orig: 65, 35
+  offset: 0, 0
+  index: -1
+desk-10
+  rotate: false
+  xy: 82, 348
+  size: 59, 97
+  orig: 59, 97
+  offset: 0, 0
+  index: -1
+desk-11
+  rotate: false
+  xy: 499, 514
+  size: 25, 58
+  orig: 25, 58
+  offset: 0, 0
+  index: -1
+desk-12
+  rotate: false
+  xy: 233, 156
+  size: 53, 35
+  orig: 53, 35
+  offset: 0, 0
+  index: -1
+desk-13
+  rotate: false
+  xy: 812, 24
+  size: 27, 47
+  orig: 27, 47
+  offset: 0, 0
+  index: -1
+desk-14
+  rotate: false
+  xy: 337, 241
+  size: 68, 35
+  orig: 68, 35
+  offset: 0, 0
+  index: -1
+desk-15
+  rotate: false
+  xy: 943, 204
+  size: 12, 39
+  orig: 12, 39
+  offset: 0, 0
+  index: -1
+desk-16
+  rotate: false
+  xy: 955, 248
+  size: 56, 19
+  orig: 56, 19
+  offset: 0, 0
+  index: -1
+desk-17
+  rotate: false
+  xy: 684, 14
+  size: 27, 51
+  orig: 41, 77
+  offset: 3, 20
+  index: -1
+desk-18
+  rotate: false
+  xy: 147, 36
+  size: 54, 50
+  orig: 62, 59
+  offset: 8, 0
+  index: -1
+desk-19
+  rotate: false
+  xy: 900, 48
+  size: 49, 94
+  orig: 52, 99
+  offset: 1, 5
+  index: -1
+desk-20
+  rotate: false
+  xy: 931, 34
+  size: 70, 12
+  orig: 70, 12
+  offset: 0, 0
+  index: -1
+desk-21
+  rotate: false
+  xy: 707, 64
+  size: 65, 35
+  orig: 65, 35
+  offset: 0, 0
+  index: -1
+desk-22
+  rotate: false
+  xy: 163, 85
+  size: 81, 48
+  orig: 88, 49
+  offset: 0, 1
+  index: -1
+desk-23
+  rotate: false
+  xy: 63, 309
+  size: 75, 34
+  orig: 75, 34
+  offset: 0, 0
+  index: -1
+desk-24
+  rotate: false
+  xy: 952, 51
+  size: 65, 28
+  orig: 65, 28
+  offset: 0, 0
+  index: -1
+desk-25
+  rotate: false
+  xy: 971, 534
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: -1
+desk-26
+  rotate: false
+  xy: 843, 12
+  size: 45, 59
+  orig: 45, 61
+  offset: 0, 0
+  index: -1
+desk-27
+  rotate: false
+  xy: 561, 30
+  size: 79, 107
+  orig: 79, 117
+  offset: 0, 10
+  index: -1
+desk-28
+  rotate: false
+  xy: 356, 85
+  size: 50, 26
+  orig: 50, 26
+  offset: 0, 0
+  index: -1
+desk-29
+  rotate: false
+  xy: 971, 363
+  size: 41, 23
+  orig: 41, 41
+  offset: 0, 7
+  index: -1
+desk-30
+  rotate: false
+  xy: 970, 271
+  size: 50, 86
+  orig: 53, 98
+  offset: 2, 4
+  index: -1
+desk-31
+  rotate: false
+  xy: 80, 50
+  size: 56, 16
+  orig: 56, 16
+  offset: 0, 0
+  index: -1
+desk-33
+  rotate: false
+  xy: 264, 22
+  size: 29, 30
+  orig: 29, 30
+  offset: 0, 0
+  index: -1
+desk-34
+  rotate: false
+  xy: 341, 451
+  size: 59, 121
+  orig: 59, 121
+  offset: 0, 0
+  index: -1
+desk-35
+  rotate: false
+  xy: 110, 452
+  size: 33, 33
+  orig: 34, 34
+  offset: 1, 0
+  index: -1
+desk-kolba
+  rotate: false
+  xy: 4, 49
+  size: 73, 85
+  orig: 75, 92
+  offset: 2, 2
+  index: -1
+desk-light-01
+  rotate: false
+  xy: 21, 926
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+desk-lignt-03
+  rotate: false
+  xy: 1012, 595
+  size: 9, 12
+  orig: 12, 12
+  offset: 2, 0
+  index: -1
+desk-lignt-04
+  rotate: false
+  xy: 1006, 921
+  size: 11, 11
+  orig: 14, 13
+  offset: 1, 1
+  index: -1
+door-L-01
+  rotate: true
+  xy: 4, 136
+  size: 161, 228
+  orig: 161, 228
+  offset: 0, 0
+  index: -1
+door-L-02
+  rotate: true
+  xy: 4, 349
+  size: 223, 333
+  orig: 223, 333
+  offset: 0, 0
+  index: -1
+door-R-01
+  rotate: 270
+  xy: 371, 114
+  size: 161, 228
+  orig: 161, 228
+  offset: 0, 0
+  index: -1
+door-R-02
+  rotate: true
+  xy: 145, 279
+  size: 220, 333
+  orig: 220, 333
+  offset: 0, 0
+  index: -1
+lampa-01
+  rotate: false
+  xy: 108, 32
+  size: 29, 13
+  orig: 29, 13
+  offset: 0, 0
+  index: -1
+lampa-02
+  rotate: false
+  xy: 989, 166
+  size: 30, 31
+  orig: 30, 31
+  offset: 0, 0
+  index: -1
+lampa-03
+  rotate: false
+  xy: 4, 921
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1
+lampa-04
+  rotate: false
+  xy: 475, 42
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+lampa-05
+  rotate: false
+  xy: 4, 257
+  size: 21, 29
+  orig: 21, 29
+  offset: 0, 0
+  index: -1
+lampa-06
+  rotate: false
+  xy: 341, 400
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+lampa-light-01
+  rotate: false
+  xy: 4, 290
+  size: 55, 55
+  orig: 59, 59
+  offset: 1, 2
+  index: -1
+number-1
+  rotate: false
+  xy: 776, 24
+  size: 32, 46
+  orig: 36, 50
+  offset: 2, 2
+  index: -1
+number-10
+  rotate: false
+  xy: 971, 488
+  size: 47, 42
+  orig: 51, 46
+  offset: 2, 2
+  index: -1
+number-2
+  rotate: false
+  xy: 644, 27
+  size: 36, 47
+  orig: 40, 51
+  offset: 2, 2
+  index: -1
+number-3
+  rotate: false
+  xy: 971, 438
+  size: 37, 46
+  orig: 41, 50
+  offset: 2, 2
+  index: -1
+number-4
+  rotate: false
+  xy: 511, 26
+  size: 37, 45
+  orig: 41, 49
+  offset: 2, 2
+  index: -1
+number-5
+  rotate: false
+  xy: 482, 413
+  size: 37, 46
+  orig: 41, 50
+  offset: 2, 2
+  index: -1
+number-6
+  rotate: false
+  xy: 482, 463
+  size: 38, 46
+  orig: 42, 50
+  offset: 2, 2
+  index: -1
+number-7
+  rotate: false
+  xy: 971, 388
+  size: 37, 46
+  orig: 41, 50
+  offset: 2, 2
+  index: -1
+number-8
+  rotate: false
+  xy: 482, 363
+  size: 37, 46
+  orig: 41, 50
+  offset: 2, 2
+  index: -1
+number-9
+  rotate: false
+  xy: 482, 313
+  size: 37, 46
+  orig: 41, 50
+  offset: 2, 2
+  index: -1
+numbers-slots
+  rotate: true
+  xy: 600, 141
+  size: 106, 264
+  orig: 110, 268
+  offset: 2, 2
+  index: -1
+panel-01
+  rotate: false
+  xy: 4, 576
+  size: 563, 356
+  orig: 563, 356
+  offset: 0, 0
+  index: -1
+panel-bg
+  rotate: false
+  xy: 527, 251
+  size: 440, 333
+  orig: 440, 333
+  offset: 0, 0
+  index: -1
+panel-neon
+  rotate: false
+  xy: 570, 588
+  size: 447, 344
+  orig: 447, 344
+  offset: 0, 0
+  index: -1
+wires-01
+  rotate: false
+  xy: 224, 195
+  size: 110, 80
+  orig: 110, 80
+  offset: 0, 0
+  index: -1
+wires-02
+  rotate: 180
+  xy: 710, 103
+  size: 298, 136
+  orig: 298, 136
+  offset: 0, 0
+  index: -1
+wires-03
+  rotate: false
+  xy: 711, 28
+  size: 56, 32
+  orig: 56, 32
+  offset: 0, 0
+  index: -1
+wires-04
+  rotate: false
+  xy: 357, 15
+  size: 50, 33
+  orig: 50, 33
+  offset: 0, 0
+  index: -1
+wires-05
+  rotate: true
+  xy: 404, 513
+  size: 59, 92
+  orig: 59, 92
+  offset: 0, 0
+  index: -1
+wires-06
+  rotate: 270
+  xy: 236, 6
+  size: 132, 282
+  orig: 132, 282
+  offset: 0, 0
+  index: -1
