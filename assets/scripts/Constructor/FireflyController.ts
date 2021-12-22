@@ -14,7 +14,12 @@ export class FireflyController extends Component {
     @property({type: [Node]}) roamingPoints: Array<Node> = []
     private slots: Array<Slot> = []
     private currentFirefly: Firefly
+    public static Instance: FireflyController
+    private addFlies: number = 0
 
+    onLoad(){
+        FireflyController.Instance = this
+    }
 
     public init(slots: Array<Slot>, roamingPoints: Array<Node>){
         this.slots = slots
@@ -42,13 +47,13 @@ export class FireflyController extends Component {
         if(this.currentFirefly == null)
             return
         this.slots.forEach(slot => {
-            let dis: number = Vec3.distance(this.currentFirefly.node.position, slot.node.position)
+            let dis: number = Vec3.distance(this.currentFirefly.node.worldPosition, slot.node.worldPosition)
             if(dis < this.connectDistance){
                 if(closestSlot == null){
                     closestSlot = slot
                     return
                 }
-                if(dis < Vec3.distance(this.currentFirefly.node.position, slot.node.position)){
+                if(dis < Vec3.distance(this.currentFirefly.node.worldPosition, slot.node.worldPosition)){
                     closestSlot = slot
                     return
                 }
@@ -66,12 +71,28 @@ export class FireflyController extends Component {
         //this.currentFirefly.endMove("lock")
         this.currentFirefly = null
         if(this.outsideArray.length > 0){
-            console.log("moveInside")
-            this.outsideArray.pop().moveInside()
+            this.moveInside(1)
         }
         return "lock"
+    } 
+    moveInside(count){
+        for(let i = 0; i < count; i++){
+            if(this.addFlies == 0)
+                break
+            console.log("moveInside")
+            let fly = null
+            fly = this.outsideArray.pop()
+            if(fly != null){
+                fly.moveInside()
+                this.addFlies--
+            }
+        }
     }
-
+    public NextMoveIn(count: number){
+        console.log("Next left " + this.outsideArray.length)
+        this.addFlies = -1
+        this.moveInside(count)
+    }
     setFireFly(fireFly: Firefly){
         if(fireFly == this.currentFirefly)
             return
@@ -88,11 +109,18 @@ export class FireflyController extends Component {
     }
     outsideArray: Array<Firefly> = []
     
-    addOutsideArray(outside:Firefly){
+    addOutsideArray(outside:Firefly, maxAdd: number){
+        // console.log("Addd" + maxAdd)
+        // this.addFlies += maxAdd 
         this.outsideArray.push(outside)
     }
-    public async spawnEnded(flies: Array<Firefly>){
+    public async spawnEnded(flies: Array<Firefly>, maxFlies: number){
         this.fireflies = flies
+        this.addFlies += maxFlies
+        if(this.addFlies < 0)
+            this.addFlies = 0
+        console.log("Add " + this.addFlies);
+        
         delay(1000).then(() => {this.node.emit("spawnEnded")})
     }
     public sing(){

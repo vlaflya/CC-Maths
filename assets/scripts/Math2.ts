@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, Button, Prefab, SpriteFrame, instantiate, Sprite, randomRangeInt, Label } from 'cc';
+import { GameStateMachine } from './GameStateMachine';
 import { Helper } from './Helper';
 import { IconsHolder } from './IconsHolder';
 const { ccclass, property } = _decorator;
@@ -69,6 +70,7 @@ export class Math2 extends Component {
     setWin(){
         if(this.currentCycle == this.cycles.length - 1){
             console.log("Math2 Win")
+            GameStateMachine.Instance.winState(this.cycles.length)
             return
         }
         this.currentCycle++

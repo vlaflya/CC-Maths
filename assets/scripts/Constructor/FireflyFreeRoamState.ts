@@ -43,7 +43,7 @@ export class FireflyFreeRoamState extends Component {
     }
 
     closestPoint(){
-        let controller: FireflyController = find("Canvas/Container/FireflyController").getComponent(FireflyController)
+        let controller: FireflyController = FireflyController.Instance
         let target = controller.getClosestPoint(this.node.worldPosition)
         let pos = target.worldPosition
         if(Vec3.distance(this.node.worldPosition, pos) < 100){

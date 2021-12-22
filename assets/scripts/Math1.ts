@@ -21,9 +21,9 @@ export class Math1 extends Component {
         let tileNumber: number = count
         let reversed: boolean
         if(rev == "no")
-            reversed = true
-        else
             reversed = false
+        else
+            reversed = true
         let prefab: Prefab
         switch(tileNumber){
             case(3):{

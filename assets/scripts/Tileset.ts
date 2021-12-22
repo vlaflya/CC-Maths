@@ -7,14 +7,16 @@ const { ccclass, property } = _decorator;
 @ccclass('Tileset')
 export class Tileset extends Component {
     private tileCount: number = 1
-    private countAdd = 1
+    private reverced: boolean = false
     private Math: Math1
-    init(Math1: Math1, reversed){
+    private countTo: number = 0
+    init(Math1: Math1, reversed: boolean){
         this.Math = Math1
-        if(!reversed){
+        if(reversed){
             this.tileCount = this.node.children.length
-            this.countAdd = -1
+            this.reverced = true
         }
+        this.countTo = this.node.children.length + 1
         let array: Array<number> = []
         for(let i = 0; i < this.node.children.length; i++){
             array.push(i)
@@ -31,13 +33,20 @@ export class Tileset extends Component {
     }
     
     callback(event, customEventData){
-        console.log(Number(customEventData));
+        // console.log(Number(customEventData));
         if(Number(customEventData) == this.tileCount){
             let button: Node = event.target
-            this.tileCount += this.countAdd
+            if(this.reverced)
+                this.tileCount--
+            else
+                this.tileCount++
             this.Math.setTile(Number(customEventData))
             button.destroy()
-            if(this.tileCount == 0){
+            console.log(this.tileCount);
+            if(this.tileCount == 0 && this.reverced){
+                this.Math.setWin()
+            }
+            if(this.tileCount == this.countTo && !this.reverced){
                 this.Math.setWin()
             }
         }

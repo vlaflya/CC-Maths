@@ -13,7 +13,7 @@ export class FireflyMoveState extends Component {
     anim: FireflyAnimation
 
     onLoad(){
-        this.fireflyController = find("Canvas/Container/FireflyController").getComponent(FireflyController)
+        this.fireflyController = FireflyController.Instance
         //systemEvent.on(SystemEvent.EventType.TOUCH_START, this.onTouchStart, this)
         this.node.on(SystemEvent.EventType.TOUCH_MOVE, this.onTouchMove, this)
         this.node.on(SystemEvent.EventType.TOUCH_END, this.onTouchEnd, this)

@@ -47,7 +47,7 @@ export class Firefly extends Component {
 
     //init
     onInitializeEnter(){
-        this.fireflyController = find("Canvas/Container/FireflyController").getComponent(FireflyController)
+        this.fireflyController = FireflyController.Instance
         this.fireflyController.node.on("spawnEnded", () => {this.endInitialization()})
         this.move.Initialize(this, this.animation)
         this.node.scale = new Vec3(0,0,0)

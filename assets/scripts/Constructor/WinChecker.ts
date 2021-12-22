@@ -1,6 +1,7 @@
 
 import { _decorator, Component, Node, tween, Sprite, Color, find, Vec3, easing } from 'cc';
 import { FireflyController } from './FireflyController';
+import { GameStateMachine } from './../GameStateMachine';
 
 
 const { ccclass, property } = _decorator;
@@ -12,16 +13,27 @@ export class WinChecker extends Component {
     @property({type: Node}) container: Node
     needToWin: number
     winCount: number = 0
+    interCount: number = 1000
     public static Instance: WinChecker
 
     onLoad(){
         WinChecker.Instance = this
     }
-    public Initialize(needWin: number){
+    public Initialize(needWin: number, inter: number){
         this.needToWin = needWin
+        this.interCount = inter
     }
     public CheckWin(){
-
+        this.winCount++
+        if(this.interCount == this.winCount){
+            GameStateMachine.Instance.winState(this.needToWin - this.winCount)
+            return
+        }
+        if(this.needToWin == this.winCount){
+            GameStateMachine.Instance.winState()
+            return
+        }
+        console.log(this.needToWin + " " + this.winCount);
     }
 
     public exitLevel(){

@@ -36,12 +36,16 @@ export class GridGenerator extends Component {
     private levelInfo: LevelInformation
 
     private paramCount: number = 1
+    private count: number;
 
-    init(confName: string){
-        this.config = confName
+    init(confName: string, count?){
+        // this.config = confName
+        this.count = count;
         this.configs.forEach(conf => {
             if(conf.name == confName)
-                this.config = JSON.parse(JSON.stringify(conf))
+                this.config = JSON.stringify(conf)
+                console.log(this.config);
+                
         });
         this.scale = this.container.height / 100
         this.CreateGrid(this.container)
@@ -55,11 +59,12 @@ export class GridGenerator extends Component {
         this.SpawnFireflyes()
     }
     private ReadConfig(){
-        let readObjects: Array<any>
-        return readObjects = JSON.parse(this.config)
+        let readObjects: Array<any> = []
+        return readObjects = JSON.parse(this.config).json 
     }
     private ReadLevelInfo(readObjects: Array<any>){
         this.levelInfo = readObjects[0]
+        console.log(readObjects);
         let colors: Array<Color> = []
         let colorString = ""
         for(let c = 0; c < this.levelInfo.availablecolors.length; c++){
@@ -171,7 +176,7 @@ export class GridGenerator extends Component {
             
         }
         this.controller.init(this.slots, this.roamPoints)
-        WinChecker.Instance.Initialize(this.unLitSlots)
+        WinChecker.Instance.Initialize(this.unLitSlots, this.count)
     }
 
     private ReadLines(readObjects: Array<any>){
@@ -246,39 +251,65 @@ export class GridGenerator extends Component {
         }
     }
     insideWhenSpawned: number = 0
+    ar: Array<Firefly> = []
+    colorAr: Array<string> = []
     private SpawnFireflyes(){
         let st: string = this.levelInfo.fireflycolors
         let colorString: string = ""
-        let ar: Array<Firefly> = []
+        
         for(let c = 0; c < st.length; c++){
             if(st[c] == ","){
-                ar.push(this.Spawn(colorString))
+                // ar.push(this.Spawn(colorString, this.controller.node))
+                this.colorAr.push(colorString)
                 colorString = ""
                 continue
             }
             colorString += st[c]
         }
-        ar.push(this.Spawn(colorString))
-        this.controller.spawnEnded(ar)
+        this.colorAr.push(colorString)
+        for(let i = 0; i < this.colorAr.length; i++){
+            this.ar.push(this.Spawn(this.colorAr[i], this.controller.node))
+        }
+        this.controller.spawnEnded(this.ar, this.count - this.fliesAtOnes)
+    }
+    public NextSpawn(nextCount: number){
+        console.log("Next " + nextCount);
+        if(this.count < this.fliesAtOnes)
+            this.controller.NextMoveIn(nextCount)
+        else
+            this.controller.NextMoveIn(this.fliesAtOnes)
     }
     s: number = 0
     smallCount = 0
-    private Spawn(colorString: string): Firefly{
+    private Spawn(colorString: string, parent: Node): Firefly{
         let fly: Firefly = instantiate(this.fireflyPrefab).getComponent(Firefly)
+        console.log("oke0");
+        console.log(fly.node)
         let smalls = this.fliesAtOnes/2
-        fly.node.parent = this.controller.node
+        console.log(this.controller.node + " " + fly.node);
+        console.log("oke1");
+        fly.node.setParent(parent)
         fly.node.position = this.spawnPos[this.s].position
+        console.log("oke2");
         this.s++
         if(this.s == this.spawnPos.length)
             this.s = 0
-        if(this.insideWhenSpawned < this.fliesAtOnes){
+        let check = this.fliesAtOnes
+        if(this.fliesAtOnes > this.count)
+            check = this.count
+        if(this.insideWhenSpawned < check){
             this.insideWhenSpawned++
             fly.Initialize(false, this.ReadColor(colorString), true, (this.smallCount < smalls))
             this.smallCount++
             return fly
         }
         fly.Initialize(false, this.ReadColor(colorString), false, (this.smallCount < smalls))
-        this.controller.addOutsideArray(fly)
+        console.log("Minus " + this.count +  " " + this.fliesAtOnes + " " + (this.count - this.fliesAtOnes));
+        
+        let m: number = this.count - this.fliesAtOnes
+        if(m < 0)
+            m = 0
+        this.controller.addOutsideArray(fly, m)
         this.insideWhenSpawned++
         this.smallCount++
         return fly

@@ -1,10 +1,16 @@
 [
     {
         "stage1count": 3,
-        "stage1revereced": "yes",
+        "stage1reverced": "no",
         "stage2choice": "fish1-1-2-3,fish2-4-5-6,fish3-7-8-9",
-        "constructorConfig": "diamond_6",
-        "stage3": "3+2",
-        "stage3Icons": "fish1,fish2"
+        "constructorconfig": "diamond_6",
+        "stage3": "3*fish1+2*fish2,5*pig1+1*pig2,2*raccoon+2*raccoon1"
+    },
+    {
+        "stage1count": 6,
+        "stage1reverced": "yes",
+        "stage2choice": "fish1-1-2-3,fish2-4-5-6,fish3-7-8-9",
+        "constructorconfig": "diamond_6",
+        "stage3": "3*fish1+2*fish2,5*pig1+1*pig2,2*raccoon+2*raccoon1"
     }
 ]

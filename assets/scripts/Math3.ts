@@ -2,6 +2,7 @@
 import { _decorator, Component, Node, Label, Button} from 'cc';
 import { IconsHolder } from './IconsHolder';
 import { Helper } from './Helper';
+import { GameStateMachine } from './GameStateMachine';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math3')
@@ -12,18 +13,82 @@ export class Math3 extends Component {
     @property({type: Label}) label2: Label
     @property({type: [Button]}) buttons: Array<Button> = []
     private currentSum: number
+    private currentStage = 0;
+    private stageCount = 0
+    private counts1: Array<number> = []
+    private icons1: Array<string> = []
+    private counts2: Array<number> = []
+    private icons2: Array<string> = []
+    private currentIcons1: Node = null
+    private currentIcons2: Node = null
     start () {
+        // this.init("3*fish1+2*fish2,5*pig1+1*pig2")
     }
-    init(){
-        let count1: number
-        let count2: number
-        let iconName1: string
-        let iconName2: string
+    init(config: string){
+        console.log("init");
+        let c = 0
+        let st = ""
+        for(; c < config.length; c++){
+            for(; c < config.length;c++){
+                if(config[c] == "*"){
+                    this.counts1.push(Number(st))
+                    console.log(st);
+                    st = ""
+                    c++
+                    break
+                }
+                st+=config[c]
+            }
+            for(; c < config.length;c++){
+                if(config[c] == "+"){
+                    this.icons1.push(st)
+                    console.log(st);
+                    st = ""
+                    c++
+                    break
+                }
+                st+=config[c]
+            }
+            for(; c < config.length;c++){
+                if(config[c] == "*"){
+                    this.counts2.push(Number(st))
+                    console.log(st);
+                    st = ""
+                    c++
+                    break
+                }
+                st+=config[c]
+            }
+            for(; c < config.length;c++){
+                if(config[c] == ","){
+                    this.icons2.push(st)
+                    console.log(st);
+                    st = ""
+                    break
+                }
+                st+=config[c]
+                if(c == config.length - 1){
+                    this.icons2.push(st)
+                    console.log(st);
+                    st = ""
+                    break
+                }
+            }
+            this.stageCount++
+        }
+        this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage])
+    }
+    create(count1: number, iconName1: string, count2: number, iconName2: string){
+        console.log(count1 + " " + iconName1 + " " + count2 + " " + iconName2);
         this.currentSum = count1 + count2
         this.label1.string = count1.toString()
         this.label2.string = count2.toString()
-        IconsHolder.Instance.setIconConfiguration(this.container1, count1, iconName1)
-        IconsHolder.Instance.setIconConfiguration(this.container2, count2, iconName2)
+        if(this.currentIcons1 != null)
+            this.currentIcons1.destroy()
+        if(this.currentIcons2 != null)
+            this.currentIcons2.destroy()
+        this.currentIcons1 = IconsHolder.Instance.setIconConfiguration(this.container1, count1, iconName1)
+        this.currentIcons2 = IconsHolder.Instance.setIconConfiguration(this.container2, count2, iconName2)
         let c: Array<number> = [1,2,3,4,5,6,7,8,9,10]
         let index = c.indexOf(this.currentSum)
         c.splice(index, 1)
@@ -42,9 +107,14 @@ export class Math3 extends Component {
     }
     callback(event, customEventData){
         if(Number(customEventData) == this.currentSum)
-            this.setWin()
+            this.checkWin()
     }
-    setWin(){
-        console.log("Math3 Win")
+    checkWin(){
+        this.currentStage++
+        if(this.currentStage == this.stageCount){
+            GameStateMachine.Instance.winState(this.stageCount)
+            return
+        }
+        this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage])
     }
 }
