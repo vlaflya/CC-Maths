@@ -1,0 +1,475 @@
+
+GamePlay-FireFly.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1 face (green)1
+  rotate: false
+  xy: 287, 130
+  size: 30, 13
+  orig: 30, 13
+  offset: 0, 0
+  index: -1
+1 face (green)mouth
+  rotate: true
+  xy: 466, 4
+  size: 17, 11
+  orig: 17, 11
+  offset: 0, 0
+  index: -1
+2 face (blue)1
+  rotate: true
+  xy: 463, 216
+  size: 31, 10
+  orig: 31, 10
+  offset: 0, 0
+  index: -1
+2 face (blue)mouth
+  rotate: false
+  xy: 358, 347
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+3 face (yellow)1
+  rotate: true
+  xy: 465, 80
+  size: 36, 14
+  orig: 36, 14
+  offset: 0, 0
+  index: -1
+4 face (red)1
+  rotate: false
+  xy: 376, 226
+  size: 31, 14
+  orig: 31, 14
+  offset: 0, 0
+  index: -1
+4 face (red)mouth
+  rotate: false
+  xy: 432, 346
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+5 face (gray)1
+  rotate: false
+  xy: 449, 162
+  size: 28, 10
+  orig: 28, 10
+  offset: 0, 0
+  index: -1
+5 face (gray)mouth
+  rotate: false
+  xy: 400, 362
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1
+Blik
+  rotate: false
+  xy: 454, 454
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+blue_body
+  rotate: true
+  xy: 353, 243
+  size: 112, 94
+  orig: 112, 94
+  offset: 0, 0
+  index: -1
+blue_eyes 3
+  rotate: true
+  xy: 467, 355
+  size: 27, 6
+  orig: 27, 6
+  offset: 0, 0
+  index: -1
+blue_eyes 4
+  rotate: true
+  xy: 400, 370
+  size: 28, 6
+  orig: 28, 6
+  offset: 0, 0
+  index: -1
+blue_leg 1
+  rotate: false
+  xy: 438, 489
+  size: 11, 22
+  orig: 11, 22
+  offset: 0, 0
+  index: -1
+blue_leg 2
+  rotate: false
+  xy: 469, 266
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+blue_leg 3
+  rotate: false
+  xy: 474, 397
+  size: 11, 21
+  orig: 11, 21
+  offset: 0, 0
+  index: -1
+blue_leg 4
+  rotate: 270
+  xy: 358, 498
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+blue_lighting back
+  rotate: false
+  xy: 2, 343
+  size: 184, 168
+  orig: 184, 168
+  offset: 0, 0
+  index: -1
+blue_mouth 1
+  rotate: false
+  xy: 437, 338
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1
+blue_mouth 21
+  rotate: false
+  xy: 353, 206
+  size: 6, 7
+  orig: 6, 7
+  offset: 0, 0
+  index: -1
+blue_mouth 3
+  rotate: false
+  xy: 469, 47
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+blue_mouth 4
+  rotate: false
+  xy: 431, 399
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1
+blue_tendril 1
+  rotate: true
+  xy: 453, 421
+  size: 27, 19
+  orig: 27, 19
+  offset: 0, 0
+  index: -1
+blue_tendril 2
+  rotate: false
+  xy: 353, 215
+  size: 21, 36
+  orig: 21, 36
+  offset: 0, 0
+  index: -1
+blue_wing 1
+  rotate: false
+  xy: 429, 79
+  size: 34, 38
+  orig: 34, 38
+  offset: 0, 0
+  index: -1
+blue_wing 2
+  rotate: false
+  xy: 393, 64
+  size: 35, 42
+  orig: 35, 42
+  offset: 0, 0
+  index: -1
+gray_body
+  rotate: false
+  xy: 188, 49
+  size: 112, 94
+  orig: 112, 94
+  offset: 0, 0
+  index: -1
+gray_leg 1
+  rotate: false
+  xy: 468, 193
+  size: 11, 22
+  orig: 11, 22
+  offset: 0, 0
+  index: -1
+gray_leg 2
+  rotate: false
+  xy: 469, 243
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+gray_leg 3
+  rotate: false
+  xy: 474, 374
+  size: 11, 21
+  orig: 11, 21
+  offset: 0, 0
+  index: -1
+gray_leg 4
+  rotate: false
+  xy: 471, 490
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+gray_lighting back
+  rotate: true
+  xy: 188, 145
+  size: 180, 163
+  orig: 180, 163
+  offset: 0, 0
+  index: -1
+gray_tendril 1
+  rotate: false
+  xy: 445, 345
+  size: 21, 37
+  orig: 21, 37
+  offset: 0, 0
+  index: -1
+gray_tendril 2
+  rotate: false
+  xy: 449, 174
+  size: 17, 39
+  orig: 17, 39
+  offset: 0, 0
+  index: -1
+gray_wing 1
+  rotate: false
+  xy: 434, 6
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+gray_wing 2
+  rotate: true
+  xy: 434, 43
+  size: 34, 32
+  orig: 34, 32
+  offset: 0, 0
+  index: -1
+green_body
+  rotate: true
+  xy: 358, 399
+  size: 112, 94
+  orig: 112, 94
+  offset: 0, 0
+  index: -1
+green_leg 1
+  rotate: false
+  xy: 468, 332
+  size: 11, 22
+  orig: 11, 22
+  offset: 0, 0
+  index: -1
+green_leg 2
+  rotate: false
+  xy: 470, 140
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+green_leg 3
+  rotate: false
+  xy: 474, 431
+  size: 11, 21
+  orig: 11, 21
+  offset: 0, 0
+  index: -1
+green_leg 4
+  rotate: false
+  xy: 471, 309
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+green_lighting back
+  rotate: false
+  xy: 2, 174
+  size: 184, 168
+  orig: 184, 168
+  offset: 0, 0
+  index: -1
+green_tendril 1
+  rotate: 180
+  xy: 358, 400
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+green_tendril 2
+  rotate: true
+  xy: 298, 119
+  size: 18, 37
+  orig: 18, 37
+  offset: 0, 0
+  index: -1
+green_tendril head 1
+  rotate: false
+  xy: 466, 23
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+green_tendril head 2
+  rotate: false
+  xy: 449, 293
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+green_wing 1
+  rotate: false
+  xy: 445, 384
+  size: 27, 35
+  orig: 27, 35
+  offset: 0, 0
+  index: -1
+green_wing 2
+  rotate: false
+  xy: 426, 215
+  size: 35, 32
+  orig: 35, 32
+  offset: 0, 0
+  index: -1
+red_body
+  rotate: 270
+  xy: 298, 3
+  size: 112, 94
+  orig: 112, 94
+  offset: 0, 0
+  index: -1
+red_leg 1
+  rotate: false
+  xy: 469, 289
+  size: 11, 22
+  orig: 11, 22
+  offset: 0, 0
+  index: -1
+red_leg 2
+  rotate: true
+  xy: 188, 131
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+red_leg 3
+  rotate: false
+  xy: 474, 467
+  size: 11, 21
+  orig: 11, 21
+  offset: 0, 0
+  index: -1
+red_leg 4
+  rotate: false
+  xy: 472, 171
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+red_lighting back
+  rotate: false
+  xy: 2, 4
+  size: 184, 168
+  orig: 184, 168
+  offset: 0, 0
+  index: -1
+red_tendril 1
+  rotate: false
+  xy: 449, 313
+  size: 19, 31
+  orig: 19, 31
+  offset: 0, 0
+  index: -1
+red_tendril 2
+  rotate: false
+  xy: 451, 478
+  size: 18, 32
+  orig: 18, 32
+  offset: 0, 0
+  index: -1
+red_wing 1
+  rotate: false
+  xy: 358, 356
+  size: 41, 38
+  orig: 41, 38
+  offset: 0, 0
+  index: -1
+red_wing 2
+  rotate: false
+  xy: 394, 24
+  size: 39, 37
+  orig: 39, 37
+  offset: 0, 0
+  index: -1
+yellow_body
+  rotate: true
+  xy: 353, 107
+  size: 112, 94
+  orig: 112, 94
+  offset: 0, 0
+  index: -1
+yellow_leg 1
+  rotate: false
+  xy: 469, 57
+  size: 11, 22
+  orig: 11, 22
+  offset: 0, 0
+  index: -1
+yellow_leg 2
+  rotate: 180
+  xy: 353, 254
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+yellow_leg 3
+  rotate: 180
+  xy: 188, 50
+  size: 11, 21
+  orig: 11, 21
+  offset: 0, 0
+  index: -1
+yellow_leg 4
+  rotate: false
+  xy: 474, 117
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+yellow_lighting back
+  rotate: true
+  xy: 188, 326
+  size: 184, 168
+  orig: 184, 168
+  offset: 0, 0
+  index: -1
+yellow_tendril 1
+  rotate: false
+  xy: 449, 118
+  size: 19, 35
+  orig: 19, 35
+  offset: 0, 0
+  index: -1
+yellow_tendril 2
+  rotate: false
+  xy: 448, 250
+  size: 19, 37
+  orig: 19, 37
+  offset: 0, 0
+  index: -1
+yellpw_wing 1
+  rotate: false
+  xy: 411, 356
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1

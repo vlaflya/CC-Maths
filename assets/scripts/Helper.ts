@@ -13,12 +13,22 @@ export class Helper{
         }
         return array
     }
-    public static setClickEvent(target: Node, button: Button, component: string, callback: string, eventData: number){
+
+    public static resetClickEvent(button: Button, name: string){
+        for(let i = 0; i < button.clickEvents.length; i++){
+            let eventName = button.clickEvents[i].handler
+            if(eventName == name){
+                button.clickEvents.splice(i);
+            }
+        }
+    }
+
+    public static addClickEvent(target: Node, button: Button, component: string, callback: string, eventData: any){
         let clickEvent = new EventHandler()
         clickEvent.target = target
         clickEvent.component = component
         clickEvent.handler = callback
         clickEvent.customEventData = eventData.toString()
-        button.clickEvents[0] = clickEvent
+        button.clickEvents.push(clickEvent)
     }
 }

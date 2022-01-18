@@ -1,13 +1,5 @@
 [
     {
-        "level": 5,
-        "stage1count": 10,
-        "stage1reverced": "yes",
-        "stage2choice": "mushroom1-5-3-4,pig1-9-10-8,cat_cold1-10-7-9,flower1-8-5-7",
-        "constructorconfig": "24_lion_10",
-        "stage3": "2*fish1+8*fish2-9-7,1*pig1+8*pig2-7-10,1*pig1+9*pig2-6-8,4*pig1+6*pig2-8-5,4*pig1+5*pig2-7-3"
-    },
-    {
         "level": 1,
         "stage1count": 3,
         "stage1reverced": "no",

@@ -6,6 +6,7 @@ import { Slot } from './Slot';
 import { FireflyController } from './FireflyController';
 import { WinChecker } from './WinChecker';
 import { Firefly } from './Firefly';
+import { GameStateMachine } from './../GameStateMachine';
 const { ccclass, property } = _decorator;
 
 @ccclass('GridGenerator')
@@ -25,8 +26,8 @@ export class GridGenerator extends Component {
     @property({type: [Node]}) roamPoints: Array<Node> = []
     @property({type: [Node]}) spawnPos: Array<Node> = []
     @property({type: CCInteger}) fliesAtOnes: number
-    @property({type: [JsonAsset]}) configs: Array<JsonAsset> = []
-
+    
+    private configs: Array<JsonAsset> = []
     private scale: number
     private gridSlots: Array<Vec3>
     private fireflyInfo: FireflyInformation = null
@@ -38,15 +39,9 @@ export class GridGenerator extends Component {
     private paramCount: number = 1
     private count: number;
 
-    init(confName: string, count?){
-        // this.config = confName
+    init(conf: string, count?){
         this.count = count;
-        this.configs.forEach(conf => {
-            if(conf.name == confName)
-                this.config = JSON.stringify(conf)
-                console.log(this.config);
-                
-        });
+        this.config = conf
         this.scale = this.container.height / 100
         this.CreateGrid(this.container)
     }

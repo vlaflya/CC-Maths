@@ -2,6 +2,7 @@
 import { _decorator, Component, Node, tween, Sprite, Color, find, Vec3, easing } from 'cc';
 import { FireflyController } from './FireflyController';
 import { GameStateMachine } from './../GameStateMachine';
+import { Anims } from './Anims';
 
 
 const { ccclass, property } = _decorator;
@@ -30,13 +31,20 @@ export class WinChecker extends Component {
             return
         }
         if(this.needToWin == this.winCount){
-            GameStateMachine.Instance.winState()
+            Anims.Instance.zebraWin()
+            this.exitLevel()
             return
         }
         console.log(this.needToWin + " " + this.winCount);
     }
 
     public exitLevel(){
+        tween(this.node)
+        .delay(3.5)
+        .call(() =>{
+            GameStateMachine.Instance.winState()
+        })
+        .start()
     }
 }
 function delay(ms: number) {

@@ -2,7 +2,7 @@
   "ver": "1.0.21",
   "importer": "image",
   "imported": true,
-  "uuid": "b184d600-5d5f-4c59-9dc8-bdd80e2b7642",
+  "uuid": "195686ea-edd5-4039-8856-58672af1d130",
   "files": [
     ".png",
     ".json"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "b184d600-5d5f-4c59-9dc8-bdd80e2b7642@6c48a",
+      "uuid": "195686ea-edd5-4039-8856-58672af1d130@6c48a",
       "displayName": "GamePlay-Board-v7",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "b184d600-5d5f-4c59-9dc8-bdd80e2b7642",
+        "imageUuidOrDatabaseUri": "195686ea-edd5-4039-8856-58672af1d130",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "b184d600-5d5f-4c59-9dc8-bdd80e2b7642@f9941",
+      "uuid": "195686ea-edd5-4039-8856-58672af1d130@f9941",
       "displayName": "GamePlay-Board-v7",
       "id": "f9941",
       "name": "spriteFrame",
@@ -55,7 +55,7 @@
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "b184d600-5d5f-4c59-9dc8-bdd80e2b7642@6c48a",
+        "imageUuidOrDatabaseUri": "195686ea-edd5-4039-8856-58672af1d130@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "type": "sprite-frame",
     "hasAlpha": true,
-    "redirect": "b184d600-5d5f-4c59-9dc8-bdd80e2b7642@f9941"
+    "redirect": "195686ea-edd5-4039-8856-58672af1d130@f9941"
   }
 }

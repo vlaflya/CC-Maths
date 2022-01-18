@@ -18,6 +18,7 @@ export class Math1 extends Component {
     @property({type: [Prefab]}) tilePrefabs9: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs10: Array<Prefab> = []
     @property({type: [Label]}) labels: Array<Label> = []
+    @property({type: Node}) container: Node
 
     public init(count: number, rev: string){
         let tileNumber: number = count
@@ -82,8 +83,9 @@ export class Math1 extends Component {
             }
         }
         let tile: Node = instantiate(prefab)
-        tile.setParent(this.node)
+        tile.setParent(this.container)
         tile.setPosition(new Vec3(0,0,0))
+        tile.setScale(new Vec3(1,1,1))
         tile.getComponent(Tileset).init(this, reversed)   
     }
     private currentTile = 0
@@ -92,6 +94,7 @@ export class Math1 extends Component {
         this.currentTile++
     }
     setWin(){
+        GameStateMachine.Instance.colorLamp()
         GameStateMachine.Instance.winState()
     }
 }
