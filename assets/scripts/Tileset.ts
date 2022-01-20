@@ -28,7 +28,7 @@ export class Tileset extends Component {
             let sp:number = array.pop()
             let st = (sp + 1).toString()
             label.string = st
-            Helper.setClickEvent(this.node, button, "Tileset", "callback", sp+1)
+            Helper.addClickEvent(this.node, button, "Tileset", "callback", sp+1)
         });
     }
     

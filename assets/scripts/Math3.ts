@@ -1,8 +1,9 @@
 
-import { _decorator, Component, Node, Label, Button} from 'cc';
+import { _decorator, Component, Node, Label, Button, tween } from 'cc';
 import { IconsHolder } from './IconsHolder';
 import { Helper } from './Helper';
 import { GameStateMachine } from './GameStateMachine';
+import { SkeletonButton } from './SkeletonButton';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math3')
@@ -12,6 +13,8 @@ export class Math3 extends Component {
     @property({type: Label}) label1: Label
     @property({type: Label}) label2: Label
     @property({type: [Button]}) buttons: Array<Button> = []
+    @property({type: [SkeletonButton]}) buttonSkeletons: Array<SkeletonButton> = []
+
     private currentSum: number
     private currentStage = 0;
     private stageCount = 0
@@ -102,7 +105,12 @@ export class Math3 extends Component {
         this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
     }
     create(count1: number, iconName1: string, count2: number, iconName2: string, wrong1:number, wrong2:number){
-        console.log(count1 + " " + iconName1 + " " + count2 + " " + iconName2);
+        this.buttonSkeletons.forEach(element => {
+            element.reset()
+        });
+        this.buttons.forEach(element => {
+            Helper.resetClickEvent(element, "checkCallback")
+        });
         this.currentSum = count1 + count2
         this.label1.string = count1.toString()
         this.label2.string = count2.toString()
@@ -118,25 +126,37 @@ export class Math3 extends Component {
             this.buttons[i].interactable = true
             let r: number = c[i]
             console.log("R " + r);
-            this.buttons[i].node.children[0].getComponent(Label).string = r.toString()
-            Helper.setClickEvent(this.node, this.buttons[i],"Math3","callback",r) 
+            this.buttons[i].node.children[1].getComponent(Label).string = r.toString()
+            Helper.addClickEvent(this.node, this.buttons[i],"Math3","checkCallback",r) 
         }
     }
-    callback(event, customEventData){
+    checkCallback(event, customEventData){
         if(Number(customEventData) == this.currentSum)
             this.checkWin()
         else{
-            console.log(event);
+            console.log(customEventData);
             let button: Node = event.target
-            button.getComponent(Button).interactable = false
+            Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         }
     }
     checkWin(){
+        GameStateMachine.Instance.colorLamp()
         this.currentStage++
         if(this.currentStage == this.stageCount){
-            GameStateMachine.Instance.winState(this.stageCount)
-            return
+            tween(this.node)
+            .delay(2.5)
+            .call(() => {
+                GameStateMachine.Instance.winState(this.stageCount)
+            })
+            .start()
         }
-        this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
+        else{
+            tween(this.node)
+            .delay(2)
+            .call(() => {
+                this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
+            })
+            .start()
+        }
     }
 }

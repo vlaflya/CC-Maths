@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 const { ccclass, property } = _decorator;
@@ -18,6 +18,7 @@ export class Math1 extends Component {
     @property({type: [Prefab]}) tilePrefabs9: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs10: Array<Prefab> = []
     @property({type: [Label]}) labels: Array<Label> = []
+    @property({type: Node}) container: Node
 
     public init(count: number, rev: string){
         let tileNumber: number = count
@@ -82,8 +83,9 @@ export class Math1 extends Component {
             }
         }
         let tile: Node = instantiate(prefab)
-        tile.setParent(this.node)
+        tile.setParent(this.container)
         tile.setPosition(new Vec3(0,0,0))
+        tile.setScale(new Vec3(1,1,1))
         tile.getComponent(Tileset).init(this, reversed)   
     }
     private currentTile = 0
@@ -92,7 +94,13 @@ export class Math1 extends Component {
         this.currentTile++
     }
     setWin(){
-        GameStateMachine.Instance.winState()
+        tween(this.node)
+        .delay(0.5)
+        .call(() =>{
+            GameStateMachine.Instance.colorLamp()
+            GameStateMachine.Instance.winState()
+        })
+        .start()
     }
 }
 

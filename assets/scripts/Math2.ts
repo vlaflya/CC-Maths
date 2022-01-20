@@ -1,13 +1,15 @@
 
-import { _decorator, Component, Node, Button, Prefab, SpriteFrame, instantiate, Sprite, randomRangeInt, Label } from 'cc';
+import { _decorator, Component, Node, Button, Prefab, SpriteFrame, instantiate, Sprite, randomRangeInt, Label, animation, sp, tween } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Helper } from './Helper';
 import { IconsHolder } from './IconsHolder';
+import { SkeletonButton } from './SkeletonButton';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math2')
 export class Math2 extends Component {
     @property({type: [Button]}) buttons: Array<Button> = []
+    @property({type: [SkeletonButton]}) buttonsSkeletons: Array<SkeletonButton> = []
     @property({type: [Prefab]}) configurations: Array<Prefab> = []
     @property({type: [SpriteFrame]}) objects: Array<SpriteFrame> = []
     @property({type: Node}) cont: Node
@@ -33,6 +35,13 @@ export class Math2 extends Component {
     }
 
     public createGame(config: string){
+        this.buttons.forEach(element => {
+            Helper.resetClickEvent(element, "checkCallback")
+        });
+        this.buttonsSkeletons.forEach(element => {
+            element.reset();
+        });
+        
         let name: string = ""
         let ar: Array<number> = []
         let c = 0;
@@ -63,27 +72,49 @@ export class Math2 extends Component {
         this.buttons = Helper.shuffleArray(this.buttons)
         for(let i = 0; i < this.buttons.length; i++){
             let r: number
-            this.buttons[i].node.children[0].getComponent(Label).string = ar[i].toString()
-            Helper.setClickEvent(this.node, this.buttons[i],"Math2","callback", ar[i]) 
+            this.buttons[i].node.children[1].getComponent(Label).string = ar[i].toString()
+            Helper.addClickEvent(this.node, this.buttons[i],"Math2","checkCallback", ar[i])
+            console.log("oke");
+            // Helper.addClickEvent(this.buttonsSkeletons[i].node, this.buttons[i], "SkeletonButton", "callback", 0)
+            console.log("oke1");
         }
     }
-    callback(event, customEventData){
-        if(Number(customEventData) == this.currentOption)
-            this.setWin()
+    checkCallback(event, customEventData){
+        if(Number(customEventData) == this.currentOption){
+            tween(this.node)
+            .delay(0.2)
+            .call(() => {
+                this.setWin()
+            })
+            .start()
+        }
+            
         else{
             console.log(event);
             let button: Node = event.target
-            button.getComponent(Button).interactable = false
+            Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         }
     }
     setWin(){
+        GameStateMachine.Instance.colorLamp()
         if(this.currentCycle == this.cycles.length - 1){
-            console.log("Math2 Win")
-            GameStateMachine.Instance.winState(this.cycles.length)
-            return
+            tween(this.node)
+            .delay(2.5)
+            .call(() =>{
+                console.log("Math2 Win")
+                GameStateMachine.Instance.winState(this.cycles.length)
+            })
+            .start()
         }
-        this.currentCycle++
-        this.createGame(this.cycles[this.currentCycle])
+        else{
+            tween(this.node)
+            .delay(2)
+            .call(() => {
+                this.currentCycle++
+                this.createGame(this.cycles[this.currentCycle])
+            })
+            .start()
+        }
     }
 }
 

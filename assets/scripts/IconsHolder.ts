@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Prefab, SpriteFrame, instantiate, Sprite, Vec3 } from 'cc';
+import { _decorator, Component, Node, Prefab, SpriteFrame, instantiate, Sprite, Vec3, UITransform } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('IconsHolder')
@@ -23,6 +23,9 @@ export class IconsHolder extends Component {
         });
         config.children.forEach(child => {
             child.getComponent(Sprite).spriteFrame = frame
+            // child.scale 
+            // child.getComponent(UITransform).width = frame.width
+            // child.getComponent(UITransform).height = frame.height
         });
         return config
     }
