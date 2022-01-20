@@ -99,7 +99,7 @@ export class Math2 extends Component {
         GameStateMachine.Instance.colorLamp()
         if(this.currentCycle == this.cycles.length - 1){
             tween(this.node)
-            .delay(3)
+            .delay(2.5)
             .call(() =>{
                 console.log("Math2 Win")
                 GameStateMachine.Instance.winState(this.cycles.length)

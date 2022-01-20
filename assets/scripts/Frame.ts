@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, sp, Prefab, tween, instantiate } from 'cc';
+import { _decorator, Component, Node, sp, Prefab, tween, instantiate, Vec2 } from 'cc';
 const { ccclass, property } = _decorator;
  
 @ccclass('Frame')
@@ -41,10 +41,11 @@ export class Frame extends Component {
         flyNode.setParent(this.flySpawn)
         let flySk = flyNode.getComponent(sp.Skeleton)
         flySk.setSkin(color)
-        let endBone = flySk.findBone("Constr-Fin")
+        let endBone: sp.spine.Bone = flySk.findBone("Constr-Fin")
         let lamp: Node = this.lamps[this.lampCount].node
         endBone.x = lamp.position.x
         endBone.y = lamp.position.y
+        // let pos = new Vec2(lamp.position.x, lamp.position.y)
         console.log(endBone);
     }
 

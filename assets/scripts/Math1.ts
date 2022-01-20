@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 const { ccclass, property } = _decorator;
@@ -94,8 +94,13 @@ export class Math1 extends Component {
         this.currentTile++
     }
     setWin(){
-        GameStateMachine.Instance.colorLamp()
-        GameStateMachine.Instance.winState()
+        tween(this.node)
+        .delay(0.5)
+        .call(() =>{
+            GameStateMachine.Instance.colorLamp()
+            GameStateMachine.Instance.winState()
+        })
+        .start()
     }
 }
 
