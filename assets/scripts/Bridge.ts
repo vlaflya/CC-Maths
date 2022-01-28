@@ -1,6 +1,8 @@
 
-import { _decorator, Component, Node, director, game, JsonAsset } from 'cc';
+import { _decorator, Component, Node, director, game, JsonAsset, find } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
+import { LevelMap } from './LevelMap';
+import { Transition } from './Constructor/Transition';
 const { ccclass, property } = _decorator;
 
  @ccclass('Bridge')
@@ -15,9 +17,18 @@ export class Bridge extends Component {
         game.addPersistRootNode(this.node)
         Bridge.Instance = this
     }
+    mapLoaded(){
+        LevelMap.Instance.init(this.maxLevels, this.levelCount, this.maxLevels, false);
+    }
+    public loadLevel(levelID){
+        this.levelCount = levelID
+        find("MetaCanvas").active = false
+        find("GameCanvas").active = true
+    }
     gameStateMachineInitialized(){
         GameStateMachine.Instance.readConfig(this.config, this.levelCount)
     }
+    
     win(){
         this.levelCount++
         if(this.levelCount == this.maxLevels){

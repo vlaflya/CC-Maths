@@ -1,0 +1,83 @@
+
+GamePlay-Board-Numbers.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Slot-Number
+  rotate: false
+  xy: 4, 72
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+number-1
+  rotate: false
+  xy: 94, 20
+  size: 21, 30
+  orig: 23, 32
+  offset: 1, 1
+  index: -1
+number-10
+  rotate: false
+  xy: 4, 41
+  size: 30, 27
+  orig: 32, 29
+  offset: 1, 1
+  index: -1
+number-2
+  rotate: false
+  xy: 38, 38
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1
+number-3
+  rotate: false
+  xy: 38, 4
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1
+number-4
+  rotate: false
+  xy: 94, 54
+  size: 24, 29
+  orig: 26, 31
+  offset: 1, 1
+  index: -1
+number-5
+  rotate: false
+  xy: 47, 81
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1
+number-6
+  rotate: true
+  xy: 4, 12
+  size: 25, 30
+  orig: 27, 32
+  offset: 1, 1
+  index: -1
+number-7
+  rotate: false
+  xy: 66, 47
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1
+number-8
+  rotate: false
+  xy: 66, 13
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1
+number-9
+  rotate: true
+  xy: 75, 87
+  size: 24, 30
+  orig: 26, 32
+  offset: 1, 1
+  index: -1

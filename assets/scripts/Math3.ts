@@ -4,6 +4,7 @@ import { IconsHolder } from './IconsHolder';
 import { Helper } from './Helper';
 import { GameStateMachine } from './GameStateMachine';
 import { SkeletonButton } from './SkeletonButton';
+import { Frame } from './Frame';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math3')
@@ -12,6 +13,7 @@ export class Math3 extends Component {
     @property({type: Node}) container2: Node
     @property({type: Label}) label1: Label
     @property({type: Label}) label2: Label
+    @property({type: [Node]}) disableNodes: Array<Node> = []
     @property({type: [Button]}) buttons: Array<Button> = []
     @property({type: [SkeletonButton]}) buttonSkeletons: Array<SkeletonButton> = []
 
@@ -111,6 +113,9 @@ export class Math3 extends Component {
         this.buttons.forEach(element => {
             Helper.resetClickEvent(element, "checkCallback")
         });
+        this.disableNodes.forEach(element => {
+            element.active = true;
+        });
         this.currentSum = count1 + count2
         this.label1.string = count1.toString()
         this.label2.string = count2.toString()
@@ -134,6 +139,7 @@ export class Math3 extends Component {
         if(Number(customEventData) == this.currentSum)
             this.checkWin()
         else{
+            Frame.Instance.zebraWrong()
             console.log(customEventData);
             let button: Node = event.target
             Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
@@ -141,8 +147,14 @@ export class Math3 extends Component {
     }
     checkWin(){
         GameStateMachine.Instance.colorLamp()
+        this.currentIcons1.destroy()
+            this.currentIcons2.destroy()
+            this.disableNodes.forEach(element => {
+                element.active = false;
+            });
         this.currentStage++
         if(this.currentStage == this.stageCount){
+            Frame.Instance.zebraWin()
             tween(this.node)
             .delay(2.5)
             .call(() => {
@@ -151,6 +163,7 @@ export class Math3 extends Component {
             .start()
         }
         else{
+            Frame.Instance.zebraNod()
             tween(this.node)
             .delay(2)
             .call(() => {

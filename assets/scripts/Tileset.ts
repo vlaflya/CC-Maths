@@ -2,6 +2,7 @@
 import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt } from 'cc';
 import { Math1 } from './Math1';
 import { Helper } from './Helper';
+import { Frame } from './Frame';
 const { ccclass, property } = _decorator;
 
 @ccclass('Tileset')
@@ -35,6 +36,7 @@ export class Tileset extends Component {
     callback(event, customEventData){
         let button: Node = event.target
         if(Number(customEventData) == this.tileCount){
+            Frame.Instance.zebraNod()
             if(this.reverced)
                 this.tileCount--
             else
@@ -48,7 +50,9 @@ export class Tileset extends Component {
             if(this.tileCount == this.countTo && !this.reverced){
                 this.Math.setWin()
             }
+            return
         }
+        Frame.Instance.zebraWrong()
     }
     
 }

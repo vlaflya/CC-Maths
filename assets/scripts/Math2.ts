@@ -4,6 +4,7 @@ import { GameStateMachine } from './GameStateMachine';
 import { Helper } from './Helper';
 import { IconsHolder } from './IconsHolder';
 import { SkeletonButton } from './SkeletonButton';
+import { Frame } from './Frame';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math2')
@@ -22,7 +23,12 @@ export class Math2 extends Component {
     init(config: string){
         let index = config.indexOf(",")
         if(index == -1){
-            this.createGame(this.cycles[0])
+            tween(this.node)
+            .delay(2)
+            .call(() => {
+                this.createGame(this.cycles[0])
+            })
+            .start()
         }
         else{
             this.cycles.pop()
@@ -81,6 +87,13 @@ export class Math2 extends Component {
     }
     checkCallback(event, customEventData){
         if(Number(customEventData) == this.currentOption){
+            this.buttons.forEach(element => {
+                Helper.resetClickEvent(element, "checkCallback")
+            });
+            if(this.currentIcons != null)
+                this.currentIcons.destroy()
+            Frame.Instance.zebraNod()
+            GameStateMachine.Instance.colorLamp()
             tween(this.node)
             .delay(0.2)
             .call(() => {
@@ -90,25 +103,26 @@ export class Math2 extends Component {
         }
             
         else{
+            Frame.Instance.zebraWrong()
             console.log(event);
             let button: Node = event.target
             Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         }
     }
     setWin(){
-        GameStateMachine.Instance.colorLamp()
         if(this.currentCycle == this.cycles.length - 1){
             tween(this.node)
             .delay(2.5)
             .call(() =>{
                 console.log("Math2 Win")
+                Frame.Instance.zebraWin()
                 GameStateMachine.Instance.winState(this.cycles.length)
             })
             .start()
         }
         else{
             tween(this.node)
-            .delay(2)
+            .delay(2.5)
             .call(() => {
                 this.currentCycle++
                 this.createGame(this.cycles[this.currentCycle])

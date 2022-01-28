@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, JsonAsset, math, js } from 'cc';
+import { _decorator, Component, Node, JsonAsset, math, js, tween } from 'cc';
 import { GeneralStateMachine } from './GeneralStateMachine';
 import { Math1 } from './Math1';
 import { Math2 } from './Math2';
@@ -8,6 +8,8 @@ import { GridGenerator } from './Constructor/GridGenerator';
 import { Firefly } from './Constructor/Firefly';
 import { Bridge } from './Bridge';
 import { Frame } from './Frame';
+import { Helper } from './Helper';
+import { Transition } from './Constructor/Transition';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameStateMachine')
@@ -105,8 +107,14 @@ export class GameStateMachine extends Component {
         this.math2.init(this.stage2choice)
     }
     onMath2Exit(fireflyCount?){
-        this.math2.node.active = false
-        this.stateMachine.setState("Constructor", fireflyCount + 1)
+        Transition.Instance.transitionIn();
+        tween(this.node)
+        .delay(1)
+        .call(() =>{
+            this.math2.node.active = false
+            this.stateMachine.setState("Constructor", fireflyCount + 1)
+        })
+        .start()
     }
     
     onConstructorEnter(fireflyCount?){
@@ -119,17 +127,28 @@ export class GameStateMachine extends Component {
             this.winLevel()
             return
         }
-        console.log("Inter Win");
-        this.contr.active = false
-        this.stateMachine.setState("Math3")
+        Transition.Instance.transitionIn();
+        tween(this.node)
+        .delay(1)
+        .call(() =>{
+            this.contr.active = false
+            this.stateMachine.setState("Math3")
+        })
+        .start()
     }
     onMath3Enter(){
         this.math3.node.active = true
         this.math3.init(this.stage3)
     }
     onMath3Exit(args?){
-        this.math3.node.active = false
-        this.stateMachine.setState("NextConstructor", args)
+        Transition.Instance.transitionIn();
+        tween(this.node)
+        .delay(1)
+        .call(() =>{
+            this.math3.node.active = false
+            this.stateMachine.setState("NextConstructor", args)
+        })
+        .start()
     }
     onNextConstructorEnter(args?){
         this.contr.active = true

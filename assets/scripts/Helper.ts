@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Button, EventHandler } from 'cc';
+import { _decorator, Component, Node, Button, EventHandler, sp } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Helper')
@@ -31,4 +31,22 @@ export class Helper{
         clickEvent.customEventData = eventData.toString()
         button.clickEvents.push(clickEvent)
     }
+}
+
+export function setMixedSkin(skeleton: sp.Skeleton, name: string, skinNames: string[]) {
+    
+    var defaultSkin = skeleton._skeleton.data.skins[0];
+    let skinProto = Object.getPrototypeOf(defaultSkin);
+    let mixedSkin = Object.create(skinProto);
+    mixedSkin.name = name;
+    mixedSkin.attachments = new Array();
+    mixedSkin.bones = Array();
+    mixedSkin.constraints = new Array();
+    for(let skinName of skinNames) {
+        let skin = skeleton._skeleton.data.findSkin(skinName);
+        mixedSkin.addSkin(skin);
+    }
+
+    skeleton._skeleton.setSkin();
+    skeleton._skeleton.setSkin(mixedSkin);
 }

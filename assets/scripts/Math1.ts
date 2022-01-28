@@ -1,7 +1,9 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
+import { Frame } from './Frame';
+import { setMixedSkin } from './Helper';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math1')
@@ -17,7 +19,7 @@ export class Math1 extends Component {
     @property({type: [Prefab]}) tilePrefabs8: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs9: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs10: Array<Prefab> = []
-    @property({type: [Label]}) labels: Array<Label> = []
+    @property({type: [sp.Skeleton]}) numberSkeletons: Array<sp.Skeleton> = []
     @property({type: Node}) container: Node
 
     public init(count: number, rev: string){
@@ -29,14 +31,16 @@ export class Math1 extends Component {
             reversed = true
         if(reversed){
             for(let i = 0; i < count ; i++){
-                this.labels[i].color = this.disableColor
-                this.labels[i].string = (count - i).toString()
+                let st = "number-" + (count - i).toString() + "-off"
+                setMixedSkin(this.numberSkeletons[i], "numMix", ["Slot-numbers", st])
             }
         }
         else{
             for(let i = 0; i < count ; i++){
-                this.labels[i].color = this.disableColor
-                this.labels[i].string = (i+1).toString()
+                let st = "number-" + (i+1).toString()
+                this.numberSkeletons[i].node.name = st;
+                setMixedSkin(this.numberSkeletons[i], "numMix", ["Slot-numbers", st + "-off"])
+
             }
         }
         let prefab: Prefab
@@ -90,13 +94,14 @@ export class Math1 extends Component {
     }
     private currentTile = 0
     public setTile(count: number){
-        this.labels[this.currentTile].color = this.activeColor
+        setMixedSkin(this.numberSkeletons[this.currentTile], "numMix", ["Slot-numbers", this.numberSkeletons[this.currentTile].node.name])
         this.currentTile++
     }
     setWin(){
         tween(this.node)
         .delay(0.5)
         .call(() =>{
+            Frame.Instance.zebraWin()
             GameStateMachine.Instance.colorLamp()
             GameStateMachine.Instance.winState()
         })

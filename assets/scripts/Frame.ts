@@ -13,9 +13,26 @@ export class Frame extends Component {
     public static Instance: Frame
     start () {
         Frame.Instance = this
+        this.setZebraMix()
     }
+
+    private setZebraMix(){
+        this.zebra.setMix("idle", "win", 0.5)
+        this.zebra.setMix("win", "idle", 0.5)
+
+        this.zebra.setMix("idle", "Track-yes", 0.5)
+        this.zebra.setMix("Track-yes", "idle", 0.5)
+
+        this.zebra.setMix("idle", "Track-no", 0.5)
+        this.zebra.setMix("Track-no", "idle", 0.5)
+
+        this.zebra.setMix("Track-yes", "Track-yes", 0.5)
+        this.zebra.setMix("Track-no", "Track-no", 0.5)
+
+        this.zebra.setMix("Track-yes", "win", 0.5)
+    }
+
     public fillLamp(color: string){
-        this.zebraWin()
         tween(this.node)
         .call(() => {this.openDoor()})
         .delay(1)
@@ -49,8 +66,16 @@ export class Frame extends Component {
         console.log(endBone);
     }
 
-    private zebraWin(){
+    public zebraWin(){
         this.zebra.setAnimation(0, "win", false)
+        this.zebra.addAnimation(0, "idle", true)
+    }
+    public zebraNod(){
+        this.zebra.setAnimation(0, "Track-yes", false)
+        this.zebra.addAnimation(0, "idle", true)
+    }
+    public zebraWrong(){
+        this.zebra.setAnimation(0, "Track-no", false)
         this.zebra.addAnimation(0, "idle", true)
     }
 
