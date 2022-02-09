@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, sp, Prefab, tween, instantiate, Vec2 } from 'cc';
+import { Helper, setMixedSkin } from './Helper';
 const { ccclass, property } = _decorator;
  
 @ccclass('Frame')
@@ -11,9 +12,15 @@ export class Frame extends Component {
     @property({type: sp.Skeleton}) zebra: sp.Skeleton
     private lampCount = 0
     public static Instance: Frame
-    start () {
+    onLoad () {
         Frame.Instance = this
         this.setZebraMix()
+    }
+
+    public init(lampCount: number){
+        for(let i = 0; i < lampCount; i++){
+            this.lamps[i].node.active = true;
+        }
     }
 
     private setZebraMix(){
@@ -52,6 +59,12 @@ export class Frame extends Component {
         this.background.timeScale = -1
         this.background.setAnimation(1, "Track-Flash", false)
     }
+    public setFrameMono(){
+        this.background.setSkin("Mono")
+    }
+    public setFrameDouble(){
+        this.background.setSkin("Double")
+    }
 
     private spawnFly(color: string){
         let flyNode = instantiate(this.fly)
@@ -81,9 +94,11 @@ export class Frame extends Component {
 
     private colorLamp(color: string){
         color = color[0].toUpperCase() + color.substr(1)
-        this.lamps[this.lampCount].setSkin(color)
-        this.lamps[this.lampCount].setAnimation(0, "Light-Start", false)
-        this.lamps[this.lampCount].addAnimation(0, "Light-On", true)
+        let lamp = this.lamps[this.lampCount]
+        setMixedSkin(lamp, "color", [lamp.defaultSkin, color])
+        // lamp.setSkin(color)
+        lamp.setAnimation(0, "Light-Start", false)
+        lamp.addAnimation(0, "Light-On", true)
         this.lampCount++
     }
 }

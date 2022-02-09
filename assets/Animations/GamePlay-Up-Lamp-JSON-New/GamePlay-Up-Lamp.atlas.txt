@@ -1,0 +1,76 @@
+
+GamePlay-Up-Lamp.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GamePlay-Lamp-Light-Blue
+  rotate: false
+  xy: 89, 57
+  size: 23, 23
+  orig: 27, 27
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Light-Green
+  rotate: false
+  xy: 89, 30
+  size: 23, 23
+  orig: 27, 27
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Light-Orange
+  rotate: false
+  xy: 4, 7
+  size: 23, 23
+  orig: 27, 27
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Light-Red
+  rotate: false
+  xy: 31, 7
+  size: 23, 23
+  orig: 27, 27
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Light-Violet
+  rotate: false
+  xy: 58, 7
+  size: 23, 23
+  orig: 27, 27
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Main
+  rotate: false
+  xy: 89, 84
+  size: 29, 29
+  orig: 33, 33
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Scratches-1
+  rotate: false
+  xy: 85, 15
+  size: 21, 11
+  orig: 25, 15
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Scratches-2
+  rotate: true
+  xy: 110, 10
+  size: 16, 10
+  orig: 20, 14
+  offset: 2, 2
+  index: -1
+GamePlay-Lamp-Scratches-3
+  rotate: false
+  xy: 85, 4
+  size: 9, 7
+  orig: 13, 11
+  offset: 2, 2
+  index: -1
+lampa-light-01
+  rotate: false
+  xy: 4, 34
+  size: 81, 80
+  orig: 81, 80
+  offset: 0, 0
+  index: -1

@@ -17,10 +17,10 @@ export class IconsHolder extends Component {
         let frame: SpriteFrame = null
         this.objects.forEach(element => {
             if(iconName == element.name){
-                console.log(element.name);
                 frame = element
             }
         });
+        
         config.children.forEach(child => {
             child.getComponent(Sprite).spriteFrame = frame
             // child.scale 

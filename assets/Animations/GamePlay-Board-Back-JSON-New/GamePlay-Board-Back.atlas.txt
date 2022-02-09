@@ -1,0 +1,76 @@
+
+GamePlay-Board-Back.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+door-L-01
+  rotate: false
+  xy: 695, 293
+  size: 176, 249
+  orig: 176, 249
+  offset: 0, 0
+  index: -1
+door-L-01_e3
+  rotate: false
+  xy: 695, 547
+  size: 176, 249
+  orig: 176, 249
+  offset: 0, 0
+  index: -1
+door-L-02
+  rotate: false
+  xy: 4, 250
+  size: 243, 363
+  orig: 243, 363
+  offset: 0, 0
+  index: -1
+door-L-02_e3
+  rotate: true
+  xy: 251, 121
+  size: 243, 363
+  orig: 243, 363
+  offset: 0, 0
+  index: -1
+door-R-01
+  rotate: true
+  xy: 695, 832
+  size: 176, 249
+  orig: 176, 249
+  offset: 0, 0
+  index: -1
+door-R-01_e3
+  rotate: false
+  xy: 792, 53
+  size: 176, 249
+  orig: 176, 249
+  offset: 0, 0
+  index: -1
+door-R-02
+  rotate: true
+  xy: 57, 6
+  size: 240, 363
+  orig: 240, 363
+  offset: 0, 0
+  index: -1
+door-R-02_e3
+  rotate: true
+  xy: 424, 27
+  size: 240, 363
+  orig: 240, 363
+  offset: 0, 0
+  index: -1
+panel-01
+  rotate: false
+  xy: 4, 617
+  size: 616, 391
+  orig: 616, 391
+  offset: 0, 0
+  index: -1
+panel-shadow
+  rotate: true
+  xy: 280, 368
+  size: 641, 411
+  orig: 641, 411
+  offset: 0, 0
+  index: -1

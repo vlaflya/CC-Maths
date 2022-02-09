@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 import { Frame } from './Frame';
@@ -21,6 +21,7 @@ export class Math1 extends Component {
     @property({type: [Prefab]}) tilePrefabs10: Array<Prefab> = []
     @property({type: [sp.Skeleton]}) numberSkeletons: Array<sp.Skeleton> = []
     @property({type: Node}) container: Node
+    @property({type: UIOpacity}) blurKey: UIOpacity
 
     public init(count: number, rev: string){
         let tileNumber: number = count
@@ -98,8 +99,11 @@ export class Math1 extends Component {
         this.currentTile++
     }
     setWin(){
+        tween(this.blurKey)
+        .to(0.5, {opacity: 0})
+        .start()
         tween(this.node)
-        .delay(0.5)
+        .delay(2)
         .call(() =>{
             Frame.Instance.zebraWin()
             GameStateMachine.Instance.colorLamp()

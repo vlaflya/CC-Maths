@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, JsonAsset, math, js, tween } from 'cc';
+import { _decorator, Component, Node, JsonAsset, math, js, tween, UIOpacity } from 'cc';
 import { GeneralStateMachine } from './GeneralStateMachine';
 import { Math1 } from './Math1';
 import { Math2 } from './Math2';
@@ -26,11 +26,13 @@ export class GameStateMachine extends Component {
     private flyColors: Array<string> = []
     
     @property({type: Math1}) math1: Math1
+    @property({type: Node}) key: Node
     @property({type: Math2}) math2: Math2
     @property({type: Math3}) math3: Math3
     @property({type: GridGenerator}) grid: GridGenerator
     @property({type: Node}) contr: Node
     @property({type: [JsonAsset]}) configs: Array<JsonAsset> = []
+    @property({type: Frame}) frame: Frame
 
     public getConstructorConfigs(){
         return this.configs
@@ -82,6 +84,7 @@ export class GameStateMachine extends Component {
             st+= colorString[c]
         }
         this.flyColors.push(st)
+        this.frame.init(this.flyColors.length)
         console.log(st);
     }
 
@@ -99,10 +102,14 @@ export class GameStateMachine extends Component {
         this.math1.init(this.stage1count, this.stage1revereced)
     }
     onMath1Exit(){
+        tween(this.key.getComponent(UIOpacity))
+        .to(0.5, {opacity: 0})
+        .start()
         this.math1.node.active = false
         this.stateMachine.setState("Math2")
     }
     onMath2Enter(){
+        Frame.Instance.setFrameMono()
         this.math2.node.active = true
         this.math2.init(this.stage2choice)
     }

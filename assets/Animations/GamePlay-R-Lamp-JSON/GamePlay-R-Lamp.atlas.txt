@@ -1,0 +1,27 @@
+
+GamePlay-R-Lamp.png
+size: 64,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Panel-Light-R-01
+  rotate: false
+  xy: 33, 28
+  size: 23, 94
+  orig: 27, 101
+  offset: 2, 6
+  index: -1
+Panel-Light-R-02
+  rotate: false
+  xy: 4, 4
+  size: 25, 118
+  orig: 27, 120
+  offset: 1, 1
+  index: -1
+Panel-Light-R-Point
+  rotate: false
+  xy: 33, 12
+  size: 12, 12
+  orig: 14, 14
+  offset: 1, 1
+  index: -1
