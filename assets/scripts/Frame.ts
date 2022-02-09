@@ -73,8 +73,8 @@ export class Frame extends Component {
         flySk.setSkin(color)
         let endBone: sp.spine.Bone = flySk.findBone("Constr-Fin")
         let lamp: Node = this.lamps[this.lampCount].node
-        endBone.x = lamp.position.x
-        endBone.y = lamp.position.y
+        endBone.x = lamp.position.x - 500
+        endBone.y = lamp.position.y + 500
         // let pos = new Vec2(lamp.position.x, lamp.position.y)
         console.log(endBone);
     }

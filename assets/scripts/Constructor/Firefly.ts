@@ -77,7 +77,12 @@ export class Firefly extends Component {
     onFirstColorExit(){
         if(!this.isLocked){
             if(this.inside){
-                this.stateMachine.setState("roam")
+                tween(this.node)
+                .delay(1)
+                .call(() => {
+                    this.stateMachine.setState("roam")
+                })
+                .start()
                 return
             }
             this.stateMachine.setState("outside")
@@ -95,7 +100,12 @@ export class Firefly extends Component {
     moveInside(){
         this.animation.node.active = true
         // tween(this.node).to(1, {position: Vec3.ZERO}).call(() => {this.stateMachine.exitState()}).start()
-        this.stateMachine.exitState()
+        tween(this.node)
+        .delay(1)
+        .call(() => {
+            this.stateMachine.exitState()
+        })
+        .start()
     }
     onMoveOutsideExit(){
         this.stateMachine.setState("roam")

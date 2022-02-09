@@ -32,6 +32,7 @@ export class IconsHolder extends Component {
             child.getComponent(Sprite).spriteFrame = frame
             child.scale = new Vec3(0,0,0)
             tween(child)
+            .delay(0.3)
             .to(0.2, {scale: new Vec3(1,1,1)})
             .start()
             list.icons.push(child)
