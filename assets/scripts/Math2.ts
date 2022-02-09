@@ -15,7 +15,6 @@ export class Math2 extends Component {
     @property({type: [SpriteFrame]}) objects: Array<SpriteFrame> = []
     @property({type: Node}) cont: Node
     
-    private currentIcons: Node = null
     private currentOption: number = 0
 
     private currentCycle = 0
@@ -72,9 +71,8 @@ export class Math2 extends Component {
             this.buttons[i].interactable = true
         }
         this.currentOption = ar[0]
-        if(this.currentIcons != null)
-            this.currentIcons.destroy()
-        this.currentIcons = IconsHolder.Instance.setIconConfiguration(this.cont, ar[0] , name)
+        IconsHolder.Instance.deleteIcons("Math2")    
+        IconsHolder.Instance.setIconConfiguration(this.cont, ar[0] , name, "Math2")
         this.buttons = Helper.shuffleArray(this.buttons)
         for(let i = 0; i < this.buttons.length; i++){
             let r: number
@@ -90,8 +88,7 @@ export class Math2 extends Component {
             this.buttons.forEach(element => {
                 Helper.resetClickEvent(element, "checkCallback")
             });
-            if(this.currentIcons != null)
-                this.currentIcons.destroy()
+            IconsHolder.Instance.deleteIcons("Math2")
             Frame.Instance.zebraNod()
             GameStateMachine.Instance.colorLamp()
             tween(this.node)
@@ -109,6 +106,7 @@ export class Math2 extends Component {
             Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         }
     }
+
     setWin(){
         if(this.currentCycle == this.cycles.length - 1){
             tween(this.node)

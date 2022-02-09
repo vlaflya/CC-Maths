@@ -27,8 +27,6 @@ export class Math3 extends Component {
     private wrong1: Array<number> = []
     private wrong2: Array<number> = []
 
-    private currentIcons1: Node = null
-    private currentIcons2: Node = null
     start () {
         // this.init("3*fish1+2*fish2-3-7,5*pig1+1*pig2-8-5")
         Frame.Instance.setFrameDouble()
@@ -120,12 +118,10 @@ export class Math3 extends Component {
         this.currentSum = count1 + count2
         this.label1.string = count1.toString()
         this.label2.string = count2.toString()
-        if(this.currentIcons1 != null)
-            this.currentIcons1.destroy()
-        if(this.currentIcons2 != null)
-            this.currentIcons2.destroy()
-        this.currentIcons1 = IconsHolder.Instance.setIconConfiguration(this.container1, count1, iconName1)
-        this.currentIcons2 = IconsHolder.Instance.setIconConfiguration(this.container2, count2, iconName2)
+        IconsHolder.Instance.deleteIcons("Math3_1")
+        IconsHolder.Instance.deleteIcons("Math3_2")
+        IconsHolder.Instance.setIconConfiguration(this.container1, count1, iconName1, "Math3_1")
+        IconsHolder.Instance.setIconConfiguration(this.container2, count2, iconName2, "Math3_2")
         Helper.shuffleArray(this.buttons)
         let c: Array<number> = [this.currentSum, wrong1, wrong2]
         for(let i = 0; i < this.buttons.length; i++){
@@ -148,11 +144,12 @@ export class Math3 extends Component {
     }
     checkWin(){
         GameStateMachine.Instance.colorLamp()
-        this.currentIcons1.destroy()
-            this.currentIcons2.destroy()
-            this.disableNodes.forEach(element => {
-                element.active = false;
-            });
+        IconsHolder.Instance.deleteIcons("Math3_1")
+        IconsHolder.Instance.deleteIcons("Math3_2")
+        
+        this.disableNodes.forEach(element => {
+            element.active = false;
+        });
         this.currentStage++
         if(this.currentStage == this.stageCount){
             Frame.Instance.zebraWin()

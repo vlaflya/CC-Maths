@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt } from 'cc';
+import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt, tween, Quat, Vec3 } from 'cc';
 import { Math1 } from './Math1';
 import { Helper } from './Helper';
 import { Frame } from './Frame';
@@ -53,8 +53,12 @@ export class Tileset extends Component {
             return
         }
         Frame.Instance.zebraWrong()
+        tween(button)
+        .to(0.05, {eulerAngles: new Vec3(0,0,10)})
+        .to(0.05, {eulerAngles: new Vec3(0,0,-10)})
+        .to(0.1, {eulerAngles: new Vec3(0,0,0)})
+        .start()
     }
-    
 }
 
 

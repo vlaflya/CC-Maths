@@ -9,7 +9,7 @@ export class SkeletonButton extends Component {
         this.skeleton = this.getComponent(sp.Skeleton)
     }
     public reset(){
-        this.skeleton.setSkin("Button-Active")
+        // this.skeleton.setSkin("Button-Active")
         this.skeleton.setAnimation(0, "idle", false)
     }
     public callback(event, customEventData){

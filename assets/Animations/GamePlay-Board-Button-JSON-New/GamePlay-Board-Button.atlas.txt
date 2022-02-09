@@ -1,0 +1,27 @@
+
+GamePlay-Board-Button.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Button-1
+  rotate: false
+  xy: 4, 66
+  size: 62, 53
+  orig: 64, 55
+  offset: 1, 1
+  index: -1
+Button-2
+  rotate: false
+  xy: 4, 7
+  size: 57, 55
+  orig: 59, 57
+  offset: 1, 1
+  index: -1
+Button-3
+  rotate: true
+  xy: 65, 4
+  size: 58, 53
+  orig: 60, 55
+  offset: 1, 1
+  index: -1
