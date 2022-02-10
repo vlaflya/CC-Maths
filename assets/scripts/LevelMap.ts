@@ -11,11 +11,11 @@ export class LevelMap extends Component {
     @property({type: UITransform}) container: UITransform
     @property({type: CCFloat}) distance: number
 
-    // @property({type: Prefab}) backStone: Prefab
-    // @property({type: Node}) backContainer: Node
+    @property({type: [Prefab]}) backPref: Array<Prefab> = []
+    @property({type: Node}) backContainer: Node
 
-    // @property({type: Prefab}) frontStone: Prefab
-    // @property({type: Node}) frontContainer: Node
+    @property({type: Prefab}) frontPref: Prefab
+    @property({type: Node}) frontContainer: Node
 
     @property({type: ScrollView}) scroll: ScrollView
     @property({type: Node}) view: Node
@@ -29,8 +29,9 @@ export class LevelMap extends Component {
     }
     scrollCallback(){
         let viewpos = new Vec3(this.view.position)
-        // this.backContainer.position = viewpos.multiplyScalar(0.5)
-        // this.frontContainer.position = viewpos.multiplyScalar(4)
+        this.backContainer.position = viewpos.multiplyScalar(0.5)
+        // console.log(viewpos);
+        this.frontContainer.position = viewpos.multiplyScalar(4)
     }
     update(){
         this.scrollCallback()
@@ -39,33 +40,18 @@ export class LevelMap extends Component {
         bgPos.z = 0
         this.background.position = bgPos
     }
-    init(count: number, lastLevel: number = 0, levelsUnlocked: number, unlockNew: boolean){
+    init(count: number, lastLevel: number = 0, levelsUnlocked: number, unlockNew: boolean, planets: Array<string>){
         this.scroll.enabled = false
-        // for(let i = 0; i < count/3; i++){
-        //     let bstone: Node = instantiate(this.backStone)
-        //     bstone.parent = this.backContainer
-        //     bstone.position = new Vec3(i*1300, -150,0)
-        // }
+        for(let i = 0; i < count/3; i++){
+            let r = randomRangeInt(0, this.backPref.length)
+            let bstone: Node = instantiate(this.backPref[r])
+            bstone.parent = this.backContainer
+            bstone.position = new Vec3(i*1300, -150,0)
+        }
         // for(let i = 0; i < count; i++){
-        //     let fstone: Node = instantiate(this.frontStone)
+        //     let fstone: Node = instantiate(this.frontPref)
         //     fstone.parent = this.frontContainer
         //     fstone.position = new Vec3(i*1000, -200,0)
-        //     let r = randomRangeInt(0,3)
-        //     let st: string
-        //     switch(r){
-        //         case(0):{
-        //             st = "StonesBig_Idle_1"
-        //             break
-        //         }
-        //         case(1):{
-        //             st = "StonesBig_Idle_2"
-        //             break
-        //         }
-        //         case(2):{
-        //             st = "StonesBig_Idle_3"
-        //             break
-        //         }
-        //     }
         // }
         this.container.width = (count + 1) * this.distance
         let m = 1
@@ -83,7 +69,7 @@ export class LevelMap extends Component {
             else
                 state = 2
             m *= -1
-            planet.getComponent(Planet).init(i,state)
+            planet.getComponent(Planet).init(i,state, planets[i])
         }
         this.container.node.position = new Vec3(-lastLevel * this.distance)
         this.scrollCallback()

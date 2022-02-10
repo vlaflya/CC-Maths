@@ -10,6 +10,7 @@ import { Bridge } from './Bridge';
 import { Frame } from './Frame';
 import { Helper } from './Helper';
 import { Transition } from './Constructor/Transition';
+import { Planet } from './Planet';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameStateMachine')
@@ -175,6 +176,7 @@ interface levelInfo{
     stage2choice: string
     constructorconfig: string
     stage3: string
+    planet: string
 }
 interface ConstructorInformation{
     availablecolors: string
