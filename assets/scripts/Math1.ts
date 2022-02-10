@@ -22,8 +22,10 @@ export class Math1 extends Component {
     @property({type: [sp.Skeleton]}) numberSkeletons: Array<sp.Skeleton> = []
     @property({type: Node}) container: Node
     @property({type: UIOpacity}) blurKey: UIOpacity
+    public static Instance: Math1
 
     public init(count: number, rev: string){
+        Math1.Instance = this
         let tileNumber: number = count
         let reversed: boolean
         if(rev == "no")
@@ -93,12 +95,24 @@ export class Math1 extends Component {
         tile.setScale(new Vec3(1,1,1))
         tile.getComponent(Tileset).init(this, reversed)   
     }
+
+    public getNumber(tileCount: number): Node{
+        return this.numberSkeletons[tileCount].node
+    }
+
     private currentTile = 0
     public setTile(count: number){
-        setMixedSkin(this.numberSkeletons[this.currentTile], "numMix", ["Slot-numbers", this.numberSkeletons[this.currentTile].node.name])
+        let tile: sp.Skeleton = this.numberSkeletons[this.currentTile]
         this.currentTile++
+        tween(tile.node)
+        .delay(0.5)
+        .call(() => {
+            setMixedSkin(tile, "numMix", ["Slot-numbers", tile.node.name])
+        })
+        .start()
     }
-    setWin(){
+
+    public setWin(){
         tween(this.blurKey)
         .to(0.5, {opacity: 0})
         .start()

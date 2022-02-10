@@ -112,16 +112,26 @@ export class Math3 extends Component {
         this.buttons.forEach(element => {
             Helper.resetClickEvent(element, "checkCallback")
         });
-        this.disableNodes.forEach(element => {
-            element.active = true;
-        });
+        tween(this.node)
+        .delay(1)
+        .call(() => {
+            this.disableNodes.forEach(element => {
+                element.active = true;
+            });
+        })
+        .start()
         this.currentSum = count1 + count2
         this.label1.string = count1.toString()
         this.label2.string = count2.toString()
         IconsHolder.Instance.deleteIcons("Math3_1")
         IconsHolder.Instance.deleteIcons("Math3_2")
-        IconsHolder.Instance.setIconConfiguration(this.container1, count1, iconName1, "Math3_1")
-        IconsHolder.Instance.setIconConfiguration(this.container2, count2, iconName2, "Math3_2")
+        tween(this.container1)
+        .delay(0.6)
+        .call(() => {
+            IconsHolder.Instance.setIconConfiguration(this.container1, count1, iconName1, "Math3_1")
+            IconsHolder.Instance.setIconConfiguration(this.container2, count2, iconName2, "Math3_2")
+        })
+        .start()
         Helper.shuffleArray(this.buttons)
         let c: Array<number> = [this.currentSum, wrong1, wrong2]
         for(let i = 0; i < this.buttons.length; i++){
@@ -146,7 +156,7 @@ export class Math3 extends Component {
         GameStateMachine.Instance.colorLamp()
         IconsHolder.Instance.deleteIcons("Math3_1")
         IconsHolder.Instance.deleteIcons("Math3_2")
-        
+
         this.disableNodes.forEach(element => {
             element.active = false;
         });

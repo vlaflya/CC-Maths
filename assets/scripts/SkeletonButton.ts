@@ -7,6 +7,8 @@ export class SkeletonButton extends Component {
     private skeleton: sp.Skeleton
     onLoad () {
         this.skeleton = this.getComponent(sp.Skeleton)
+        this.skeleton.setMix("idle", "tap", 0.1)
+        this.skeleton.setMix("tap", "idle", 0.1)
     }
     public reset(){
         this.skeleton.timeScale = 1
@@ -16,7 +18,7 @@ export class SkeletonButton extends Component {
     public callback(event, customEventData){
         this.skeleton.setAnimation(0, "tap", false)
         tween(this.node)
-        .delay(0.05)
+        .delay(0.11)
         .call(() => {
             this.skeleton.timeScale = -1
             this.skeleton.setSkin("Button-No-Active-1")

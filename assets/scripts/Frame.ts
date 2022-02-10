@@ -70,6 +70,7 @@ export class Frame extends Component {
         let flyNode = instantiate(this.fly)
         flyNode.setParent(this.flySpawn)
         let flySk = flyNode.getComponent(sp.Skeleton)
+        flySk.timeScale = 0.7
         flySk.setSkin(color)
         let endBone: sp.spine.Bone = flySk.findBone("Constr-Fin")
         let lamp: Node = this.lamps[this.lampCount].node
