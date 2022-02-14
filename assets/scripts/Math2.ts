@@ -10,7 +10,6 @@ const { ccclass, property } = _decorator;
 @ccclass('Math2')
 export class Math2 extends Component {
     @property({type: [Button]}) buttons: Array<Button> = []
-    @property({type: [SkeletonButton]}) buttonsSkeletons: Array<SkeletonButton> = []
     @property({type: [Prefab]}) configurations: Array<Prefab> = []
     @property({type: [SpriteFrame]}) objects: Array<SpriteFrame> = []
     @property({type: Node}) cont: Node
@@ -41,10 +40,8 @@ export class Math2 extends Component {
 
     public createGame(config: string){
         this.buttons.forEach(element => {
+            element.getComponent(SkeletonButton).reset()
             Helper.resetClickEvent(element, "checkCallback")
-        });
-        this.buttonsSkeletons.forEach(element => {
-            element.reset();
         });
         
         let name: string = ""
@@ -71,15 +68,15 @@ export class Math2 extends Component {
             this.buttons[i].interactable = true
         }
         this.currentOption = ar[0]
+        
         IconsHolder.Instance.deleteIcons("Math2")    
         IconsHolder.Instance.setIconConfiguration(this.cont, ar[0] , name, "Math2")
         this.buttons = Helper.shuffleArray(this.buttons)
+        this.buttons[0].getComponent(SkeletonButton).isCurrent = true;
         for(let i = 0; i < this.buttons.length; i++){
             let r: number
             this.buttons[i].node.children[1].getComponent(Label).string = ar[i].toString()
             Helper.addClickEvent(this.node, this.buttons[i],"Math2","checkCallback", ar[i])
-            console.log("oke");
-            // Helper.addClickEvent(this.buttonsSkeletons[i].node, this.buttons[i], "SkeletonButton", "callback", 0)
             console.log("oke1");
         }
     }
@@ -120,7 +117,7 @@ export class Math2 extends Component {
         }
         else{
             tween(this.node)
-            .delay(2.5)
+            .delay(2.8)
             .call(() => {
                 this.currentCycle++
                 this.createGame(this.cycles[this.currentCycle])

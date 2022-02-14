@@ -4,13 +4,14 @@ const { ccclass, property } = _decorator;
  
 @ccclass('SkeletonButtons')
 export class SkeletonButton extends Component {
-    private skeleton: sp.Skeleton
+    @property({type: sp.Skeleton}) skeleton: sp.Skeleton
+    public isCurrent: boolean  = false 
     onLoad () {
-        this.skeleton = this.getComponent(sp.Skeleton)
         this.skeleton.setMix("idle", "tap", 0.1)
         this.skeleton.setMix("tap", "idle", 0.1)
     }
     public reset(){
+        this.isCurrent = false
         this.skeleton.timeScale = 1
         this.skeleton.setSkin("Button-Active-1")
         this.skeleton.setAnimation(0, "idle", false)
@@ -20,9 +21,8 @@ export class SkeletonButton extends Component {
         tween(this.node)
         .delay(0.11)
         .call(() => {
-            // this.skeleton.timeScale = -1
-            this.skeleton.setSkin("Button-No-Active-1")
-            // this.skeleton.setAnimation(0, "tap", false)
+            if(!this.isCurrent)
+                this.skeleton.setSkin("Button-No-Active-1")
             this.skeleton.addAnimation(0, "idle", true)
         })
         .start()

@@ -15,7 +15,6 @@ export class Math3 extends Component {
     @property({type: Label}) label2: Label
     @property({type: [Node]}) disableNodes: Array<Node> = []
     @property({type: [Button]}) buttons: Array<Button> = []
-    @property({type: [SkeletonButton]}) buttonSkeletons: Array<SkeletonButton> = []
 
     private currentSum: number
     private currentStage = 0;
@@ -106,10 +105,8 @@ export class Math3 extends Component {
         this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
     }
     create(count1: number, iconName1: string, count2: number, iconName2: string, wrong1:number, wrong2:number){
-        this.buttonSkeletons.forEach(element => {
-            element.reset()
-        });
         this.buttons.forEach(element => {
+            element.getComponent(SkeletonButton).reset()
             Helper.resetClickEvent(element, "checkCallback")
         });
         tween(this.node)
@@ -134,6 +131,7 @@ export class Math3 extends Component {
         .start()
         Helper.shuffleArray(this.buttons)
         let c: Array<number> = [this.currentSum, wrong1, wrong2]
+        this.buttons[0].getComponent(SkeletonButton).isCurrent = true
         for(let i = 0; i < this.buttons.length; i++){
             this.buttons[i].interactable = true
             let r: number = c[i]
@@ -173,7 +171,7 @@ export class Math3 extends Component {
         else{
             Frame.Instance.zebraNod()
             tween(this.node)
-            .delay(2)
+            .delay(2.5)
             .call(() => {
                 this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
             })
