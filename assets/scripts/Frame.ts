@@ -37,6 +37,8 @@ export class Frame extends Component {
         this.zebra.setMix("Track-no", "Track-no", 0.5)
 
         this.zebra.setMix("Track-yes", "win", 0.5)
+
+        setMixedSkin(this.zebra, "zebra", ["2-Legs", "Zebra-Shadow"])
     }
 
     public fillLamp(color: string){
@@ -70,7 +72,7 @@ export class Frame extends Component {
         let flyNode = instantiate(this.fly)
         flyNode.setParent(this.flySpawn)
         let flySk = flyNode.getComponent(sp.Skeleton)
-        flySk.timeScale = 0.7
+        flySk.timeScale = 0.5
         flySk.setSkin(color)
         let endBone: sp.spine.Bone = flySk.findBone("Constr-Fin")
         let lamp: Node = this.lamps[this.lampCount].node

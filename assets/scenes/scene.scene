@@ -60,7 +60,7 @@
         "__id__": 380
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 384
@@ -1947,8 +1947,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -424.519,
-      "y": -256.788,
+      "x": 60.455,
+      "y": -267.699,
       "z": 0
     },
     "_lrot": {
@@ -1960,9 +1960,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.263,
-      "y": 0.263,
-      "z": 0.879
+      "x": 0.511,
+      "y": 0.511,
+      "z": 1.707
     },
     "_layer": 33554432,
     "_euler": {
@@ -1984,8 +1984,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1039.38,
-      "height": 1741.94
+      "width": 519.69,
+      "height": 870.97
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2024,10 +2024,10 @@
     "_debugBones": false,
     "_debugSlots": false,
     "_skeletonData": {
-      "__uuid__": "80f898f7-1649-48ed-b40f-49f8b51856f6",
+      "__uuid__": "40151ee7-6c7d-468c-82d7-fd6c59d228e7",
       "__expectedType__": "sp.SkeletonData"
     },
-    "defaultSkin": "2-Legs",
+    "defaultSkin": "Zebra-Shadow",
     "defaultAnimation": "idle",
     "_sockets": [],
     "_debugMesh": false,
@@ -12069,7 +12069,7 @@
         "__id__": 396
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 420
@@ -13187,29 +13187,14 @@
     "distance": 500,
     "backPref": [
       {
-        "__uuid__": "d515fac0-9049-4e44-91a8-55e87ddc8ad5",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "a23f43ee-80ab-41c3-98d4-145bea8eabe3",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "feb587ca-a956-4bba-99bb-2163bb959747",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "e8cd5c80-2ef5-4f77-aa99-811cffacf89b",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "bea08a3f-5388-49d2-9818-5926c4148bae",
+        "__uuid__": "f8b453ea-6774-4ff6-8ab6-d260b3e0b368",
         "__expectedType__": "cc.Prefab"
       }
     ],
     "backContainer": {
       "__id__": 397
     },
+    "frontPref": null,
     "frontContainer": {
       "__id__": 406
     },

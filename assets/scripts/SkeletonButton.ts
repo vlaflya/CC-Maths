@@ -20,9 +20,9 @@ export class SkeletonButton extends Component {
         tween(this.node)
         .delay(0.11)
         .call(() => {
-            this.skeleton.timeScale = -1
+            // this.skeleton.timeScale = -1
             this.skeleton.setSkin("Button-No-Active-1")
-            this.skeleton.setAnimation(0, "tap", false)
+            // this.skeleton.setAnimation(0, "tap", false)
             this.skeleton.addAnimation(0, "idle", true)
         })
         .start()

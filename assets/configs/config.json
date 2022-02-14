@@ -6,7 +6,7 @@
         "stage2choice": "fish1-3-2-4,octopus1-4-1-3,octopus2-4-2-1",
         "constructorconfig": "10_heart_7",
         "stage3": "3*fish1+2*fish2-3-4,3*pig1+3*pig2-4-5,4*pig1+1*pig2-3-6",
-        "planet": "Ice"
+        "planet": "blue_1"
     },
     {
         "level": 1,
@@ -15,7 +15,7 @@
         "stage2choice": "fish1-3-2-1,raccoon1-2-1-3,fish2-3-1-2",
         "constructorconfig": "21_diamond_6",
         "stage3": "1*fish1+1*fish2-1-3,2*pig1+2*pig2-2-3",
-        "planet": "Ice"
+        "planet": "blue_1"
     },
     {
         "level": 2,
@@ -24,7 +24,7 @@
         "stage2choice": "fish1-3-2-4,octopus1-4-1-3,octopus2-4-2-1",
         "constructorconfig": "10_heart_7",
         "stage3": "3*fish1+2*fish2-3-4,3*pig1+3*pig2-4-5,4*pig1+1*pig2-3-6",
-        "planet": "Ice"
+        "planet": "blue_1"
     },
     {
         "level": 3,
@@ -33,7 +33,7 @@
         "stage2choice": "mushroom1-5-4-6,mushroom2-5-6-3,octopus1-4-3-6,cat_warm1-6-5-4",
         "constructorconfig": "22_cat_8",
         "stage3": "3*fish1+4*fish2-5-2,4*pig1+4*pig2-4-6,4*pig1+2*pig2-8-2",
-        "planet": "Ice"
+        "planet": "blue_1"
     },
     {
         "level": 4,
@@ -42,7 +42,7 @@
         "stage2choice": "flower1-8-7-5,octopus1-4-3-2,cat_warm1-6-5-7,flower2-8-4-6",
         "constructorconfig": "20_owl_9",
         "stage3": "5*fish1+1*fish2-3-7,3*pig1+2*pig2-6-8,8*pig1+1*pig2-7-5,4*pig1+3*pig2-8-4",
-        "planet": "Ice"
+        "planet": "blue_1"
     },
     {
         "level": 5,
@@ -51,6 +51,6 @@
         "stage2choice": "mushroom1-5-3-4,pig1-9-10-8,cat_cold1-10-7-9,flower1-8-5-7",
         "constructorconfig": "24_lion_10",
         "stage3": "2*fish1+8*fish2-9-7,1*pig1+8*pig2-7-10,1*pig1+9*pig2-6-8,4*pig1+6*pig2-8-5,4*pig1+5*pig2-7-3",
-        "planet": "Ice"
+        "planet": "blue_1"
     }
 ]
