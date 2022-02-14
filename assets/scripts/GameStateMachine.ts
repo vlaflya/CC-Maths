@@ -111,8 +111,13 @@ export class GameStateMachine extends Component {
     }
     onMath2Enter(){
         Frame.Instance.setFrameMono()
-        this.math2.node.active = true
-        this.math2.init(this.stage2choice)
+        tween(this.math2.node)
+        .delay(3)
+        .call(() =>{
+            this.math2.node.active = true
+            this.math2.init(this.stage2choice)
+        })
+        .start()
     }
     onMath2Exit(fireflyCount?){
         Transition.Instance.transitionIn();

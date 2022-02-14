@@ -22,7 +22,7 @@ export class Math2 extends Component {
         let index = config.indexOf(",")
         if(index == -1){
             tween(this.node)
-            .delay(3)
+            .delay(0)
             .call(() => {
                 this.createGame(this.cycles[0])
             })
