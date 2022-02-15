@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, director, game, JsonAsset, find, SpriteFrame } from 'cc';
+import { _decorator, Component, Node, director, game, JsonAsset, find, SpriteFrame, tween } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { LevelMap } from './LevelMap';
 import { Transition } from './Constructor/Transition';
@@ -11,6 +11,7 @@ export class Bridge extends Component {
     private levelCount: number = 0
     private maxLevels : number = 0
     private planets: Array<string> = []
+    private planetNumbers: Array<number> = []
     @property({type: JsonAsset}) config: JsonAsset
     onLoad () {
         let conf: Array<any> = JSON.parse(JSON.stringify(this.config.json))
@@ -18,12 +19,13 @@ export class Bridge extends Component {
         for(let i = 0; i < this.maxLevels; i++){
             let lvl: levelInfo = conf[i]
             this.planets.push(lvl.planet)
+            this.planetNumbers.push(lvl.planetNumber)
         }
         game.addPersistRootNode(this.node)
         Bridge.Instance = this
     }
     mapLoaded(){
-        LevelMap.Instance.init(this.maxLevels, this.levelCount, this.maxLevels, false, this.planets);
+        LevelMap.Instance.init(this.maxLevels, this.levelCount, this.levelCount, false, this.planets, this.planetNumbers);
     }
     public loadLevel(levelID){
         this.levelCount = levelID
@@ -33,13 +35,23 @@ export class Bridge extends Component {
     gameStateMachineInitialized(){
         GameStateMachine.Instance.readConfig(this.config, this.levelCount)
     }
+
+    public exitLevel(){
+        Transition.Instance.transitionIn()
+        tween(this.node)
+        .delay(1)
+        .call(() => {
+            director.loadScene("scene")
+        })
+        .start()
+    }
     
     win(){
         this.levelCount++
         if(this.levelCount == this.maxLevels){
             this.levelCount = 0
         }
-        director.loadScene("scene")
+        this.exitLevel()
     }
 
 }
@@ -51,4 +63,5 @@ interface levelInfo{
     constructorconfig: string
     stage3: string
     planet: string
+    planetNumber: number
 }

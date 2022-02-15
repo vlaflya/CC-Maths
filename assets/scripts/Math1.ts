@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity, Sprite, SpriteFrame } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 import { Frame } from './Frame';
@@ -21,12 +21,21 @@ export class Math1 extends Component {
     @property({type: [Prefab]}) tilePrefabs10: Array<Prefab> = []
     @property({type: [sp.Skeleton]}) numberSkeletons: Array<sp.Skeleton> = []
     @property({type: Node}) container: Node
+    @property({type: [SpriteFrame]}) keyFrames: Array<SpriteFrame> = []
+    @property({type: [SpriteFrame]}) keyBlurFrames: Array<SpriteFrame> = []
+    @property({type: Sprite}) keySprite: Sprite
+    @property({type: Sprite}) keyBlurSprite: Sprite
     @property({type: UIOpacity}) blurKey: UIOpacity
     public static Instance: Math1
 
-    public init(count: number, rev: string){
+    public init(count: number, rev: string, keyName:string){
         Math1.Instance = this
         let tileNumber: number = count
+
+        let keyIndex = this.getKeyIndex(keyName)
+        this.keySprite.spriteFrame = this.keyFrames[keyIndex]
+        this.keyBlurSprite.spriteFrame = this.keyBlurFrames[keyIndex]
+
         let reversed: boolean
         if(rev == "no")
             reversed = false
@@ -94,6 +103,14 @@ export class Math1 extends Component {
         tile.setPosition(new Vec3(0,0,0))
         tile.setScale(new Vec3(1,1,1))
         tile.getComponent(Tileset).init(this, reversed)   
+    }
+
+    private getKeyIndex(keyName: string): number{
+        for(let i; i < this.keyFrames.length; i++){
+            if(this.keyFrames[i].name == keyName)
+                return i
+        }
+        return 0
     }
 
     public getNumber(tileCount: number): Node{

@@ -18,6 +18,7 @@ export class GameStateMachine extends Component {
     private stateMachine: GeneralStateMachine;
     private stage1count: number
     private stage1revereced: string
+    private stage1back: string
     private stage2choice: string
     private constructorConfig: string
     private stage3: string
@@ -56,6 +57,7 @@ export class GameStateMachine extends Component {
         let info: levelInfo = this.conf[levelCount]
         this.stage1count = info.stage1count
         this.stage1revereced = info.stage1reverced
+        this.stage1back = info.stage1back
         this.stage2choice = info.stage2choice
         this.constructorConfig = info.constructorconfig
         this.getColors()
@@ -100,7 +102,7 @@ export class GameStateMachine extends Component {
 
     onMath1Enter(){
         this.math1.node.active = true
-        this.math1.init(this.stage1count, this.stage1revereced)
+        this.math1.init(this.stage1count, this.stage1revereced, this.stage1back)
     }
     onMath1Exit(){
         tween(this.key.getComponent(UIOpacity))
@@ -173,11 +175,15 @@ export class GameStateMachine extends Component {
     winLevel(){
         Bridge.Instance.win()
     }
+    exitLevel(){
+        Bridge.Instance.exitLevel()
+    }
 }
 interface levelInfo{
     level: number
     stage1count: number
     stage1reverced: string
+    stage1back: string
     stage2choice: string
     constructorconfig: string
     stage3: string

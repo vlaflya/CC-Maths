@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Tween, tween, Vec3, SpriteFrame, Sprite, Skeleton, sp, animation, randomRange } from 'cc';
+import { _decorator, Component, Node, Tween, tween, Vec3, SpriteFrame, Sprite, Skeleton, sp, animation, randomRange, Label } from 'cc';
 import { Bridge } from './Bridge';
 import { Transition } from './Constructor/Transition';
 const { ccclass, property } = _decorator;
@@ -11,15 +11,29 @@ export class Planet extends Component {
     @property({type: Sprite}) sprite: Sprite
     @property({type: sp.Skeleton}) anim: sp.Skeleton
     @property({type: [SpriteFrame]}) frames: Array<SpriteFrame> = []
-    init(id: number, state: number, planet: string){
+    @property({type: Node}) zebra: Node
+    @property({type: sp.Skeleton}) zebraSkeleton: sp.Skeleton
+    @property({type: Node}) flag: Node
+    @property({type: Label}) flagLabel: Label
+
+    init(id: number, state: number, planet: string, planeNumber: number){
         this.node.on(Node.EventType.TOUCH_END, this.onTouch, this)
-        this.sprite.spriteFrame = this.findPlanet(planet)
+        
         this.anim.timeScale = randomRange(0.8, 1.2)
         this.id = id
         if(state == 0 || state == 1){
+            if(state == 0){
+                this.zebra.active = true
+            }
+            if(state == 1){
+                this.flag.active = true
+                this.flagLabel.string = planeNumber.toString()
+            }
+            this.sprite.spriteFrame = this.findPlanet(planet)
             this.isUnlocked = true
         }
         else{
+            this.sprite.spriteFrame = this.findPlanet("closed")
             this.isUnlocked = false            
         }
     }
@@ -33,11 +47,15 @@ export class Planet extends Component {
     }
 
     onTouch(){
-        Tween.stopAllByTarget(this.node)
-        Transition.Instance.transitionIn()
+        Tween.stopAllByTarget(this.sprite.node)
+        if(this.isUnlocked){
+            this.zebraSkeleton.setMix("idle", "win", 0.5)
+            this.zebraSkeleton.setAnimation(0, "win", true)
+            Transition.Instance.transitionIn()
+        }
         tween(this.node)
-        .to(0.2, {scale:new Vec3(1.1,1.1,1)}, {easing:"bounceOut"})
-        .to(0.2, {scale:new Vec3(1,1,1)}, {easing:"bounceIn"})
+        .by(0.2, {scale:new Vec3(0.1, 0.1, 0.1)}, {easing:"bounceOut"})
+        .by(0.2, {scale:new Vec3(-0.1, -0.1, -0.1)}, {easing:"bounceIn"})
         .delay(1)
         .call(() => {
             if(this.isUnlocked){
