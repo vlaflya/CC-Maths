@@ -84,17 +84,22 @@ export class LevelMap extends Component {
             m *= -1
             planet.getComponent(Planet).init(i,state, planets[i], planetNumbers[i])
         }
-        this.container.node.position = new Vec3(-lastLevel * this.distance)
+        this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
+        this.scroll.enabled = true
+        if(unlockNew)
+            this.container.node.position = new Vec3(-(lastLevel + 2) * this.distance)
+
         this.scrollCallback()
-        if(levelsUnlocked != (lastLevel + 1) || !unlockNew){
-            console.log(levelsUnlocked + " " +lastLevel)
-            this.scroll.enabled = true
-            return
-        }
-        tween(this.container.node)
-        .by(1, {position: new Vec3(Vec3.RIGHT).multiplyScalar(-this.distance/1.2)})
-        .call(() => {this.scroll.enabled = true})
-        .start()
+        // if(levelsUnlocked != (lastLevel + 1) || !unlockNew){
+        //     console.log(levelsUnlocked + " " +lastLevel)
+        //     this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
+        //     this.scroll.enabled = true
+        //     return
+        // }
+        // tween(this.container.node)
+        // .by(1, {position: new Vec3(Vec3.RIGHT).multiplyScalar(-this.distance/1.2)})
+        // .call(() => {this.scroll.enabled = true})
+        // .start()
     }
 
     focusOnIsland(pos: Vec3, id: number){

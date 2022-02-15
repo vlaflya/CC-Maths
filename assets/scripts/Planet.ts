@@ -25,10 +25,10 @@ export class Planet extends Component {
             if(state == 0){
                 this.zebra.active = true
             }
-            if(state == 1){
-                this.flag.active = true
-                this.flagLabel.string = planeNumber.toString()
-            }
+            
+            this.flag.active = true
+            this.flagLabel.string = planeNumber.toString()
+            
             this.sprite.spriteFrame = this.findPlanet(planet)
             this.isUnlocked = true
         }
@@ -54,8 +54,8 @@ export class Planet extends Component {
             Transition.Instance.transitionIn()
         }
         tween(this.node)
-        .by(0.2, {scale:new Vec3(0.1, 0.1, 0.1)}, {easing:"bounceOut"})
-        .by(0.2, {scale:new Vec3(-0.1, -0.1, -0.1)}, {easing:"bounceIn"})
+        .by(0.1, {scale:new Vec3(0.1, 0.1, 0.1)}, {easing:"bounceOut"})
+        .by(0.1, {scale:new Vec3(-0.1, -0.1, -0.1)}, {easing:"bounceIn"})
         .delay(1)
         .call(() => {
             if(this.isUnlocked){
