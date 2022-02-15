@@ -200,23 +200,163 @@
     },
     "configs": [
       {
-        "__uuid__": "ef96f15a-b6ad-48e8-b517-6b4b8741c78c",
+        "__uuid__": "65ab63a9-6784-4438-a4ce-394938161970",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "787922f3-ce3e-48ea-94c4-01f0c98cc299",
+        "__uuid__": "9461f653-e53e-4f32-a60f-a9e70ae5cc64",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "2f3400e5-a086-47ee-83d2-c0237749a760",
+        "__uuid__": "23d80a5d-0df7-4fa9-a5fc-d8f0ec3f45a2",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "7f6f5347-c871-4a47-af2a-f632a6632bb3",
+        "__uuid__": "e48c9cca-66b9-44fb-af52-83fcf6b30a2a",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "4be596e3-8e13-4e03-8337-9c914123fd82",
+        "__uuid__": "52f479bf-14e2-4caf-8ef5-ddc5b5c7fb39",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "08a2a7aa-dc1f-473b-932f-90b9ebcaeaa8",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "713723c8-f582-485f-9298-7e647bdcf5bb",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "572dfb16-8c44-489a-82eb-cb1989fdea66",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "9d8bbb63-c8da-4dfd-86e2-ea14b37e68c8",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "a1deae58-1c60-4ff1-8aeb-ba6a23e19f06",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "8a81f518-49bb-46cb-a8f4-6603f7ac4df5",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "f210691e-486d-4de7-8b56-d41e43ce276d",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "0728e69d-d565-4a1c-8624-9aff8140a624",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "6bedde1a-c510-4946-b89f-6f6d3816a772",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "eb37c56e-f78c-44c6-a6e5-7178aff68365",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "ab1abffd-94b2-44f7-b12d-da22376a5cab",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "1ff1567d-982b-4d9e-a7b9-c1c137b0b741",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "959088d5-b293-4110-9da5-435d89aa4f55",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "d63e7d4c-8847-419e-ac01-f77ff945802c",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "465b98bc-558e-4a66-8c61-b61326006dd3",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "66a6988c-6e89-4e5c-aeb9-234ae7c94b4e",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "928ea760-20e6-4ba6-9956-1b3662c24612",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "c9bb4cee-abc2-485c-aa12-8b1eebbe1d34",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "84a1b49f-0170-45fd-b8cd-ecd4e6bd7b80",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "6cae7243-e8dc-48c5-b21c-b8195d77fb51",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "fafa9b3c-0013-4afa-8af6-26837710dda5",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "6607cbb9-4b3e-49bf-a30b-86ccbbde06b8",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "71155a7c-012a-4d26-b32b-fae58a7856d8",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "7003fbd4-2a08-4f4a-b65e-38accdbe36b0",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "ffd02a1c-70bd-49bd-9614-ddf4d56e808b",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "a8113edb-4e04-4121-a5f5-c0a7d6aac92c",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "3f051a86-40b4-44af-80f4-a0ae241f0a6e",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "e320cb8b-7c95-4166-9740-de38b089f4c2",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "ddd93970-23ee-41f2-be3d-b1c1501e1185",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "ea24ed2a-b272-4fb4-a993-32522876fcad",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "2fcc4553-b6de-45ae-9dcf-12ee936f702d",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "61f68d68-6e39-43e9-abcc-0a1423a8c103",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "330ed295-600a-4b29-b85c-02708863469e",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "8df0e74b-e473-44cf-a418-863f104cec42",
+        "__expectedType__": "cc.JsonAsset"
+      },
+      {
+        "__uuid__": "a77f735a-8a0e-47db-8c64-9594b6ab1311",
         "__expectedType__": "cc.JsonAsset"
       }
     ],
@@ -6508,9 +6648,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 85,
+      "g": 64,
+      "b": 110,
       "a": 255
     },
     "_string": "10",
@@ -6750,9 +6890,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 85,
+      "g": 64,
+      "b": 110,
       "a": 255
     },
     "_string": "+",
@@ -6980,9 +7120,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 85,
+      "g": 64,
+      "b": 110,
       "a": 255
     },
     "_string": "10",
@@ -7222,9 +7362,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 85,
+      "g": 64,
+      "b": 110,
       "a": 255
     },
     "_string": "=",
@@ -7452,9 +7592,9 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 85,
+      "g": 64,
+      "b": 110,
       "a": 255
     },
     "_string": "?",
