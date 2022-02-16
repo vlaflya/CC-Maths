@@ -276,7 +276,7 @@
         "stage1back": "picture3",
         "stage2choice": "fish3-3-5-7,cat_warm1-6-3-9,pig3-9-6-4,octopus3-4-2-8",
         "constructorconfig": "27_maple_8",
-        "stage3": "7*flower1+1*flower1-6-4,6*flower1+2*flower1-5-9,7*pig1+2*pig1-8-6,*+*--",
+        "stage3": "7*flower1+1*flower1-6-4,6*flower1+2*flower1-5-9,7*pig1+2*pig1-8-6",
         "planet": "blue_4",
         "planetnumber": 9
     },
@@ -342,7 +342,7 @@
         "stage1back": "picture9",
         "stage2choice": "cat_warm1-6-5-8,octopus3-4-2-7,monster2-7-8-10",
         "constructorconfig": "33_corgi_7",
-        "stage3": "2*mushroom1+3*mushroom1-8-6,5*monster1+2*monster1-9-4,4*monster1+3*monster1-5-3,*+*--",
+        "stage3": "2*mushroom1+3*mushroom1-8-6,5*monster1+2*monster1-9-4,4*monster1+3*monster1-5-3",
         "planet": "yellow_1",
         "planetnumber": 7
     },
@@ -408,7 +408,7 @@
         "stage1back": "picture3",
         "stage2choice": "cat_warm2-6-5-7,flower1-8-7-10,flower2-8-9-7,monster1-7-5-9",
         "constructorconfig": "39_giraffe_9",
-        "stage3": "1*flower1+7*flower1-6-9,2*monster1+5*monster1-4-8,6*pig1+3*pig1-10-7,4*cat_warm1+2*cat_warm1-5-7,*+*--",
+        "stage3": "1*flower1+7*flower1-6-9,2*monster1+5*monster1-4-8,6*pig1+3*pig1-10-7,4*cat_warm1+2*cat_warm1-5-7",
         "planet": "green_4",
         "planetnumber": 9
     },
