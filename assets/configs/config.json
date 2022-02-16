@@ -309,7 +309,7 @@
         "stage1back": "picture6",
         "stage2choice": "pig3-9-8-10,cat_warm3-6-7-4,octopus_1-4-2-5,cat_cold2-10-7-9",
         "constructorconfig": "30_rabbit2_8",
-        "stage3": "4*flower1+4*flower1-6-5,3*pig1+6*pig1-7-10,9*cat_cold1+1*cat_cold1-7-8,*+*--",
+        "stage3": "4*flower1+4*flower1-6-5,3*pig1+6*pig1-7-10,9*cat_cold1+1*cat_cold1-7-8",
         "planet": "pink_3",
         "planetnumber": 10
     },
