@@ -18,6 +18,7 @@ export class Bridge extends Component {
     onLoad () {
         if(Bridge.Instance != null)
             this.node.destroy()
+        this.curLevel = this.levelCount
         let conf: Array<any> = JSON.parse(JSON.stringify(this.config.json))
         this.maxLevels = conf.length
         for(let i = 0; i < this.maxLevels; i++){

@@ -88,7 +88,8 @@ export class LevelMap extends Component {
         this.scroll.enabled = true
         if(unlockNew)
             this.container.node.position = new Vec3(-(lastLevel + 2) * this.distance)
-
+        else
+            this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
         this.scrollCallback()
         // if(levelsUnlocked != (lastLevel + 1) || !unlockNew){
         //     console.log(levelsUnlocked + " " +lastLevel)
