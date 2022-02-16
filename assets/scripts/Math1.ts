@@ -11,6 +11,7 @@ export class Math1 extends Component {
     @property({type: CCInteger}) tileNumber: number
     @property({type: Color}) disableColor: Color
     @property({type: Color}) activeColor: Color
+    @property({type: [Prefab]}) tilePrefabs2: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs3: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs4: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs5: Array<Prefab> = []
@@ -57,6 +58,11 @@ export class Math1 extends Component {
         }
         let prefab: Prefab
         switch(tileNumber){
+            case(2):{
+                let r = randomRangeInt(0, this.tilePrefabs2.length)
+                prefab = this.tilePrefabs2[r]
+                break
+            }
             case(3):{
                 let r = randomRangeInt(0, this.tilePrefabs3.length)
                 prefab = this.tilePrefabs3[r]
@@ -106,15 +112,16 @@ export class Math1 extends Component {
     }
 
     private getKeyIndex(keyName: string): number{
-        for(let i; i < this.keyFrames.length; i++){
+        for(let i = 0; i < this.keyFrames.length; i++){
+            console.log(this.keyFrames[i].name);
             if(this.keyFrames[i].name == keyName)
                 return i
         }
         return 0
     }
 
-    public getNumber(tileCount: number): Node{
-        return this.numberSkeletons[tileCount].node
+    public getNumber(): Node{
+        return this.numberSkeletons[this.currentTile - 1].node
     }
 
     private currentTile = 0
@@ -124,7 +131,7 @@ export class Math1 extends Component {
         tween(tile.node)
         .delay(0.5)
         .call(() => {
-            setMixedSkin(tile, "numMix", ["Slot-numbers", tile.node.name])
+            setMixedSkin(tile, "numMix", ["Slot-numbers", "number-" + count.toString()])
         })
         .start()
     }

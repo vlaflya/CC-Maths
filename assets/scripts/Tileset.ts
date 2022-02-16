@@ -44,7 +44,7 @@ export class Tileset extends Component {
                 this.tileCount++
             this.math1.setTile(Number(customEventData))
             
-            let number = this.math1.getNumber(this.tileCount-2)
+            let number = this.math1.getNumber()
             let label = button.children[0]
             let pos = new Vec3(label.worldPosition)
             label.parent = number

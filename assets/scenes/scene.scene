@@ -389,6 +389,12 @@
       "b": 0,
       "a": 255
     },
+    "tilePrefabs2": [
+      {
+        "__uuid__": "be265055-9465-45de-8f65-bd514d32f844",
+        "__expectedType__": "cc.Prefab"
+      }
+    ],
     "tilePrefabs3": [
       {
         "__uuid__": "cac90031-4df9-4191-bbaa-96a0c8096139",

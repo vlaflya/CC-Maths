@@ -40,7 +40,7 @@ export class Planet extends Component {
 
     private findPlanet(name: string): SpriteFrame{
         for(let i = 0; i < this.frames.length; i++){
-            console.log(this.frames[i].name);
+
             if(this.frames[i].name == name)
                 return this.frames[i]
         }
