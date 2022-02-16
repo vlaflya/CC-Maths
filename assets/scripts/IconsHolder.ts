@@ -30,10 +30,11 @@ export class IconsHolder extends Component {
             
         config.children.forEach(child => {
             child.getComponent(Sprite).spriteFrame = frame
+            let sc = new Vec3(child.scale)
             child.scale = new Vec3(0,0,0)
             tween(child)
             .delay(0.3)
-            .to(0.2, {scale: new Vec3(1,1,1)})
+            .to(0.2, {scale: sc})
             .start()
             list.icons.push(child)
         });
