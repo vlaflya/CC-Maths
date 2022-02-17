@@ -2,7 +2,7 @@
   "ver": "1.0.21",
   "importer": "image",
   "imported": true,
-  "uuid": "ae041dcf-5d98-47d9-8026-25fd258fada4",
+  "uuid": "886ae45b-03ef-4e42-8fcb-986fb66e5ee5",
   "files": [
     ".png",
     ".json"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "ae041dcf-5d98-47d9-8026-25fd258fada4@6c48a",
-      "displayName": "firefly_blue_cut",
+      "uuid": "886ae45b-03ef-4e42-8fcb-986fb66e5ee5@6c48a",
+      "displayName": "lamp",
       "id": "6c48a",
       "name": "texture",
       "userData": {
-        "imageUuidOrDatabaseUri": "ae041dcf-5d98-47d9-8026-25fd258fada4",
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "886ae45b-03ef-4e42-8fcb-986fb66e5ee5",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
@@ -33,29 +33,29 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "ae041dcf-5d98-47d9-8026-25fd258fada4@f9941",
-      "displayName": "firefly_blue_cut",
+      "uuid": "886ae45b-03ef-4e42-8fcb-986fb66e5ee5@f9941",
+      "displayName": "lamp",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -322.5,
+        "offsetX": -112.5,
         "offsetY": 0.5,
-        "trimX": 2,
-        "trimY": 2,
-        "width": 1399,
-        "height": 507,
-        "rawWidth": 2048,
-        "rawHeight": 512,
+        "trimX": 4,
+        "trimY": 4,
+        "width": 791,
+        "height": 247,
+        "rawWidth": 1024,
+        "rawHeight": 256,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "ae041dcf-5d98-47d9-8026-25fd258fada4@6c48a",
+        "imageUuidOrDatabaseUri": "886ae45b-03ef-4e42-8fcb-986fb66e5ee5@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,10 +69,6 @@
   "userData": {
     "type": "sprite-frame",
     "hasAlpha": true,
-    "redirect": "ae041dcf-5d98-47d9-8026-25fd258fada4@f9941",
-    "compressSettings": {
-      "useCompressTexture": false,
-      "presetId": "transparent"
-    }
+    "redirect": "886ae45b-03ef-4e42-8fcb-986fb66e5ee5@f9941"
   }
 }

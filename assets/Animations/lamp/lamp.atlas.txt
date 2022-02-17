@@ -1,0 +1,104 @@
+
+lamp.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lamp1_1
+  rotate: false
+  xy: 442, 4
+  size: 85, 65
+  orig: 85, 65
+  offset: 0, 0
+  index: -1
+lamp1_10
+  rotate: true
+  xy: 4, 44
+  size: 207, 202
+  orig: 210, 208
+  offset: 2, 3
+  index: -1
+lamp1_2
+  rotate: false
+  xy: 751, 167
+  size: 44, 84
+  orig: 45, 86
+  offset: 1, 1
+  index: -1
+lamp1_3
+  rotate: false
+  xy: 724, 15
+  size: 51, 108
+  orig: 53, 114
+  offset: 1, 5
+  index: -1
+lamp1_4
+  rotate: false
+  xy: 395, 73
+  size: 146, 178
+  orig: 146, 179
+  offset: 0, 1
+  index: -1
+lamp1_6
+  rotate: false
+  xy: 674, 10
+  size: 46, 90
+  orig: 46, 91
+  offset: 0, 0
+  index: -1
+lamp1_7
+  rotate: false
+  xy: 620, 6
+  size: 50, 94
+  orig: 51, 94
+  offset: 1, 0
+  index: -1
+lamp1_8
+  rotate: true
+  xy: 210, 10
+  size: 55, 100
+  orig: 56, 101
+  offset: 0, 1
+  index: -1
+lamp1_9
+  rotate: true
+  xy: 4, 27
+  size: 13, 94
+  orig: 14, 96
+  offset: 1, 1
+  index: -1
+lamp2_1
+  rotate: false
+  xy: 531, 4
+  size: 85, 65
+  orig: 85, 65
+  offset: 0, 0
+  index: -1
+lamp2_2
+  rotate: true
+  xy: 314, 11
+  size: 54, 124
+  orig: 56, 126
+  offset: 1, 1
+  index: -1
+lamp2_3
+  rotate: false
+  xy: 693, 127
+  size: 54, 124
+  orig: 56, 126
+  offset: 1, 1
+  index: -1
+lamp2_4
+  rotate: false
+  xy: 545, 104
+  size: 144, 147
+  orig: 144, 147
+  offset: 0, 0
+  index: -1
+lamp2_5
+  rotate: false
+  xy: 210, 69
+  size: 181, 182
+  orig: 181, 182
+  offset: 0, 0
+  index: -1

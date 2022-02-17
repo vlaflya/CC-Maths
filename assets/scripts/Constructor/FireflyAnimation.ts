@@ -58,7 +58,9 @@ export class FireflyAnimation extends Component {
         if(color.equals(new Color(255,255,0,255)))
             return "yellow"
         if(color.equals(new Color(0,255,0,255)))
-            return "green"    
+            return "green"
+        if(color.equals(new Color(255,0,255,255)))
+            return "violet"
         return "gray"
     }
 

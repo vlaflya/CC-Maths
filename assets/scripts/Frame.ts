@@ -10,10 +10,14 @@ export class Frame extends Component {
     @property({type: Prefab}) fly: Prefab
     @property({type: Node}) flySpawn: Node
     @property({type: sp.Skeleton}) zebra: sp.Skeleton
+    
+
     private lampCount = 0
     public static Instance: Frame
     onLoad () {
         Frame.Instance = this
+
+
         this.setZebraMix()
     }
 
@@ -98,6 +102,8 @@ export class Frame extends Component {
     private colorLamp(color: string){
         color = color[0].toUpperCase() + color.substr(1)
         let lamp = this.lamps[this.lampCount]
+        if(color == "Violet")
+            color = "Viollet"
         setMixedSkin(lamp, "color", [lamp.defaultSkin, color])
         // lamp.setSkin(color)
         lamp.setAnimation(0, "Light-Start", false)

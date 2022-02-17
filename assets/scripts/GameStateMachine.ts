@@ -64,6 +64,7 @@ export class GameStateMachine extends Component {
         this.stage3 = info.stage3
         this.stateMachine.setState("Math1")
     }
+    
     private currentConf: string
     private getColors(){
         this.configs.forEach(conf => {

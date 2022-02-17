@@ -2,7 +2,7 @@
   "ver": "1.0.21",
   "importer": "image",
   "imported": true,
-  "uuid": "c5f8f3f7-414d-4c94-87a9-f35c7a360cd4",
+  "uuid": "879169b4-55a2-450b-9ec2-7095702ae00d",
   "files": [
     ".png",
     ".json"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "c5f8f3f7-414d-4c94-87a9-f35c7a360cd4@6c48a",
-      "displayName": "GamePlay-FireFly",
+      "uuid": "879169b4-55a2-450b-9ec2-7095702ae00d@6c48a",
+      "displayName": "firefly_blue_cut",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "c5f8f3f7-414d-4c94-87a9-f35c7a360cd4",
+        "imageUuidOrDatabaseUri": "879169b4-55a2-450b-9ec2-7095702ae00d",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
@@ -33,29 +33,29 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "c5f8f3f7-414d-4c94-87a9-f35c7a360cd4@f9941",
-      "displayName": "GamePlay-FireFly",
+      "uuid": "879169b4-55a2-450b-9ec2-7095702ae00d@f9941",
+      "displayName": "firefly_blue_cut",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": 0,
-        "offsetY": 24.5,
+        "offsetX": -40.5,
+        "offsetY": 0,
         "trimX": 2,
-        "trimY": 4,
-        "width": 508,
-        "height": 455,
-        "rawWidth": 512,
-        "rawHeight": 512,
+        "trimY": 2,
+        "width": 1963,
+        "height": 1020,
+        "rawWidth": 2048,
+        "rawHeight": 1024,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "c5f8f3f7-414d-4c94-87a9-f35c7a360cd4@6c48a",
+        "imageUuidOrDatabaseUri": "879169b4-55a2-450b-9ec2-7095702ae00d@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "type": "sprite-frame",
     "hasAlpha": true,
-    "redirect": "c5f8f3f7-414d-4c94-87a9-f35c7a360cd4@f9941"
+    "redirect": "879169b4-55a2-450b-9ec2-7095702ae00d@f9941"
   }
 }
