@@ -26,7 +26,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 7
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -43,8 +43,8 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.45,
-      "y": 0.45,
+      "x": 0.5,
+      "y": 0.5,
       "z": 1
     },
     "_layer": 33554432,
@@ -119,14 +119,23 @@
       "__expectedType__": "sp.SkeletonData"
     },
     "defaultSkin": "default",
-    "defaultAnimation": "start-to-lamp",
-    "_sockets": [],
+    "defaultAnimation": "start-to-lamp-constr",
+    "_sockets": [
+      {
+        "__id__": 6
+      }
+    ],
     "_debugMesh": false,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
     "fileId": "288i9Tcx5B3bo4eilH8sZR"
+  },
+  {
+    "__type__": "sp.Skeleton.SpineSocket",
+    "path": "",
+    "target": null
   },
   {
     "__type__": "cc.PrefabInfo",

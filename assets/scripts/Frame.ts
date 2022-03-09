@@ -78,11 +78,14 @@ export class Frame extends Component {
         let flySk = flyNode.getComponent(sp.Skeleton)
         flySk.timeScale = 1
         flySk.setSkin(color)
+        let startBone: sp.spine.Bone = flySk.findBone("Constr-Start")
+        
         let endBone: sp.spine.Bone = flySk.findBone("Constr-Fin")
         let lamp: Node = this.lamps[this.lampCount].node
-        endBone.x = lamp.position.x - 1000
-        endBone.y = lamp.position.y + 1000
+        endBone.x = lamp.position.x - 100
+        endBone.y = lamp.position.y + 500
         // let pos = new Vec2(lamp.position.x, lamp.position.y)
+        console.log(startBone);
         console.log(endBone);
     }
 
