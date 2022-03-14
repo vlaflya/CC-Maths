@@ -220,8 +220,8 @@ export class Firefly extends Component {
         this.node.setPosition(Vec3.ZERO)
         WinChecker.Instance.CheckWin()
     }
-    public sing(){
-        this.animation.sing()
+    public sing(count){
+        this.animation.sing(count)
         tween(this.node)
         .to(0.5, {scale: new Vec3(0.8,0.8,0.8)})
         .start()

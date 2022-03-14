@@ -26,21 +26,30 @@ export class WinChecker extends Component {
     }
     public CheckWin(){
         this.winCount++
+        console.log(this.interCount);
+        console.log(this.winCount);
         if(this.interCount == this.winCount){
+            console.log("inter win");
             GameStateMachine.Instance.winState(this.needToWin - this.winCount)
             return
         }
-        if(this.needToWin == this.winCount){
-            Anims.Instance.zebraWin()
+        if(this.needToWin == this.winCount){   
             this.exitLevel()
-            return
         }
-        console.log(this.needToWin + " " + this.winCount);
     }
 
     public exitLevel(){
+        Anims.Instance.zebraWin()
         tween(this.node)
-        .delay(3.5)
+        .delay(1)
+        .call(() => {
+            this.controller.sing()
+        })
+        .delay(1)
+        .call(() => {
+            this.controller.blinkLines()
+        })
+        .delay(3)
         .call(() =>{
             GameStateMachine.Instance.winState()
         })

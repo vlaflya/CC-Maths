@@ -16,8 +16,6 @@ export class Frame extends Component {
     public static Instance: Frame
     onLoad () {
         Frame.Instance = this
-
-
         this.setZebraMix()
     }
 
@@ -58,7 +56,7 @@ export class Frame extends Component {
     }
 
     private openDoor(){
-        this.background.timeScale = 1
+        this.background.timeScale = 0.7
         this.background.setAnimation(1, "Track-Flash", false)
     }
     private closeDoor(){
@@ -77,13 +75,17 @@ export class Frame extends Component {
         flyNode.setParent(this.flySpawn)
         let flySk = flyNode.getComponent(sp.Skeleton)
         flySk.timeScale = 1
+        flySk.setMix("start", "start-to-lamp-2", 1)
+        flySk.setMix("start-to-lamp-2", "start-to-lamp-constr", 0.1)
+        flySk.addAnimation(0, "start-to-lamp-2", false)
+        // flySk.addAnimation(0, "start-to-lamp-constr", false)
         flySk.setSkin(color)
         let startBone: sp.spine.Bone = flySk.findBone("Constr-Start")
         
         let endBone: sp.spine.Bone = flySk.findBone("Constr-Fin")
         let lamp: Node = this.lamps[this.lampCount].node
         endBone.x = lamp.position.x - 100
-        endBone.y = lamp.position.y + 500
+        endBone.y = lamp.position.y + 1000
         // let pos = new Vec2(lamp.position.x, lamp.position.y)
         console.log(startBone);
         console.log(endBone);

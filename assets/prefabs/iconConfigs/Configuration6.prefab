@@ -74,7 +74,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite",
+    "_name": "Sprite-003",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -94,8 +94,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -69.34,
-      "y": -206.691,
+      "x": -69.369,
+      "y": 51.013,
       "z": 0
     },
     "_lrot": {
@@ -200,11 +200,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "44KNmnKfxHA7AR6OIeJCuj"
+    "fileId": "57oEgF93JLKKAfxgUZK58T"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-001",
+    "_name": "Sprite-005",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -224,8 +224,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -69.369,
-      "y": -77.928,
+      "x": 74.61,
+      "y": 50.625,
       "z": 0
     },
     "_lrot": {
@@ -330,11 +330,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "b62nDY7nFFtYs/IxWfrRMn"
+    "fileId": "d3Ad9bgrxEUa3Q4uyh1/Hh"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-002",
+    "_name": "Sprite-001",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -354,8 +354,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 75.518,
-      "y": -208.302,
+      "x": -69.369,
+      "y": -77.928,
       "z": 0
     },
     "_lrot": {
@@ -460,11 +460,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "45FuuQLQlJK6zN66KolHtq"
+    "fileId": "b62nDY7nFFtYs/IxWfrRMn"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-003",
+    "_name": "Sprite-004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -484,8 +484,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -69.369,
-      "y": 51.013,
+      "x": 74.61,
+      "y": -79.19,
       "z": 0
     },
     "_lrot": {
@@ -590,11 +590,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "57oEgF93JLKKAfxgUZK58T"
+    "fileId": "efRDdYsWZBOLwwbbZOSD4m"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-004",
+    "_name": "Sprite",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -614,8 +614,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 74.61,
-      "y": -79.19,
+      "x": -69.34,
+      "y": -206.691,
       "z": 0
     },
     "_lrot": {
@@ -720,11 +720,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "efRDdYsWZBOLwwbbZOSD4m"
+    "fileId": "44KNmnKfxHA7AR6OIeJCuj"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-005",
+    "_name": "Sprite-002",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -744,8 +744,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 74.61,
-      "y": 50.625,
+      "x": 75.518,
+      "y": -208.302,
       "z": 0
     },
     "_lrot": {
@@ -850,7 +850,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "d3Ad9bgrxEUa3Q4uyh1/Hh"
+    "fileId": "45FuuQLQlJK6zN66KolHtq"
   },
   {
     "__type__": "cc.UITransform",

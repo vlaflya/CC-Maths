@@ -83,7 +83,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite",
+    "_name": "Sprite-003",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -103,8 +103,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 115.461,
-      "y": -185.682,
+      "x": -115.751,
+      "y": 56.158,
       "z": 0
     },
     "_lrot": {
@@ -209,11 +209,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "9eJcjizcVFz4U7paaR1X8t"
+    "fileId": "27o5rqr61HA5w7k1ckvlWZ"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-001",
+    "_name": "Sprite-005",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -233,8 +233,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -115.751,
-      "y": -185.682,
+      "x": -0.143,
+      "y": 56.158,
       "z": 0
     },
     "_lrot": {
@@ -339,7 +339,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "277/Pg1XNGdYWnFCK5MVWs"
+    "fileId": "57R2F5Zz9OmIIP4hUTnRPl"
   },
   {
     "__type__": "cc.Node",
@@ -473,7 +473,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-003",
+    "_name": "Sprite-006",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -494,7 +494,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -115.751,
-      "y": 56.158,
+      "y": -65.339,
       "z": 0
     },
     "_lrot": {
@@ -599,11 +599,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "27o5rqr61HA5w7k1ckvlWZ"
+    "fileId": "fcWRvlovdIOKW5SbPvZLUG"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-004",
+    "_name": "Sprite-008",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -624,7 +624,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -0.143,
-      "y": -185.684,
+      "y": -65.339,
       "z": 0
     },
     "_lrot": {
@@ -729,11 +729,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "5aOpDSRCVKHooSLx4gzgJ9"
+    "fileId": "c4N6tTbJxNTL5shdQms8HJ"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-005",
+    "_name": "Sprite-007",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -753,8 +753,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.143,
-      "y": 56.158,
+      "x": 115.461,
+      "y": -65.339,
       "z": 0
     },
     "_lrot": {
@@ -859,11 +859,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "57R2F5Zz9OmIIP4hUTnRPl"
+    "fileId": "74zah8C8BJgK6NrnsAr4EE"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-006",
+    "_name": "Sprite-001",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -884,7 +884,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -115.751,
-      "y": -65.339,
+      "y": -185.682,
       "z": 0
     },
     "_lrot": {
@@ -989,11 +989,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "fcWRvlovdIOKW5SbPvZLUG"
+    "fileId": "277/Pg1XNGdYWnFCK5MVWs"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-007",
+    "_name": "Sprite-004",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1013,8 +1013,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 115.461,
-      "y": -65.339,
+      "x": -0.143,
+      "y": -185.684,
       "z": 0
     },
     "_lrot": {
@@ -1119,11 +1119,11 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "74zah8C8BJgK6NrnsAr4EE"
+    "fileId": "5aOpDSRCVKHooSLx4gzgJ9"
   },
   {
     "__type__": "cc.Node",
-    "_name": "Sprite-008",
+    "_name": "Sprite",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1143,8 +1143,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.143,
-      "y": -65.339,
+      "x": 115.461,
+      "y": -185.682,
       "z": 0
     },
     "_lrot": {
@@ -1249,7 +1249,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "c4N6tTbJxNTL5shdQms8HJ"
+    "fileId": "9eJcjizcVFz4U7paaR1X8t"
   },
   {
     "__type__": "cc.UITransform",

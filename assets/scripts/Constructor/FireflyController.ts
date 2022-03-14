@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, systemEvent, SystemEvent, Event, EventTouch, Touch, Vec2, Vec3, UITransform, macro, Color, color } from 'cc';
+import { _decorator, Component, Node, CCFloat, systemEvent, SystemEvent, Event, EventTouch, Touch, Vec2, Vec3, UITransform, macro, Color, color, tween } from 'cc';
 import { Firefly } from './Firefly';
 import { Slot } from './Slot';
 import { FireflyMoveState } from './FireflyMoveState';
@@ -124,11 +124,14 @@ export class FireflyController extends Component {
         delay(1000).then(() => {this.node.emit("spawnEnded")})
     }
     public sing(){
-        this.fireflies.forEach(fly => {
-            fly.sing()
+        let count = 0
+        this.fireflies.forEach(element => {
+            count++
+            element.sing(count)
         });
     }
-    public blinkSlots(){
+
+    public blinkLines(){
         this.slots.forEach(slot => {
             slot.blinkLines()
         });

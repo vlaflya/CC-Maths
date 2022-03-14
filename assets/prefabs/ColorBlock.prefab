@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "win fly",
+    "_name": "ColorBlock",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -23,10 +23,13 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 6
       }
     ],
     "_prefab": {
-      "__id__": 7
+      "__id__": 8
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -43,8 +46,8 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.4,
-      "y": 0.4,
+      "x": 1,
+      "y": 1,
       "z": 1
     },
     "_layer": 33554432,
@@ -69,8 +72,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 512,
-      "height": 466
+      "width": 498,
+      "height": 720
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -81,10 +84,10 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "0e/KfIAOZAercinSkLFFy1"
+    "fileId": "0fowj5lNBGP7qs7UM153r7"
   },
   {
-    "__type__": "sp.Skeleton",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -105,37 +108,46 @@
       "b": 255,
       "a": 255
     },
-    "loop": false,
-    "_premultipliedAlpha": true,
-    "_timeScale": 1,
-    "_useTint": false,
-    "_preCacheMode": 0,
-    "_cacheMode": 0,
-    "_defaultCacheMode": 0,
-    "_debugBones": false,
-    "_debugSlots": false,
-    "_skeletonData": {
-      "__uuid__": "9cd18e06-03e9-4b39-a658-9d25109fe426",
-      "__expectedType__": "sp.SkeletonData"
+    "_spriteFrame": {
+      "__uuid__": "b8243386-8247-4bd6-97f7-90527c3cf5b8@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
-    "defaultSkin": "default",
-    "defaultAnimation": "start",
-    "_sockets": [
-      {
-        "__id__": 6
-      }
-    ],
-    "_debugMesh": false,
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "288i9Tcx5B3bo4eilH8sZR"
+    "fileId": "05etfpEMhMSKX8Gn4wMgkr"
   },
   {
-    "__type__": "sp.Skeleton.SpineSocket",
-    "path": "",
-    "target": null
+    "__type__": "cc.UIOpacity",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 7
+    },
+    "_opacity": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "dbkP/8aeBKPLqH1iKJDswg"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -145,6 +157,6 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "1bwvEYMmFEwq/58nTJTE++"
+    "fileId": "ebgJyQTbdEKonWwoOvt4Rs"
   }
 ]

@@ -308,6 +308,10 @@
     "animation": {
       "__id__": 5
     },
+    "fireworks": {
+      "__uuid__": "2997bc41-3ede-4e13-b10b-aa36ebb4f363",
+      "__expectedType__": "cc.Prefab"
+    },
     "_id": ""
   },
   {

@@ -4,13 +4,15 @@ import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 import { Frame } from './Frame';
 import { setMixedSkin } from './Helper';
+import { MathWithIcons } from './MathWithIcons';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math1')
-export class Math1 extends Component {
+export class Math1 extends MathWithIcons {
     @property({type: CCInteger}) tileNumber: number
     @property({type: Color}) disableColor: Color
     @property({type: Color}) activeColor: Color
+    @property({type: Prefab}) colorBlock: Prefab
     @property({type: [Prefab]}) tilePrefabs2: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs3: Array<Prefab> = []
     @property({type: [Prefab]}) tilePrefabs4: Array<Prefab> = []
@@ -28,7 +30,7 @@ export class Math1 extends Component {
     @property({type: Sprite}) keyBlurSprite: Sprite
     @property({type: UIOpacity}) blurKey: UIOpacity
     public static Instance: Math1
-
+    private tile: Node
     public init(count: number, rev: string, keyName:string){
         Math1.Instance = this
         let tileNumber: number = count
@@ -104,11 +106,11 @@ export class Math1 extends Component {
                 break
             }
         }
-        let tile: Node = instantiate(prefab)
-        tile.setParent(this.container)
-        tile.setPosition(new Vec3(0,0,0))
-        tile.setScale(new Vec3(1,1,1))
-        tile.getComponent(Tileset).init(this, reversed)   
+        this.tile = instantiate(prefab)
+        this.tile.setParent(this.container)
+        this.tile.setPosition(new Vec3(0,0,0))
+        this.tile.setScale(new Vec3(1,1,1))
+        this.tile.getComponent(Tileset).init(this, reversed)  
     }
 
     private getKeyIndex(keyName: string): number{
@@ -148,6 +150,10 @@ export class Math1 extends Component {
             GameStateMachine.Instance.winState()
         })
         .start()
+    }
+
+    public giveHint(){
+        this.tile.getComponent(Tileset).giveHint()
     }
 }
 

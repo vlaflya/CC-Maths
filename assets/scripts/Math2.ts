@@ -5,20 +5,24 @@ import { Helper } from './Helper';
 import { IconsHolder } from './IconsHolder';
 import { SkeletonButton } from './SkeletonButton';
 import { Frame } from './Frame';
+import { MathWithIcons } from './MathWithIcons';
+import { Lamp } from './Lamp';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math2')
-export class Math2 extends Component {
+export class Math2 extends MathWithIcons {
     @property({type: [Button]}) buttons: Array<Button> = []
     @property({type: [Prefab]}) configurations: Array<Prefab> = []
     @property({type: [SpriteFrame]}) objects: Array<SpriteFrame> = []
     @property({type: Node}) cont: Node
     
+    public static Instance: Math2
     private currentOption: number = 0
 
     private currentCycle = 0
     private cycles: Array<string> = []
     init(config: string){
+        Math2.Instance = this
         let index = config.indexOf(",")
         if(index == -1){
             tween(this.node)
@@ -80,6 +84,7 @@ export class Math2 extends Component {
             console.log("oke1");
         }
     }
+
     checkCallback(event, customEventData){
         if(Number(customEventData) == this.currentOption){
             this.buttons.forEach(element => {
@@ -124,6 +129,14 @@ export class Math2 extends Component {
             })
             .start()
         }
+    }
+
+    singleIconLightUp(){
+        Lamp.Instance.callBack()
+    }
+
+    public giveHint(){
+        IconsHolder.Instance.giveHint("Math2", this)
     }
 }
 

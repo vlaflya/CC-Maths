@@ -40,6 +40,10 @@ export class GameStateMachine extends Component {
         return this.configs
     }
 
+    public getState(): string{
+        return this.stateMachine.getStateName()
+    }
+
     start () {
         GameStateMachine.Instance = this
         this.stateMachine = new GeneralStateMachine(this, "Game")
@@ -138,7 +142,7 @@ export class GameStateMachine extends Component {
         console.log("Count " + fireflyCount);
         this.grid.init(this.currentConf, fireflyCount)
     }
-    onConstructorExit(args?){
+    onConstructorExit(args = 0){
         if(args == 0){
             this.winLevel()
             return

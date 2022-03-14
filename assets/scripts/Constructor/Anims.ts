@@ -21,6 +21,8 @@ export class Anims extends Component {
 
         this.back.setMix("idle", "Track-tap-3", 0.5)
         this.back.setMix("Track-tap-3", "idle", 0.5)
+
+        this.back.setMix("Track-fire-to-off", "Track-fire-off", 0.5)
         // this.zebraWin()
     }
     public tapCallback(){
@@ -44,5 +46,8 @@ export class Anims extends Component {
     public zebraWin(){
         this.zebra.setAnimation(0, "idle-sit-to-fin", false)
         this.zebra.addAnimation(0, "win-2", true)
+        this.back.setAnimation(3, "Track-tap-4", false)
+        this.back.setAnimation(4, "Track-fire-to-off", false)
+        this.back.addAnimation(4, "Track-fire-off", false)
     }
 }

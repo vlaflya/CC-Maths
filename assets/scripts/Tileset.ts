@@ -1,8 +1,9 @@
 
-import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt, tween, Quat, Vec3 } from 'cc';
+import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt, tween, Quat, Vec3, instantiate, UITransform, UIOpacity } from 'cc';
 import { Math1 } from './Math1';
 import { Helper } from './Helper';
 import { Frame } from './Frame';
+import { Lamp } from './Lamp';
 const { ccclass, property } = _decorator;
 
 @ccclass('Tileset')
@@ -73,6 +74,59 @@ export class Tileset extends Component {
         .to(0.05, {eulerAngles: new Vec3(0,0,10)})
         .to(0.05, {eulerAngles: new Vec3(0,0,-10)})
         .to(0.1, {eulerAngles: new Vec3(0,0,0)})
+        .start()
+    }
+    public giveHint(){
+        this.lightPanel(this.tileCount)
+    }
+    private lightPanel(count){
+        let panel: Node
+        for(let i = 0; i < this.node.children.length; i++){
+            if(this.node.children[i].children.length == 0)
+                continue
+            if(this.node.children[i].children[0].getComponent(Label).string == count.toString()){
+                panel = this.node.children[i]
+            }
+        }
+        if(panel == null)
+            return
+        let colorBlock = instantiate(this.math1.colorBlock)
+        // colorBlock.worldPosition = panel.worldPosition
+        let colorTransform = colorBlock.getComponent(UITransform)
+        let panelTransform = panel.getComponent(UITransform)
+        colorBlock.parent = panel
+        colorBlock.position = new Vec3(0,0,0)
+        colorTransform.contentSize.set(panelTransform.width, panelTransform.height)
+        tween(colorBlock.getComponent(UIOpacity))
+        .to(0.4, {opacity: 200})
+        .to(0.4, {opacity: 0})
+        .start()
+
+        tween(panel)
+        .by(0.4, {scale: new Vec3(0.1, 0.1, 0.1)})
+        .by(0.4, {scale: new Vec3(-0.1, -0.1, -0.1)})
+        .delay(0.1)
+        .call(() => {
+            colorBlock.destroy()
+            if(this.reverced)
+                count--
+            else
+                count++
+            if(count == 0 && this.reverced){
+                if(count == 0)
+                    Lamp.Instance.callBack()
+                else
+                    this.lightPanel(count)
+                return
+            }
+            if(!this.reverced){
+                if(count == this.countTo)
+                    Lamp.Instance.callBack()
+                else
+                    this.lightPanel(count)
+                return
+            }
+        })
         .start()
     }
 }

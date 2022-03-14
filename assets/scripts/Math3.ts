@@ -5,16 +5,20 @@ import { Helper } from './Helper';
 import { GameStateMachine } from './GameStateMachine';
 import { SkeletonButton } from './SkeletonButton';
 import { Frame } from './Frame';
+import { MathWithIcons } from './MathWithIcons';
+import { Lamp } from './Lamp';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math3')
-export class Math3 extends Component {
+export class Math3 extends MathWithIcons {
     @property({type: Node}) container1: Node
     @property({type: Node}) container2: Node
     @property({type: Label}) label1: Label
     @property({type: Label}) label2: Label
     @property({type: [Node]}) disableNodes: Array<Node> = []
     @property({type: [Button]}) buttons: Array<Button> = []
+
+    public static Instance: Math3
 
     private currentSum: number
     private currentStage = 0;
@@ -27,9 +31,11 @@ export class Math3 extends Component {
     private wrong2: Array<number> = []
 
     start () {
+        Math3.Instance = this
         // this.init("3*fish1+2*fish2-3-7,5*pig1+1*pig2-8-5")
         Frame.Instance.setFrameDouble()
     }
+
     init(config: string){
         console.log(config);
         let c = 0
@@ -104,6 +110,7 @@ export class Math3 extends Component {
         }
         this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
     }
+
     create(count1: number, iconName1: string, count2: number, iconName2: string, wrong1:number, wrong2:number){
         this.buttons.forEach(element => {
             element.getComponent(SkeletonButton).reset()
@@ -140,6 +147,7 @@ export class Math3 extends Component {
             Helper.addClickEvent(this.node, this.buttons[i],"Math3","checkCallback",r) 
         }
     }
+
     checkCallback(event, customEventData){
         if(Number(customEventData) == this.currentSum)
             this.checkWin()
@@ -150,6 +158,7 @@ export class Math3 extends Component {
             Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         }
     }
+
     checkWin(){
         GameStateMachine.Instance.colorLamp()
         IconsHolder.Instance.deleteIcons("Math3_1")
@@ -177,5 +186,17 @@ export class Math3 extends Component {
             })
             .start()
         }
+    }
+    iconCount = 0
+    public giveHint(){
+        this.iconCount = 0
+        IconsHolder.Instance.giveHint("Math3_1", this)
+    }   
+    public allIconsLightUp(){
+        this.iconCount++
+        if(this.iconCount == 1)
+            IconsHolder.Instance.giveHint("Math3_2", this)
+        if(this.iconCount == 2)
+            Lamp.Instance.callBack()
     }
 }

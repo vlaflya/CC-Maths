@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, Prefab, SpriteFrame, instantiate, Sprite, Vec3, UITransform, tween, Tween } from 'cc';
+import { MathWithIcons } from './MathWithIcons';
 const { ccclass, property } = _decorator;
 
 @ccclass('IconsHolder')
@@ -11,6 +12,7 @@ export class IconsHolder extends Component {
     onLoad(){
         IconsHolder.Instance = this
     }
+
     public setIconConfiguration(target: Node, iconCount: number, iconName: string, listName: string){
         let config: Node = instantiate(this.configurations[iconCount])
         config.setParent(target)
@@ -40,6 +42,7 @@ export class IconsHolder extends Component {
         });
         return config
     }
+
     public deleteIcons(name: string){
         if(this.iconLists.length == 0)
             return
@@ -59,6 +62,7 @@ export class IconsHolder extends Component {
             .start()
         });
     }
+
     private getList(name: string): IconList{
         for(let i = 0; i < this.iconLists.length; i++){
             if(this.iconLists[i].name == name){
@@ -66,8 +70,38 @@ export class IconsHolder extends Component {
                 return this.iconLists[i]
             }
         }
+        let listNames = ""
+        this.iconLists.forEach(element => {
+            listNames += " " + element.name
+        });
         console.log("No list");
         return null
+    }
+
+    public giveHint(listName: string, math: MathWithIcons){
+        let list = this.getList(listName)
+        if(list == null)
+            return
+        this.lightIcon(0, list, math)
+    }
+
+    private lightIcon(count: number, iconList: IconList, math: MathWithIcons){
+        console.log("oke");
+        tween(iconList.icons[count])
+        .by(0.3, {scale: new Vec3(0.5, 0.5, 0.5)})
+        .by(0.3, {scale: new Vec3(-0.5, -0.5, -0.5)})
+        .delay(0.4)
+        .call(() =>{
+            math.singleIconLightUp()
+            count++
+            if(count == iconList.icons.length){
+                math.allIconsLightUp()
+            }
+            else{
+                this.lightIcon(count, iconList, math)
+            }
+        })
+        .start()
     }
 }
 class IconList {
