@@ -35,6 +35,8 @@ export class Tileset extends Component {
     }
     
     callback(event, customEventData){
+        if(this.givingHint)
+            return
         let button: Node = event.target
         Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         if(Number(customEventData) == this.tileCount){
@@ -76,7 +78,10 @@ export class Tileset extends Component {
         .to(0.1, {eulerAngles: new Vec3(0,0,0)})
         .start()
     }
+
+    private givingHint = false
     public giveHint(){
+        this.givingHint = true
         this.lightPanel(this.tileCount)
     }
     private lightPanel(count){
@@ -112,16 +117,21 @@ export class Tileset extends Component {
                 count--
             else
                 count++
-            if(count == 0 && this.reverced){
-                if(count == 0)
+            if(this.reverced){
+                console.log(count);
+                if(count == 0){
+                    this.givingHint = false
                     Lamp.Instance.callBack()
+                }
                 else
                     this.lightPanel(count)
                 return
             }
             if(!this.reverced){
-                if(count == this.countTo)
+                if(count == this.countTo){
+                    this.givingHint = false
                     Lamp.Instance.callBack()
+                }
                 else
                     this.lightPanel(count)
                 return

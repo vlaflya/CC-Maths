@@ -151,7 +151,7 @@ export class Math1 extends MathWithIcons {
         })
         .start()
     }
-
+    
     public giveHint(){
         this.tile.getComponent(Tileset).giveHint()
     }

@@ -86,6 +86,8 @@ export class Math2 extends MathWithIcons {
     }
 
     checkCallback(event, customEventData){
+        if(this.givingHint)
+            return
         if(Number(customEventData) == this.currentOption){
             this.buttons.forEach(element => {
                 Helper.resetClickEvent(element, "checkCallback")
@@ -132,10 +134,17 @@ export class Math2 extends MathWithIcons {
     }
 
     singleIconLightUp(){
+        
+    }
+
+    public allIconsLightUp(){
+        this.givingHint = false
         Lamp.Instance.callBack()
     }
 
+    private givingHint = false;
     public giveHint(){
+        this.givingHint = false
         IconsHolder.Instance.giveHint("Math2", this)
     }
 }

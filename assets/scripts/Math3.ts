@@ -149,6 +149,8 @@ export class Math3 extends MathWithIcons {
     }
 
     checkCallback(event, customEventData){
+        if(this.givingHint)
+            return
         if(Number(customEventData) == this.currentSum)
             this.checkWin()
         else{
@@ -188,15 +190,22 @@ export class Math3 extends MathWithIcons {
         }
     }
     iconCount = 0
+
+    private givingHint = false
     public giveHint(){
+        this.givingHint = true
         this.iconCount = 0
         IconsHolder.Instance.giveHint("Math3_1", this)
-    }   
+    }
+
     public allIconsLightUp(){
         this.iconCount++
-        if(this.iconCount == 1)
+        if(this.iconCount == 1){
             IconsHolder.Instance.giveHint("Math3_2", this)
-        if(this.iconCount == 2)
+        }
+        if(this.iconCount == 2){
+            this.givingHint = false
             Lamp.Instance.callBack()
+        }
     }
 }

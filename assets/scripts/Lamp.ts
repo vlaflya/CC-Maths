@@ -26,16 +26,16 @@ export class Lamp extends Component {
         if(!this.canHint){
             Tween.stopAllByTarget(this.node)
             tween(this.node)
-            .by(0.1, {scale: new Vec3(-0.1, -0.1, -0.1)}, {easing: 'sineIn'})
-            .by(0.1, {scale: new Vec3(0.1, 0.1, 0.1)}, {easing: 'sineOut'})
+            .by(0.05, {scale: new Vec3(-0.1, -0.1, -0.1)}, {easing: 'sineIn'})
+            .by(0.05, {scale: new Vec3(0.1, 0.1, 0.1)}, {easing: 'sineOut'})
             .start()
             return
         }
         Tween.stopAllByTarget(this.node)
         this.clearLamp()
         tween(this.node)
-        .by(0.2, {scale: new Vec3(0.1, 0.1, 0.1), position: new Vec3(0,20,0)})
-        .by(0.2, {scale: new Vec3(-0.1, -0.1, -0.1), position: new Vec3(0,-20,0)})
+        .by(0.1, {scale: new Vec3(0.1, 0.1, 0.1), position: new Vec3(0,10,0)})
+        .by(0.1, {scale: new Vec3(-0.1, -0.1, -0.1), position: new Vec3(0,-10,0)})
         .call(() => {
             this.canHint = false
             console.log("Give hint");
@@ -70,7 +70,7 @@ export class Lamp extends Component {
         this.lamp.setAnimation(0.5, "Idle", true)
         this.lampBone = this.lamp.findBone("Mask_transform")
         tween(this.lampBone)
-        .to(2, {x: 0, y: -3000})
+        .to(1, {x: 0, y: -150})
         .start()
     }
     private startLamp(){

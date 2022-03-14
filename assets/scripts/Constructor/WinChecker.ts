@@ -21,8 +21,12 @@ export class WinChecker extends Component {
         WinChecker.Instance = this
     }
     public Initialize(needWin: number, inter: number){
+        console.log("Need win " + needWin);
+        console.log("Inter win " + inter);
         this.needToWin = needWin
         this.interCount = inter
+        if(inter == needWin)
+            this.interCount = 1000
     }
     public CheckWin(){
         this.winCount++
@@ -49,8 +53,9 @@ export class WinChecker extends Component {
         .call(() => {
             this.controller.blinkLines()
         })
-        .delay(3)
+        .delay(5)
         .call(() =>{
+            console.log("exit level");
             GameStateMachine.Instance.winState()
         })
         .start()
