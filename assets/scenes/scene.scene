@@ -66,7 +66,7 @@
         "__id__": 58
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 409
@@ -3501,8 +3501,8 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 0.896,
-      "y": 0.94,
+      "x": 0.92,
+      "y": 0.96,
       "z": 0.816
     },
     "_layer": 33554432,
@@ -12793,7 +12793,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 357.43119266055044,
+    "_orthoHeight": 320,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -13264,7 +13264,7 @@
         "__id__": 424
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 450
@@ -13364,7 +13364,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 357.43119266055044,
+    "_orthoHeight": 320,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -14866,7 +14866,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 357.43119266055044,
+    "_orthoHeight": 320,
     "_near": 1,
     "_far": 2000,
     "_color": {
