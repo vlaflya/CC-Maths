@@ -27,8 +27,8 @@ export class SoundManager extends Component {
     @property({type: [AudioClip]}) Math1HintEN: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math1HintReverceEN: Array<AudioClip> = []
 
-    @property({type: [AudioClip]}) Math1Wrong: Array<AudioClip> = []
-    @property({type: [AudioClip]}) Math1WrongEn: Array<AudioClip> = []
+    @property({type: [AudioClip]}) MathWrong: Array<AudioClip> = []
+    @property({type: [AudioClip]}) MathWrongEn: Array<AudioClip> = []
 
     @property({type: [AudioClip]}) Math1End: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math1EndEN: Array<AudioClip> = []
@@ -39,9 +39,6 @@ export class SoundManager extends Component {
     @property({type: [AudioClip]}) Math2Start: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math2StartEN: Array<AudioClip> = []
     
-    @property({type: [AudioClip]}) Math2Wrong: Array<AudioClip> = []
-    @property({type: [AudioClip]}) Math2WrongEN: Array<AudioClip> = []
-
     @property({type: [AudioClip]}) Math2Right: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math2RightEN: Array<AudioClip> = []
     
@@ -50,9 +47,6 @@ export class SoundManager extends Component {
 
     @property({type: [AudioClip]}) Math3Start: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math3StartEN: Array<AudioClip> = []
-
-    @property({type: [AudioClip]}) Math3Wrong: Array<AudioClip> = []
-    @property({type: [AudioClip]}) Math3WrongEN: Array<AudioClip> = []
 
     @property({type: [AudioClip]}) Math3Right: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math3RightEN: Array<AudioClip> = []
@@ -98,9 +92,9 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math1HintReverce.length)
         this.playVoice(this.Math1HintReverce[r])
     }
-    public playMath1Wrong(){
-        let r = randomRangeInt(0, this.Math1Wrong.length)
-        this.playVoice(this.Math1Wrong[r])
+    public playMathWrong(){
+        let r = randomRangeInt(0, this.MathWrong.length)
+        this.playVoice(this.MathWrong[r])
     }
     public playMath1End(){
         let r = randomRangeInt(0, this.Math1End.length)
@@ -113,10 +107,6 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math2Start.length)
         this.playVoice(this.Math2Start[r])
     }
-    public playMath2Wrong(){
-        let r = randomRangeInt(0, this.Math2Wrong.length)
-        this.playVoice(this.Math2Wrong[r])
-    }
     public playMath2Right(){
         let r = randomRangeInt(0, this.Math2Right.length)
         this.playVoice(this.Math2Right[r])
@@ -127,10 +117,6 @@ export class SoundManager extends Component {
     public playMath3Start(){
         let r = randomRangeInt(0, this.Math3Start.length)
         this.playVoice(this.Math3Start[r])
-    }
-    public playMath3Wrong(){
-        let r = randomRangeInt(0, this.Math3Wrong.length)
-        this.playVoice(this.Math3Wrong[r])
     }
     public playMath3Right(){
         let r = randomRangeInt(0, this.Math3Right.length)
