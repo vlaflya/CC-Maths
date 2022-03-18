@@ -1,11 +1,14 @@
 
-import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt } from 'cc';
+import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt, tween, Tween, math } from 'cc';
 import { Bridge } from './Bridge';
+import { GameStateMachine } from './GameStateMachine';
 const { ccclass, property } = _decorator;
 
 @ccclass('SoundManager')
 export class SoundManager extends Component {
     @property({type: AudioSource}) voiceSource: AudioSource
+    @property({type: AudioSource}) hintSource: AudioSource
+    
 
     @property({type: AudioClip}) firstMetaEnter: AudioClip
     @property({type: AudioClip}) firstMetaEnterEN: AudioClip
@@ -64,6 +67,7 @@ export class SoundManager extends Component {
     public static Instance: SoundManager
 
     onLoad(){
+        this.giveHint()
         SoundManager.Instance = this
     }
 
@@ -75,17 +79,17 @@ export class SoundManager extends Component {
         this.playVoice(this.gameStart[r])
     }
     public playMath1Tutorial(){
-        this.playVoice(this.Math1Tutorial[0])
-        this.playVoice(this.Math1Tutorial[1])
+        this.playVoice(this.Math1Tutorial[0], true, true)
+        this.playVoice(this.Math1Tutorial[1], false, true)
     }
     public playMath1Start(reverce = false){
         if(reverce){
             let r = randomRangeInt(0, this.Math1StartReverce.length)
-            this.playVoice(this.Math1StartReverce[r])
+            this.playVoice(this.Math1StartReverce[r], false, true)
             return;
         }
         let r = randomRangeInt(0, this.Math1Start.length)
-        this.playVoice(this.Math1Start[r])
+        this.playVoice(this.Math1Start[r], false, true)
     }
     public playMath1Hint(reverce = false){
         if(reverce){
@@ -109,13 +113,13 @@ export class SoundManager extends Component {
     }
     public playMath1End(){
         let random = randomRangeInt(0, 100)
-        if(random < 60){
+        if(random < 60 || Bridge.Instance.levelCount == 0){
             let r = randomRangeInt(0, this.Math1End.length)
-            this.playVoice(this.Math1End[r])
+            this.playVoice(this.Math1End[r], false, true)
             return
         }
         let r = randomRangeInt(0, this.ZebraSounds.length)
-        this.playVoice(this.ZebraSounds[r])
+        this.playVoice(this.ZebraSounds[r], false, true)
     }
     public playMath2Tutorial(){
         this.playVoice(this.Math2Tutorial)
@@ -127,7 +131,7 @@ export class SoundManager extends Component {
     public playMath2Right(count){
         this.playIconCount(count, true, true)
         let r = randomRangeInt(0, this.Math2Right.length)
-        this.playVoice(this.Math2Right[r])
+        this.playVoice(this.Math2Right[r], false, true)
     }
     public playMath3Tutorial(){
         this.playVoice(this.Math2Tutorial)
@@ -139,7 +143,7 @@ export class SoundManager extends Component {
     public playMath3Right(count){
         this.playIconCount(count, true, true)
         let r = randomRangeInt(0, this.Math3Right.length)
-        this.playVoice(this.Math3Right[r])
+        this.playVoice(this.Math3Right[r], false, true)
     }
     public playHintNotAvalible(){
         let r = randomRangeInt(0, this.HintNotAvalible.length)
@@ -154,18 +158,49 @@ export class SoundManager extends Component {
     private clipQeue: Array<AudioClip> = []
     private playVoice(clip: AudioClip, addToQeue = false, interapt = false){
         if(this.voiceSource.playing && !interapt){
+            console.log("no voice");
             if(addToQeue){
                 this.clipQeue.push(clip)
                 this.waitFor()
             }
             return
         }
+        console.log("voice");
+        Tween.stopAllByTarget(this.node)
         this.voiceSource.stop()
+        this.hintSource.stop()
         this.voiceSource.clip = clip
         this.voiceSource.play()
+        this.waitFor()
     }
-    private async waitFor(){
-        await !this.voiceSource.playing
-        this.playVoice(this.clipQeue.pop())
+    private waitFor(){
+        tween(this.voiceSource.node)
+        .delay(this.voiceSource.clip.getDuration())
+        .call(() => {
+            console.log("Audio stoped");
+            this.giveHint()
+            if(this.clipQeue.length > 0)
+                this.playVoice(this.clipQeue.pop())
+        })
+        .start()
+    }
+    private giveHint(){
+        console.log("Hint start");
+        tween(this.node)
+        .delay(8)
+        .call(() => {
+            if(GameStateMachine.Instance != null && GameStateMachine.Instance.node.active && !this.hintSource.playing){
+                
+                let state = GameStateMachine.Instance.getState()
+                let audio: AudioClip
+                if(state == "Math1")
+                    audio = this.Math1Hint[randomRangeInt(0, this.Math1Hint.length)]
+                console.log(state + " " + this.Math1Hint.length);
+                this.hintSource.clip = audio
+                this.hintSource.play()
+            }
+            this.giveHint()
+        })
+        .start()
     }
 }

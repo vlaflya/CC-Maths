@@ -117,7 +117,7 @@ export class Math1 extends MathWithIcons {
         this.tile.setScale(new Vec3(1,1,1))
         this.tile.getComponent(Tileset).init(this, reversed)
         if(Bridge.Instance.levelCount == 0){
-            SoundManager.Instance.playMath1Tutorial
+            SoundManager.Instance.playMath1Tutorial()
         }
         else{
             SoundManager.Instance.playMath1Start(reversed)

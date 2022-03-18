@@ -53,10 +53,10 @@ export class FireflyAnimation extends Component {
         // let delay = (this.node.worldPosition.y * 4 * Math.sign(this.node.worldPosition.y)) / 1000
         let delay = count * 0.5 + 1
         console.log(delay);
-        let particle = this.spawnFireworks(startPos)
         tween(this.node)
         .delay(delay)
-        .call(() => {
+        .call(()=>{
+            let particle = this.spawnFireworks(startPos)
             particle.enabled = true
         })
         .to(4, {scale: newScale, position: newPosition})

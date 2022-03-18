@@ -101,12 +101,12 @@ export class LevelMap extends Component {
         if(Bridge.Instance.formCatalogue){
             console.log("first time");
             Bridge.Instance.formCatalogue = false
-            return
+            if(Bridge.Instance.levelCount == 0)
+                SoundManager.Instance.playFirstMeta()
+            else
+                SoundManager.Instance.playGameStart()
         }
-        if(Bridge.Instance.levelCount == 0)
-            SoundManager.Instance.playFirstMeta()
-        else
-            SoundManager.Instance.playGameStart()
+        
     }
 
     public playUnlocked(){
