@@ -24,7 +24,7 @@
         "stage1count": 3,
         "stage1reverced": "yes",
         "stage1back": "picture3",
-        "stage2choice": "fish1-3-2-1,raccoon2-2-1-3,fish3-3-1-2",
+        "stage2choice": "fish1-3-2-1,raccoon1-2-1-3,fish3-3-1-2",
         "constructorconfig": "3_brilliant_4",
         "planet": "yellow_3",
         "planetnumber": 3
@@ -104,7 +104,7 @@
         "stage1count": 5,
         "stage1reverced": "yes",
         "stage1back": "picture11",
-        "stage2choice": "mushroom1-5-3-4,mushroom3-4-4-2,octopus3-5-5-3",
+        "stage2choice": "mushroom1-5-3-4,mushroom3-4-3-2,octopus3-5-2-3",
         "constructorconfig": "11_rose_4",
         "planet": "blue_3",
         "planetnumber": 11
@@ -134,7 +134,7 @@
         "stage1count": 6,
         "stage1reverced": "no",
         "stage1back": "picture2",
-        "stage2choice": "cat_warm2-6-5-4,raccoon2-2-3-4,octopus3-4-2-5",
+        "stage2choice": "cat_warm1-6-5-4,raccoon2-2-3-4,octopus3-4-2-5",
         "constructorconfig": "14_snegir_4",
         "planet": "pink_2",
         "planetnumber": 14
@@ -154,7 +154,7 @@
         "stage1count": 6,
         "stage1reverced": "yes",
         "stage1back": "picture4",
-        "stage2choice": "mushroom2-5-3-4,cat_warm1-6-5-4,cat_warm2-7-4-5,monster1-6-5-6",
+        "stage2choice": "mushroom2-5-3-4,cat_warm1-6-5-4,cat_warm2-7-4-5,monster1-6-5-7",
         "constructorconfig": "16_snezhinka4_5",
         "planet": "pink_5",
         "planetnumber": 16
@@ -175,7 +175,7 @@
         "stage1count": 7,
         "stage1reverced": "no",
         "stage1back": "picture6",
-        "stage2choice": "mushroom1-7-6-7,monster2-5-9-6,monster3-7-4-5",
+        "stage2choice": "mushroom1-7-6-5,monster2-5-9-6,monster3-7-4-5",
         "constructorconfig": "18_rozochka_6",
         "stage3": "2*fish1+1*fish1-2-4,3*octopus1+1*octopus1-5-2",
         "planet": "yellow_3",
@@ -307,7 +307,7 @@
         "stage1count": 10,
         "stage1reverced": "no",
         "stage1back": "picture6",
-        "stage2choice": "pig3-9-8-10,cat_warm3-6-7-4,octopus_1-4-2-5,cat_cold2-10-7-9",
+        "stage2choice": "pig3-9-8-10,cat_warm3-6-7-4,octopus1-4-2-5,cat_cold2-10-7-9",
         "constructorconfig": "30_rabbit2_8",
         "stage3": "4*flower1+4*flower1-6-5,3*pig1+6*pig1-7-10,9*cat_cold1+1*cat_cold1-7-8",
         "planet": "pink_3",
@@ -330,7 +330,7 @@
         "stage1reverced": "yes",
         "stage1back": "picture8",
         "stage2choice": "mushroom1-5-3-8,fish3-3-1-6,pig2-9-8-10,mushroom2-5-6-3",
-        "constructorconfig": "32_star1_9",
+        "constructorconfig": "32_star2_9",
         "stage3": "3*cat_warm1+3*cat_warm1-7-5,4*mushroom1+1*mushroom1-6-8,3*monster1+4*monster1-9-5",
         "planet": "pink_5",
         "planetnumber": 32
@@ -363,7 +363,7 @@
         "stage1reverced": "yes",
         "stage1back": "picture11",
         "stage2choice": "octopus2-4-3-7,monster3-7-5-6,pig1-9-10-8,cat_cold1-10-7-9",
-        "constructorconfig": "35_star2_9",
+        "constructorconfig": "35_star1_9",
         "stage3": "8*cat_cold1+2*cat_cold1-7-9,4*cat_warm1+2*cat_warm1-8-5,9*cat_cold1+1*cat_cold1-8-5,4*monster1+3*monster1-5-6",
         "planet": "yellow_4",
         "planetnumber": 35
