@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, systemEvent, SystemEvent, Event, EventTouch, Touch, Vec2, Vec3, UITransform, macro, Color, tween, find, sys, Tween, animation } from 'cc';
+import { _decorator, Component, Node, CCFloat, systemEvent, SystemEvent, Event, EventTouch, Touch, Vec2, Vec3, UITransform, macro, Color, tween, find, sys, Tween, animation, AudioSource } from 'cc';
 import { Firefly } from './Firefly';
 import { FireflyController } from './FireflyController';
 import { FireflyAnimation } from './FireflyAnimation';
@@ -8,6 +8,7 @@ const { ccclass, property } = _decorator;
 @ccclass('FireflyMoveState')
 export class FireflyMoveState extends Component {
     @property({type: CCFloat}) moveSpeed: number
+    @property({type: AudioSource}) keep: AudioSource
     firefly: Firefly
     fireflyController: FireflyController
     anim: FireflyAnimation
@@ -35,6 +36,9 @@ export class FireflyMoveState extends Component {
             if(!this.keepSound){
                 this.keepSound = true
                 console.log("addedKeep")
+
+                // SoundManager.Instance.setSound(this.node, "Keep", true, true)
+                this.keep.play()
             }
             let touchPos: Vec3 = new Vec3(touch.getUILocation().x, touch.getUILocation().y)
             this.LerpMove(touchPos)
@@ -42,24 +46,26 @@ export class FireflyMoveState extends Component {
     }
     onTouchEnd(touch: Touch, event: EventTouch){
         if(this.firefly.stateMachine.isCurrentState("controledMove")){
+            // SoundManager.Instance.removeSound(this.node)
+            this.keep.stop()
             this.keepSound = false
-            this.сhecksCallback()
+            this.checksCallback()
         }
     }
 
     private TweenMove(pos: Vec3){
         Tween.stopAllByTarget(this.node)
         let time: number = Vec3.distance(this.node.worldPosition, pos)/this.moveSpeed
-        tween(this.node).to(time, {worldPosition: pos}).call(() => {this.сhecksCallback()}).start()
+        tween(this.node).to(time, {worldPosition: pos}).call(() => {this.checksCallback()}).start()
     }
 
     private LerpMove(pos: Vec3){
         Tween.stopAllByTarget(this.node)
         this.node.setWorldPosition(this.node.worldPosition.lerp(pos, 0.5))
-        //this.сhecksCallback()
+        //this.checksCallback()
     }
     
-    сhecksCallback(){
+    checksCallback(){
         let st: string = this.fireflyController.checkConnection()
         if(st == "wrongColor"){
             this.anim.Wrong()

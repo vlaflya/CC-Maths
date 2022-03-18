@@ -4,6 +4,6 @@ const { ccclass, property } = _decorator;
 
 @ccclass('MathWithIcons')
 export class MathWithIcons extends Component {
-    public singleIconLightUp(){}
+    public singleIconLightUp(count){}
     public allIconsLightUp(){}
 }

@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Label, Button, tween } from 'cc';
+import { _decorator, Component, Node, Label, Button, tween, AudioSource } from 'cc';
 import { IconsHolder } from './IconsHolder';
 import { Helper } from './Helper';
 import { GameStateMachine } from './GameStateMachine';
@@ -7,6 +7,8 @@ import { SkeletonButton } from './SkeletonButton';
 import { Frame } from './Frame';
 import { MathWithIcons } from './MathWithIcons';
 import { Lamp } from './Lamp';
+import { Bridge } from './Bridge';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math3')
@@ -17,6 +19,9 @@ export class Math3 extends MathWithIcons {
     @property({type: Label}) label2: Label
     @property({type: [Node]}) disableNodes: Array<Node> = []
     @property({type: [Button]}) buttons: Array<Button> = []
+    @property({type: AudioSource}) rightSound: AudioSource
+    @property({type: AudioSource}) wrongSound: AudioSource
+
 
     public static Instance: Math3
 
@@ -38,6 +43,10 @@ export class Math3 extends MathWithIcons {
 
     init(config: string){
         console.log(config);
+        if(Bridge.Instance.levelCount == 0)
+            SoundManager.Instance.playMath3Tutorial()
+        else
+            SoundManager.Instance.playMath3Start()
         let c = 0
         let st = ""
         for(; c < config.length; c++){
@@ -151,9 +160,12 @@ export class Math3 extends MathWithIcons {
     checkCallback(event, customEventData){
         if(this.givingHint)
             return
-        if(Number(customEventData) == this.currentSum)
+        if(Number(customEventData) == this.currentSum){
             this.checkWin()
+            SoundManager.Instance.playMath3Right(this.currentSum)
+        }
         else{
+            SoundManager.Instance.playMathWrong()
             Frame.Instance.zebraWrong()
             console.log(customEventData);
             let button: Node = event.target
@@ -171,6 +183,7 @@ export class Math3 extends MathWithIcons {
         });
         this.currentStage++
         if(this.currentStage == this.stageCount){
+            this.rightSound.play()
             Frame.Instance.zebraWin()
             tween(this.node)
             .delay(2.5)
@@ -180,6 +193,7 @@ export class Math3 extends MathWithIcons {
             .start()
         }
         else{
+            this.wrongSound.play()
             Frame.Instance.zebraNod()
             tween(this.node)
             .delay(2.5)
@@ -189,21 +203,28 @@ export class Math3 extends MathWithIcons {
             .start()
         }
     }
-    iconCount = 0
 
+    iconCountPhase = 0
+    iconCount = 0
     private givingHint = false
     public giveHint(){
         this.givingHint = true
-        this.iconCount = 0
+        this.iconCountPhase = 0
         IconsHolder.Instance.giveHint("Math3_1", this)
     }
 
-    public allIconsLightUp(){
+    public singleIconLightUp(count){
+        SoundManager.Instance.playIconCount(this.iconCount+1)
         this.iconCount++
-        if(this.iconCount == 1){
+    }
+
+    public allIconsLightUp(){
+        this.iconCountPhase++
+        if(this.iconCountPhase == 1){
             IconsHolder.Instance.giveHint("Math3_2", this)
         }
-        if(this.iconCount == 2){
+        if(this.iconCountPhase == 2){
+            this.iconCount = 0
             this.givingHint = false
             Lamp.Instance.callBack()
         }

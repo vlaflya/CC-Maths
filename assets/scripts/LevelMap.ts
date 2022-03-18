@@ -1,11 +1,15 @@
 
-import { _decorator, Component, Node, Prefab, UITransform, CCFloat, ScrollView, Camera, Vec3, tween, instantiate, randomRangeInt } from 'cc';
+import { _decorator, Component, Node, Prefab, UITransform, CCFloat, ScrollView, Camera, Vec3, tween, instantiate, randomRangeInt, AudioSource } from 'cc';
 import { Bridge } from './Bridge';
 import { Planet } from './Planet';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
  
 @ccclass('LevelMap')
 export class LevelMap extends Component {
+
+    @property({type: AudioSource}) unlockTap: AudioSource
+    @property({type: AudioSource}) lockedTap: AudioSource
 
     @property({type: Prefab}) planetPrefab: Prefab
     @property({type: UITransform}) container: UITransform
@@ -25,6 +29,9 @@ export class LevelMap extends Component {
 
     @property({type: Camera}) camera: Camera
     @property({type: Node}) background: Node
+
+
+
     public static Instance: LevelMap;
     start(){
         LevelMap.Instance = this
@@ -91,16 +98,17 @@ export class LevelMap extends Component {
         else
             this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
         this.scrollCallback()
-        // if(levelsUnlocked != (lastLevel + 1) || !unlockNew){
-        //     console.log(levelsUnlocked + " " +lastLevel)
-        //     this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
-        //     this.scroll.enabled = true
-        //     return
-        // }
-        // tween(this.container.node)
-        // .by(1, {position: new Vec3(Vec3.RIGHT).multiplyScalar(-this.distance/1.2)})
-        // .call(() => {this.scroll.enabled = true})
-        // .start()
+        if(Bridge.Instance.levelCount == 0)
+            SoundManager.Instance.playFirstMeta()
+        else
+            SoundManager.Instance.playGameStart()
+    }
+
+    public playUnlocked(){
+        this.unlockTap.play()
+    }
+    public playLocked(){
+        this.lockedTap.play()
     }
 
     focusOnIsland(pos: Vec3, id: number){

@@ -1,10 +1,12 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity, Sprite, SpriteFrame } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity, Sprite, SpriteFrame, AudioSource } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 import { Frame } from './Frame';
 import { setMixedSkin } from './Helper';
 import { MathWithIcons } from './MathWithIcons';
+import { SoundManager } from './SoundManager';
+import { Bridge } from './Bridge';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math1')
@@ -29,6 +31,9 @@ export class Math1 extends MathWithIcons {
     @property({type: Sprite}) keySprite: Sprite
     @property({type: Sprite}) keyBlurSprite: Sprite
     @property({type: UIOpacity}) blurKey: UIOpacity
+    @property({type: AudioSource}) rightSound: AudioSource
+    @property({type: AudioSource}) wrongSound: AudioSource
+
     public static Instance: Math1
     private tile: Node
     public init(count: number, rev: string, keyName:string){
@@ -110,7 +115,13 @@ export class Math1 extends MathWithIcons {
         this.tile.setParent(this.container)
         this.tile.setPosition(new Vec3(0,0,0))
         this.tile.setScale(new Vec3(1,1,1))
-        this.tile.getComponent(Tileset).init(this, reversed)  
+        this.tile.getComponent(Tileset).init(this, reversed)
+        if(Bridge.Instance.levelCount == 0){
+            SoundManager.Instance.playMath1Tutorial
+        }
+        else{
+            SoundManager.Instance.playMath1Start(reversed)
+        }
     }
 
     private getKeyIndex(keyName: string): number{
@@ -145,11 +156,19 @@ export class Math1 extends MathWithIcons {
         tween(this.node)
         .delay(2)
         .call(() =>{
+            SoundManager.Instance.playMath1End()
             Frame.Instance.zebraWin()
             GameStateMachine.Instance.colorLamp()
             GameStateMachine.Instance.winState()
         })
         .start()
+    }
+
+    public playRight(){
+        this.rightSound.play()
+    }
+    public playWrong(){
+        this.wrongSound.play()
     }
     
     public giveHint(){

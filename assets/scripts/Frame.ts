@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, sp, Prefab, tween, instantiate, Vec2 } from 'cc';
+import { _decorator, Component, Node, sp, Prefab, tween, instantiate, Vec2, AudioSource } from 'cc';
 import { Helper, setMixedSkin } from './Helper';
 const { ccclass, property } = _decorator;
  
@@ -10,7 +10,13 @@ export class Frame extends Component {
     @property({type: Prefab}) fly: Prefab
     @property({type: Node}) flySpawn: Node
     @property({type: sp.Skeleton}) zebra: sp.Skeleton
-    
+    @property({type: AudioSource}) doorOpen: AudioSource
+    @property({type: AudioSource}) dzin: AudioSource
+    @property({type: AudioSource}) vjuh: AudioSource
+    @property({type: AudioSource}) bulbLight: AudioSource
+    @property({type: AudioSource}) fireflySound: AudioSource
+    @property({type: AudioSource}) wingsSound: AudioSource
+    @property({type: AudioSource}) doorClose: AudioSource
 
     private lampCount = 0
     public static Instance: Frame
@@ -56,10 +62,12 @@ export class Frame extends Component {
     }
 
     private openDoor(){
+        this.doorOpen.play()
         this.background.timeScale = 0.7
         this.background.setAnimation(1, "Track-Flash", false)
     }
     private closeDoor(){
+        this.doorClose.play()
         this.background.timeScale = -1
         this.background.setAnimation(1, "Track-Flash", false)
     }
@@ -71,6 +79,8 @@ export class Frame extends Component {
     }
 
     private spawnFly(color: string){
+        this.vjuh.play()
+        this.wingsSound.play()
         let flyNode = instantiate(this.fly)
         flyNode.setParent(this.flySpawn)
         let flySk = flyNode.getComponent(sp.Skeleton)
@@ -105,6 +115,7 @@ export class Frame extends Component {
     }
 
     private colorLamp(color: string){
+        this.dzin.play()
         color = color[0].toUpperCase() + color.substr(1)
         let lamp = this.lamps[this.lampCount]
         if(color == "Violet")

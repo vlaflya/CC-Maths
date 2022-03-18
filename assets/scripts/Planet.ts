@@ -2,6 +2,7 @@
 import { _decorator, Component, Node, Tween, tween, Vec3, SpriteFrame, Sprite, Skeleton, sp, animation, randomRange, Label } from 'cc';
 import { Bridge } from './Bridge';
 import { Transition } from './Constructor/Transition';
+import { LevelMap } from './LevelMap';
 const { ccclass, property } = _decorator;
  
 @ccclass('Planet')
@@ -52,6 +53,10 @@ export class Planet extends Component {
             this.zebraSkeleton.setMix("idle", "win", 0.5)
             this.zebraSkeleton.setAnimation(0, "win", true)
             Transition.Instance.transitionIn()
+            LevelMap.Instance.playUnlocked()
+        }
+        else{
+            LevelMap.Instance.playLocked()
         }
         tween(this.node)
         .by(0.1, {scale:new Vec3(0.1, 0.1, 0.1)}, {easing:"bounceOut"})
@@ -59,6 +64,7 @@ export class Planet extends Component {
         .delay(1)
         .call(() => {
             if(this.isUnlocked){
+                
                 Bridge.Instance.loadLevel(this.id)
             }
         })

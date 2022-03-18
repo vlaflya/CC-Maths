@@ -4,6 +4,7 @@ import { Math1 } from './Math1';
 import { Helper } from './Helper';
 import { Frame } from './Frame';
 import { Lamp } from './Lamp';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Tileset')
@@ -40,6 +41,7 @@ export class Tileset extends Component {
         let button: Node = event.target
         Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         if(Number(customEventData) == this.tileCount){
+            this.math1.playRight()
             Frame.Instance.zebraNod()
             if(this.reverced)
                 this.tileCount--
@@ -71,7 +73,9 @@ export class Tileset extends Component {
             }
             return
         }
+        this.math1.playWrong()
         Frame.Instance.zebraWrong()
+        SoundManager.Instance.playMathWrong()
         tween(button)
         .to(0.05, {eulerAngles: new Vec3(0,0,10)})
         .to(0.05, {eulerAngles: new Vec3(0,0,-10)})
@@ -86,6 +90,7 @@ export class Tileset extends Component {
     }
     private lightPanel(count){
         let panel: Node
+        
         for(let i = 0; i < this.node.children.length; i++){
             if(this.node.children[i].children.length == 0)
                 continue
@@ -109,6 +114,9 @@ export class Tileset extends Component {
 
         tween(panel)
         .by(0.4, {scale: new Vec3(0.1, 0.1, 0.1)})
+        .call(() =>{
+            SoundManager.Instance.playIconCount(count, false, true)
+        })
         .by(0.4, {scale: new Vec3(-0.1, -0.1, -0.1)})
         .delay(0.1)
         .call(() => {

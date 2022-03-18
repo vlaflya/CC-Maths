@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Event, Node, Color, tween, Vec2, Vec3, Sprite, color, easing, SkeletalAnimation, Skeleton, sp, find, randomRange, randomRangeInt, RigidBody2D, Collider2D, CircleCollider2D, systemEvent, animation } from 'cc';
+import { _decorator, Component, Event, Node, Color, tween, Vec2, Vec3, Sprite, color, easing, SkeletalAnimation, Skeleton, sp, find, randomRange, randomRangeInt, RigidBody2D, Collider2D, CircleCollider2D, systemEvent, animation, AudioSource } from 'cc';
 import { FireflyController } from './FireflyController';
 import { FireflyFreeRoamState } from './FireflyFreeRoamState';
 import { FireflyMoveState } from './FireflyMoveState';
@@ -16,6 +16,9 @@ export class Firefly extends Component {
     @property({type: FireflyMoveState}) move: FireflyMoveState = null!
     @property({type: FireflyAnimation}) animation: FireflyAnimation = null!
     @property({type: Color}) color: Color = new Color()
+    @property({type: AudioSource}) tapSound: AudioSource
+    @property({type: AudioSource}) positionSound: AudioSource
+
     stateMachine: GeneralStateMachine
     fireflyController: FireflyController
     private isLocked: boolean = false
@@ -132,6 +135,8 @@ export class Firefly extends Component {
     onControlMoveEnter(){
         this.timePassed = false
         this.checked = false
+        // SoundManager.Instance.setSound(this.animation.node, "Tap", false, false)
+        this.tapSound.play()
         this.animation.SetSelect(true)
         this.startScale = this.node.getScale()
         tween(this.node).to(0.2 ,{scale: this.startScale.multiplyScalar(2)},{easing: "bounceIn"}).
@@ -207,6 +212,8 @@ export class Firefly extends Component {
         .delay(0.2)
         .call(() => {
             this.animation.Lock()
+            // SoundManager.Instance.setSound(this.node, "Position", false, true)
+            this.positionSound.play()
         })
         .delay(0.7)
         .to(0.5, {scale: startScale.multiplyScalar(0.5)})

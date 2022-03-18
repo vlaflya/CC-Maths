@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Button, Prefab, SpriteFrame, instantiate, Sprite, randomRangeInt, Label, animation, sp, tween } from 'cc';
+import { _decorator, Component, Node, Button, Prefab, SpriteFrame, instantiate, Sprite, randomRangeInt, Label, animation, sp, tween, AudioSource } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Helper } from './Helper';
 import { IconsHolder } from './IconsHolder';
@@ -7,6 +7,8 @@ import { SkeletonButton } from './SkeletonButton';
 import { Frame } from './Frame';
 import { MathWithIcons } from './MathWithIcons';
 import { Lamp } from './Lamp';
+import { Bridge } from './Bridge';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Math2')
@@ -15,7 +17,10 @@ export class Math2 extends MathWithIcons {
     @property({type: [Prefab]}) configurations: Array<Prefab> = []
     @property({type: [SpriteFrame]}) objects: Array<SpriteFrame> = []
     @property({type: Node}) cont: Node
-    
+    @property({type: AudioSource}) rightButton: AudioSource
+    @property({type: AudioSource}) wrongButton: AudioSource
+
+
     public static Instance: Math2
     private currentOption: number = 0
 
@@ -40,6 +45,10 @@ export class Math2 extends MathWithIcons {
             this.cycles.push(st1)
             this.init(st1)
         }
+        if(Bridge.Instance.levelCount == 0)
+            SoundManager.Instance.playMath2Tutorial()
+        else
+            SoundManager.Instance.playMath2Start()
     }
 
     public createGame(config: string){
@@ -89,6 +98,8 @@ export class Math2 extends MathWithIcons {
         if(this.givingHint)
             return
         if(Number(customEventData) == this.currentOption){
+            this.rightButton.play()
+            SoundManager.Instance.playMath2Right(this.currentOption)
             this.buttons.forEach(element => {
                 Helper.resetClickEvent(element, "checkCallback")
             });
@@ -104,6 +115,8 @@ export class Math2 extends MathWithIcons {
         }
             
         else{
+            this.wrongButton.play()
+            SoundManager.Instance.playMathWrong()
             Frame.Instance.zebraWrong()
             console.log(event);
             let button: Node = event.target
@@ -133,11 +146,14 @@ export class Math2 extends MathWithIcons {
         }
     }
 
-    singleIconLightUp(){
-        
+    iconCount = 0
+    public singleIconLightUp(count){
+        SoundManager.Instance.playIconCount(this.iconCount + 1)
+        this.iconCount++
     }
 
     public allIconsLightUp(){
+        this.iconCount = 0
         this.givingHint = false
         Lamp.Instance.callBack()
     }

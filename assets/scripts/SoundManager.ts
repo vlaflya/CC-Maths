@@ -30,6 +30,8 @@ export class SoundManager extends Component {
     @property({type: [AudioClip]}) MathWrong: Array<AudioClip> = []
     @property({type: [AudioClip]}) MathWrongEn: Array<AudioClip> = []
 
+    @property({type: [AudioClip]}) ZebraSounds: Array<AudioClip> = []
+
     @property({type: [AudioClip]}) Math1End: Array<AudioClip> = []
     @property({type: [AudioClip]}) Math1EndEN: Array<AudioClip> = []
 
@@ -97,8 +99,14 @@ export class SoundManager extends Component {
         this.playVoice(this.MathWrong[r])
     }
     public playMath1End(){
-        let r = randomRangeInt(0, this.Math1End.length)
-        this.playVoice(this.Math1End[r])
+        let random = randomRangeInt(0, 100)
+        if(random < 60){
+            let r = randomRangeInt(0, this.Math1End.length)
+            this.playVoice(this.Math1End[r])
+            return
+        }
+        let r = randomRangeInt(0, this.ZebraSounds.length)
+        this.playVoice(this.ZebraSounds[r])
     }
     public playMath2Tutorial(){
         this.playVoice(this.Math2Tutorial)
@@ -107,7 +115,8 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math2Start.length)
         this.playVoice(this.Math2Start[r])
     }
-    public playMath2Right(){
+    public playMath2Right(count){
+        this.playIconCount(count, true)
         let r = randomRangeInt(0, this.Math2Right.length)
         this.playVoice(this.Math2Right[r])
     }
@@ -118,7 +127,8 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math3Start.length)
         this.playVoice(this.Math3Start[r])
     }
-    public playMath3Right(){
+    public playMath3Right(count){
+        this.playIconCount(count, true)
         let r = randomRangeInt(0, this.Math3Right.length)
         this.playVoice(this.Math3Right[r])
     }
@@ -126,21 +136,22 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.HintNotAvalible.length)
         this.playVoice(this.HintNotAvalible[r])
     }
-    public playIconHint(count = 1){
-        if(count == 0)
-            return
-        this.playVoice(this.IconCounts[count])
+    public playIconCount(count = 0,  addToQeue = false, interapt = false){
+        count--
+        console.log("Icon " + count);
+        this.playVoice(this.IconCounts[count], addToQeue, interapt)
     }
 
     private clipQeue: Array<AudioClip> = []
-    private playVoice(clip: AudioClip, addToQeue = false){
-        if(this.voiceSource.playing){
+    private playVoice(clip: AudioClip, addToQeue = false, interapt = false){
+        if(this.voiceSource.playing && !interapt){
             if(addToQeue){
                 this.clipQeue.push(clip)
                 this.waitFor()
             }
             return
         }
+        this.voiceSource.stop()
         this.voiceSource.clip = clip
         this.voiceSource.play()
     }

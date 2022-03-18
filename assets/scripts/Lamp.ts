@@ -1,9 +1,9 @@
-
 import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Math1 } from './Math1';
 import { Math2 } from './Math2';
 import { Math3 } from './Math3';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Lamp')
@@ -24,6 +24,7 @@ export class Lamp extends Component {
 
     public giveHint(){
         if(!this.canHint){
+            SoundManager.Instance.playHintNotAvalible()
             Tween.stopAllByTarget(this.node)
             tween(this.node)
             .by(0.05, {scale: new Vec3(-0.1, -0.1, -0.1)}, {easing: 'sineIn'})

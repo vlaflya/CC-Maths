@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, systemEvent, SystemEvent, Event, EventTouch, Touch, Vec2, Vec3, UITransform, macro, Color, color, tween } from 'cc';
+import { _decorator, Component, Node, CCFloat, systemEvent, SystemEvent, Event, EventTouch, Touch, Vec2, Vec3, UITransform, macro, Color, color, tween, AudioSource } from 'cc';
 import { Firefly } from './Firefly';
 import { Slot } from './Slot';
 import { FireflyMoveState } from './FireflyMoveState';
@@ -12,6 +12,7 @@ export class FireflyController extends Component {
     @property({type: CCFloat}) minDistance: number
     @property({type: CCFloat}) connectDistance: number
     @property({type: [Node]}) roamingPoints: Array<Node> = []
+    @property({type: AudioSource}) afterFx: AudioSource
     private slots: Array<Slot> = []
     private currentFirefly: Firefly
     public static Instance: FireflyController
@@ -120,7 +121,8 @@ export class FireflyController extends Component {
         if(this.addFlies < 0)
             this.addFlies = 0
         console.log("Add " + this.addFlies);
-        
+        // SoundManager.Instance.setSound(this.node, "AfterFX", false, true)
+        this.afterFx.play()
         delay(1000).then(() => {this.node.emit("spawnEnded")})
     }
     public sing(){

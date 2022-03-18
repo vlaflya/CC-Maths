@@ -89,10 +89,12 @@ export class IconsHolder extends Component {
         console.log("oke");
         tween(iconList.icons[count])
         .by(0.3, {scale: new Vec3(0.5, 0.5, 0.5)})
+        .call(() => {
+            math.singleIconLightUp(count)
+        })
         .by(0.3, {scale: new Vec3(-0.5, -0.5, -0.5)})
         .delay(0.4)
-        .call(() =>{
-            math.singleIconLightUp()
+        .call(() =>{       
             count++
             if(count == iconList.icons.length){
                 math.allIconsLightUp()
