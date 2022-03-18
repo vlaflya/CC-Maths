@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat } from 'cc';
+import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat, AudioSource } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Math1 } from './Math1';
 import { Math2 } from './Math2';
@@ -10,6 +10,10 @@ const { ccclass, property } = _decorator;
 export class Lamp extends Component {
     @property({type: sp.Skeleton}) lamp: sp.Skeleton
     @property({type: Node}) block: Node
+    @property({type: AudioSource}) useLamp: AudioSource
+    @property({type: AudioSource}) lampFilled: AudioSource
+    @property({type: AudioSource}) lampLocked: AudioSource
+
     private lampBone: sp.spine.Bone
     private canHint: boolean = false
     public static Instance: Lamp
@@ -23,17 +27,19 @@ export class Lamp extends Component {
     }
 
     public giveHint(){
+        Tween.stopAllByTarget(this.node)
         if(!this.canHint){
+            this.lampLocked.play()
             SoundManager.Instance.playHintNotAvalible()
-            Tween.stopAllByTarget(this.node)
+            
             tween(this.node)
             .by(0.05, {scale: new Vec3(-0.1, -0.1, -0.1)}, {easing: 'sineIn'})
             .by(0.05, {scale: new Vec3(0.1, 0.1, 0.1)}, {easing: 'sineOut'})
             .start()
             return
         }
-        Tween.stopAllByTarget(this.node)
         this.clearLamp()
+        this.useLamp.play()
         tween(this.node)
         .by(0.1, {scale: new Vec3(0.1, 0.1, 0.1), position: new Vec3(0,10,0)})
         .by(0.1, {scale: new Vec3(-0.1, -0.1, -0.1), position: new Vec3(0,-10,0)})
@@ -79,8 +85,14 @@ export class Lamp extends Component {
         .to(8, {x: 0, y: 0})
         .call(() => {
             console.log("Can give hint");
+            this.lampFilled.play()
             this.lamp.setAnimation(0.5, "Idle_Full", true)
             this.canHint = true
+            Tween.stopAllByTarget(this.node)
+            tween(this.node)
+            .by(0.1, {scale: new Vec3(0.1, 0.1, 0.1), position: new Vec3(0,5,0)})
+            .by(0.1, {scale: new Vec3(-0.1, -0.1, -0.1), position: new Vec3(0,-5,0)})
+            .start()
         })
         .start()
     }

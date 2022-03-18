@@ -9,11 +9,12 @@ const { ccclass, property } = _decorator;
 export class Bridge extends Component {
     public static Instance: Bridge = null
     private curLevel = 0
-    public levelCount: number = 17
+    public levelCount: number = 0
     private maxLevels : number = 0
     private planets: Array<string> = []
     private planetNumbers: Array<number> = []
     private unlockNew = false
+    public formCatalogue = true
     @property({type: JsonAsset}) config: JsonAsset
     onLoad () {
         if(Bridge.Instance != null)
@@ -27,6 +28,7 @@ export class Bridge extends Component {
             this.planetNumbers.push(lvl.planetnumber)
         }
         console.log("Bridge load");
+        
         game.addPersistRootNode(this.node)
         Bridge.Instance = this
     }

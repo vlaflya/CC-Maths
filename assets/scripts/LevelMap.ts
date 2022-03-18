@@ -98,6 +98,10 @@ export class LevelMap extends Component {
         else
             this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
         this.scrollCallback()
+        if(!Bridge.Instance.formCatalogue){
+            Bridge.Instance.formCatalogue = true
+            return
+        }
         if(Bridge.Instance.levelCount == 0)
             SoundManager.Instance.playFirstMeta()
         else

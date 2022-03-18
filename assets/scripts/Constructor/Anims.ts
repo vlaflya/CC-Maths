@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, sp, randomRange, randomRangeInt, tween } from 'cc';
+import { _decorator, Component, Node, sp, randomRange, randomRangeInt, tween, AudioSource } from 'cc';
 const { ccclass, property } = _decorator;
  
 @ccclass('Anims')
@@ -8,6 +8,7 @@ export class Anims extends Component {
     public static Instance: Anims
     @property({type: sp.Skeleton}) back: sp.Skeleton
     @property({type: sp.Skeleton}) zebra: sp.Skeleton
+    @property({type: AudioSource}) dudeSound: AudioSource
     private canTap = true;
 
     onLoad () {
@@ -28,6 +29,7 @@ export class Anims extends Component {
     public tapCallback(){
         if(!this.canTap)
             return
+        this.dudeSound.play()
         this.canTap = false
         console.log("TapCallback")
         let r = randomRangeInt(0,2)

@@ -116,6 +116,8 @@ export class Frame extends Component {
 
     private colorLamp(color: string){
         this.dzin.play()
+        this.bulbLight.play()
+        this.fireflySound.play()
         color = color[0].toUpperCase() + color.substr(1)
         let lamp = this.lamps[this.lampCount]
         if(color == "Violet")

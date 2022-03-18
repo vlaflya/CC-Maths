@@ -1,16 +1,18 @@
 
-import { _decorator, Component, Node, UITransform, tween, Vec2, game } from 'cc';
+import { _decorator, Component, Node, UITransform, tween, Vec2, game, AudioSource } from 'cc';
 const { ccclass, property } = _decorator;
  
 @ccclass('Transition')
 export class Transition extends Component {
     @property({type: UITransform}) circle: UITransform
+    @property({type: AudioSource}) sound: AudioSource
     public static Instance: Transition;
     onLoad () {
         game.addPersistRootNode(this.node)
         Transition.Instance = this
     }
     public transitionIn(){
+        this.sound.play()
         tween(this.circle)
         .to(1, {width: 0, height: 0})
         .delay(1)

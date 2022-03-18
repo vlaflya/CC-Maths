@@ -5,6 +5,7 @@ import { Helper } from './Helper';
 import { Frame } from './Frame';
 import { Lamp } from './Lamp';
 import { SoundManager } from './SoundManager';
+import { Bridge } from './Bridge';
 const { ccclass, property } = _decorator;
 
 @ccclass('Tileset')

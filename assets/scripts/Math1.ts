@@ -152,11 +152,13 @@ export class Math1 extends MathWithIcons {
     public setWin(){
         tween(this.blurKey)
         .to(0.5, {opacity: 0})
-        .start()
-        tween(this.node)
-        .delay(2)
         .call(() =>{
             SoundManager.Instance.playMath1End()
+        })
+        .start()
+        tween(this.node)
+        .delay(4)
+        .call(() =>{
             Frame.Instance.zebraWin()
             GameStateMachine.Instance.colorLamp()
             GameStateMachine.Instance.winState()

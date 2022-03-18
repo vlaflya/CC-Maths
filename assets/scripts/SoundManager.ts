@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt } from 'cc';
+import { Bridge } from './Bridge';
 const { ccclass, property } = _decorator;
 
 @ccclass('SoundManager')
@@ -29,6 +30,7 @@ export class SoundManager extends Component {
 
     @property({type: [AudioClip]}) MathWrong: Array<AudioClip> = []
     @property({type: [AudioClip]}) MathWrongEn: Array<AudioClip> = []
+    @property({type: [AudioClip]}) MathWrongZebra: Array<AudioClip> = []
 
     @property({type: [AudioClip]}) ZebraSounds: Array<AudioClip> = []
 
@@ -95,8 +97,15 @@ export class SoundManager extends Component {
         this.playVoice(this.Math1HintReverce[r])
     }
     public playMathWrong(){
-        let r = randomRangeInt(0, this.MathWrong.length)
-        this.playVoice(this.MathWrong[r])
+        let isTutorial: boolean = Bridge.Instance.levelCount == 0
+        let random = randomRangeInt(0, 100)
+        if(random < 60 || isTutorial){
+            let r = randomRangeInt(0, this.MathWrong.length)
+            this.playVoice(this.MathWrong[r])
+            return
+        }
+        let r = randomRangeInt(0, this.MathWrongZebra.length)
+        this.playVoice(this.MathWrongZebra[r])
     }
     public playMath1End(){
         let random = randomRangeInt(0, 100)
@@ -116,7 +125,7 @@ export class SoundManager extends Component {
         this.playVoice(this.Math2Start[r])
     }
     public playMath2Right(count){
-        this.playIconCount(count, true)
+        this.playIconCount(count, true, true)
         let r = randomRangeInt(0, this.Math2Right.length)
         this.playVoice(this.Math2Right[r])
     }
@@ -128,7 +137,7 @@ export class SoundManager extends Component {
         this.playVoice(this.Math3Start[r])
     }
     public playMath3Right(count){
-        this.playIconCount(count, true)
+        this.playIconCount(count, true, true)
         let r = randomRangeInt(0, this.Math3Right.length)
         this.playVoice(this.Math3Right[r])
     }
