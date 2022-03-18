@@ -187,17 +187,18 @@ export class SoundManager extends Component {
     private giveHint(){
         console.log("Hint start");
         tween(this.node)
-        .delay(8)
+        .delay(10)
         .call(() => {
-            if(GameStateMachine.Instance != null && GameStateMachine.Instance.node.active && !this.hintSource.playing){
-                
-                let state = GameStateMachine.Instance.getState()
-                let audio: AudioClip
-                if(state == "Math1")
-                    audio = this.Math1Hint[randomRangeInt(0, this.Math1Hint.length)]
-                console.log(state + " " + this.Math1Hint.length);
-                this.hintSource.clip = audio
-                this.hintSource.play()
+            if(GameStateMachine.Instance != null && !this.hintSource.playing){
+                if(GameStateMachine.Instance.node.active){
+                    let state = GameStateMachine.Instance.getState()
+                    let audio: AudioClip
+                    if(state == "Math1")
+                        audio = this.Math1Hint[randomRangeInt(0, this.Math1Hint.length)]
+                    console.log(state + " " + this.Math1Hint.length);
+                    this.hintSource.clip = audio
+                    this.hintSource.play()
+                }
             }
             this.giveHint()
         })
