@@ -98,8 +98,9 @@ export class LevelMap extends Component {
         else
             this.container.node.position = new Vec3(-(lastLevel + 1) * this.distance)
         this.scrollCallback()
-        if(!Bridge.Instance.formCatalogue){
-            Bridge.Instance.formCatalogue = true
+        if(Bridge.Instance.formCatalogue){
+            console.log("first time");
+            Bridge.Instance.formCatalogue = false
             return
         }
         if(Bridge.Instance.levelCount == 0)
