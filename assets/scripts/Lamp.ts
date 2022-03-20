@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat, AudioSource } from 'cc';
+import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat, AudioSource, System, SystemEvent, systemEvent } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Math1 } from './Math1';
 import { Math2 } from './Math2';

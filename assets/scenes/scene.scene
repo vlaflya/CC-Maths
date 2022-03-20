@@ -18165,6 +18165,74 @@
       }
     ],
     "IconCountsEN": [],
+    "ConstructorTutorial": {
+      "__uuid__": "d400429a-dab6-49b2-83ed-d4ff3445ec5b",
+      "__expectedType__": "cc.AudioClip"
+    },
+    "ConstructorPhase1Start": [
+      {
+        "__uuid__": "4fd1fa7d-bded-4644-9eaf-d1a0db2e0b72",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "3f5fd125-4289-4f15-a84a-f720bf12f293",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "a0cf3ab6-2b07-4b57-a2da-88bcd578733d",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "91ff8aa1-79a9-4ee5-b182-7dddd804a733",
+        "__expectedType__": "cc.AudioClip"
+      }
+    ],
+    "ConstructorPhase1StartEN": [],
+    "ConstructorPhase1End": [
+      {
+        "__uuid__": "1f88d0a4-dbb9-46a6-8c55-c2f8f16c89e1",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "2b4d182e-a499-4636-b990-0d931be205c1",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "10747f79-41df-4489-8643-6d035958e43b",
+        "__expectedType__": "cc.AudioClip"
+      }
+    ],
+    "ConstructorPhase1EndEN": [],
+    "ConstructorPhase2Start": [
+      {
+        "__uuid__": "d1f5db91-12ed-4aa6-b3e4-b0645c94c18f",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "c58d754b-0242-4146-b7af-c4ab52e8c752",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "29c20e97-b6cb-4c71-81ab-0935036dd99b",
+        "__expectedType__": "cc.AudioClip"
+      }
+    ],
+    "ConstructorPhase2StartEN": [],
+    "ConstructorFinish": [
+      {
+        "__uuid__": "3963b89c-453a-4b98-8b37-c22f1cbdc942",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "7856bf4b-4324-4845-b3d7-68a7becdae39",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "1a2c1f01-ca06-4d16-93dc-fb7aad2abafc",
+        "__expectedType__": "cc.AudioClip"
+      }
+    ],
+    "ConstructorFinishEN": [],
     "_id": "25X0uFiMtNhoJc/75BabQu"
   },
   {

@@ -3,6 +3,8 @@ import { _decorator, Component, Node, tween, Sprite, Color, find, Vec3, easing }
 import { FireflyController } from './FireflyController';
 import { GameStateMachine } from './../GameStateMachine';
 import { Anims } from './Anims';
+import { Bridge } from '../Bridge';
+import { SoundManager } from '../SoundManager';
 
 
 const { ccclass, property } = _decorator;
@@ -34,6 +36,21 @@ export class WinChecker extends Component {
         console.log(this.winCount);
         if(this.interCount == this.winCount){
             console.log("inter win");
+            let level = Bridge.Instance.levelCount
+            switch(level){
+                case 17:{
+                    SoundManager.Instance.playConstructorEndPhase1(0)
+                    break
+                }
+                case 18:{
+                    SoundManager.Instance.playConstructorEndPhase1(1)
+                    break
+                }
+                case 19:{
+                    SoundManager.Instance.playConstructorEndPhase1(2)
+                    break
+                }
+            }
             GameStateMachine.Instance.winState(this.needToWin - this.winCount)
             return
         }
@@ -44,6 +61,7 @@ export class WinChecker extends Component {
 
     public exitLevel(){
         Anims.Instance.zebraWin()
+        SoundManager.Instance.playConstructorFinish()
         tween(this.node)
         .delay(1)
         .call(() => {

@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Prefab, UITransform, CCFloat, ScrollView, Camera, Vec3, tween, instantiate, randomRangeInt, AudioSource } from 'cc';
+import { _decorator, Component, Node, Prefab, UITransform, CCFloat, ScrollView, Camera, Vec3, tween, instantiate, randomRangeInt, AudioSource, SpriteFrame } from 'cc';
 import { Bridge } from './Bridge';
 import { Planet } from './Planet';
 import { SoundManager } from './SoundManager';
@@ -30,7 +30,7 @@ export class LevelMap extends Component {
     @property({type: Camera}) camera: Camera
     @property({type: Node}) background: Node
 
-
+    @property({type: [SpriteFrame]}) pictograms: Array<SpriteFrame> = []
 
     public static Instance: LevelMap;
     start(){

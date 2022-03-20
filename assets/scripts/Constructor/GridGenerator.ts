@@ -7,6 +7,8 @@ import { FireflyController } from './FireflyController';
 import { WinChecker } from './WinChecker';
 import { Firefly } from './Firefly';
 import { GameStateMachine } from './../GameStateMachine';
+import { SoundManager } from '../SoundManager';
+import { Bridge } from '../Bridge';
 const { ccclass, property } = _decorator;
 
 @ccclass('GridGenerator')
@@ -40,6 +42,10 @@ export class GridGenerator extends Component {
     private count: number;
 
     init(conf: string, count?){
+        if(Bridge.Instance.levelCount == 0)
+            SoundManager.Instance.playConstructorTutorial()
+        else
+            SoundManager.Instance.playConstructorStartPhase1()
         this.count = count;
         this.config = conf
         this.scale = this.container.height / 100
@@ -268,6 +274,7 @@ export class GridGenerator extends Component {
         this.controller.spawnEnded(this.ar, this.count - this.fliesAtOnes)
     }
     public NextSpawn(nextCount: number){
+        SoundManager.Instance.playConstructorStartPhase2()
         console.log("Next " + nextCount);
         if(this.count < this.fliesAtOnes)
             this.controller.NextMoveIn(nextCount)

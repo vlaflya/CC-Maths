@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt, tween, Tween, math } from 'cc';
+import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt, tween, Tween, math, systemEvent, SystemEvent } from 'cc';
 import { Bridge } from './Bridge';
 import { GameStateMachine } from './GameStateMachine';
 const { ccclass, property } = _decorator;
@@ -64,11 +64,31 @@ export class SoundManager extends Component {
     @property({type: [AudioClip]}) IconCounts: Array<AudioClip> = []
     @property({type: [AudioClip]}) IconCountsEN: Array<AudioClip> = []
 
+    @property({type: AudioClip}) ConstructorTutorial: AudioClip
+    @property({type: AudioClip}) ConstructorTutorialEN: AudioClip
+
+    @property({type: [AudioClip]}) ConstructorPhase1Start: Array<AudioClip> = []
+    @property({type: [AudioClip]}) ConstructorPhase1StartEN: Array<AudioClip> = []
+
+    @property({type: [AudioClip]}) ConstructorPhase1End: Array<AudioClip> = []
+    @property({type: [AudioClip]}) ConstructorPhase1EndEN: Array<AudioClip> = []
+
+    @property({type: [AudioClip]}) ConstructorPhase2Start: Array<AudioClip> = []
+    @property({type: [AudioClip]}) ConstructorPhase2StartEN: Array<AudioClip> = []
+
+    @property({type: [AudioClip]}) ConstructorFinish: Array<AudioClip> = []
+    @property({type: [AudioClip]}) ConstructorFinishEN: Array<AudioClip> = []
+    
+
     public static Instance: SoundManager
 
     onLoad(){
         this.giveHint()
         SoundManager.Instance = this
+        systemEvent.on(SystemEvent.EventType.TOUCH_START, () => {
+            Tween.stopAllByTarget(this.node)
+            this.giveHint()
+        })
     }
 
     public playFirstMeta(){
@@ -154,6 +174,28 @@ export class SoundManager extends Component {
         console.log("Icon " + count);
         this.playVoice(this.IconCounts[count], addToQeue, interapt)
     }
+
+    public playConstructorTutorial(){
+        this.playVoice(this.ConstructorTutorial)
+    }
+    public playConstructorStartPhase1(){
+        let r = randomRangeInt(0, this.ConstructorPhase1Start.length)
+        this.playVoice(this.ConstructorPhase1Start[r]) 
+    }
+    public playConstructorEndPhase1(count){
+        this.playVoice(this.ConstructorPhase1End[count])
+    }
+    public playConstructorStartPhase2(){
+        let r = randomRangeInt(0, this.ConstructorPhase2Start.length)
+        this.playVoice(this.ConstructorPhase2Start[r]) 
+    }
+    public playConstructorFinish(){
+        let r = randomRangeInt(0, this.ConstructorFinish.length)
+        this.playVoice(this.ConstructorFinish[r]) 
+    }
+
+
+
 
     private clipQeue: Array<AudioClip> = []
     private playVoice(clip: AudioClip, addToQeue = false, interapt = false){
