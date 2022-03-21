@@ -132,14 +132,9 @@ export class SoundManager extends Component {
         this.playVoice(this.MathWrongZebra[r])
     }
     public playMath1End(){
-        let random = randomRangeInt(0, 100)
-        if(random < 60 || Bridge.Instance.levelCount == 0){
-            let r = randomRangeInt(0, this.Math1End.length)
-            this.playVoice(this.Math1End[r], false, true)
-            return
-        }
-        let r = randomRangeInt(0, this.ZebraSounds.length)
-        this.playVoice(this.ZebraSounds[r], false, true)
+        let r = randomRangeInt(0, this.Math1End.length)
+        this.playVoice(this.Math1End[r], false, true)
+        return
     }
     public playMath2Tutorial(){
         this.playVoice(this.Math2Tutorial)
@@ -148,10 +143,13 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math2Start.length)
         this.playVoice(this.Math2Start[r])
     }
+    private prevRandomMath2 = 0
     public playMath2Right(count){
         this.playIconCount(count, true, true)
-        let r = randomRangeInt(0, this.Math2Right.length)
-        this.playVoice(this.Math2Right[r], false, true)
+        let tmp = this.Math2Right.slice(this.prevRandomMath2, 1)
+        let r = randomRangeInt(0, tmp.length)
+        this.prevRandomMath2 = r
+        this.playVoice(tmp[r], false, true)
     }
     public playMath3Tutorial(){
         this.playVoice(this.Math2Tutorial)
@@ -160,10 +158,13 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math3Start.length)
         this.playVoice(this.Math3Start[r])
     }
+    private prevRandomMath3 = 0
     public playMath3Right(count){
         this.playIconCount(count, true, true)
-        let r = randomRangeInt(0, this.Math3Right.length)
-        this.playVoice(this.Math3Right[r], false, true)
+        let tmp = this.Math2Right.slice(this.prevRandomMath3, 1)
+        let r = randomRangeInt(0, tmp.length)
+        this.prevRandomMath3 = r
+        this.playVoice(tmp[r], false, true)
     }
     public playHintNotAvalible(){
         let r = randomRangeInt(0, this.HintNotAvalible.length)

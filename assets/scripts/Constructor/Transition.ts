@@ -12,9 +12,11 @@ export class Transition extends Component {
         Transition.Instance = this
     }
     public transitionIn(){
-        this.sound.play()
         tween(this.circle)
         .to(1, {width: 0, height: 0})
+        .call(() => {
+            this.sound.play()
+        })
         .delay(1)
         .to(1, {width: 3000, height: 3000})
         .start()
