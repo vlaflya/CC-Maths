@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt, tween, Tween, math, systemEvent, SystemEvent } from 'cc';
+import { _decorator, Component, Node, AudioSource, AudioClip, randomRange, randomRangeInt, tween, Tween, math, systemEvent, SystemEvent, find } from 'cc';
 import { Bridge } from './Bridge';
 import { GameStateMachine } from './GameStateMachine';
 const { ccclass, property } = _decorator;
@@ -231,8 +231,9 @@ export class SoundManager extends Component {
         tween(this.node)
         .delay(10)
         .call(() => {
-            if(GameStateMachine.Instance != null && !this.hintSource.playing){
-                if(GameStateMachine.Instance.node.active){
+            let state = find("GameCanvas")
+            if(state != null && !this.hintSource.playing){
+                if(state.active){
                     let state = GameStateMachine.Instance.getState()
                     let audio: AudioClip
                     if(state == "Math1")

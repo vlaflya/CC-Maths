@@ -16772,6 +16772,7 @@
     "background": {
       "__id__": 474
     },
+    "pictograms": [],
     "_id": "984AL3NedKvrQzcRgV3BAx"
   },
   {
@@ -18160,7 +18161,7 @@
         "__expectedType__": "cc.AudioClip"
       },
       {
-        "__uuid__": "57cef49f-cb0a-4a3f-b959-b88a94785d7e",
+        "__uuid__": "968baf67-53eb-4228-977e-831f6191ffd4",
         "__expectedType__": "cc.AudioClip"
       }
     ],

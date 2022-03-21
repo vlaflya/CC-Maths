@@ -1,0 +1,74 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "37c9a988-ae80-43d1-8a71-cbc74e4ad2ae",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "37c9a988-ae80-43d1-8a71-cbc74e4ad2ae@6c48a",
+      "displayName": "treasure_02",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "37c9a988-ae80-43d1-8a71-cbc74e4ad2ae",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "37c9a988-ae80-43d1-8a71-cbc74e4ad2ae@f9941",
+      "displayName": "treasure_02",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": -1,
+        "offsetY": 2,
+        "trimX": 30,
+        "trimY": 7,
+        "width": 276,
+        "height": 320,
+        "rawWidth": 338,
+        "rawHeight": 338,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "37c9a988-ae80-43d1-8a71-cbc74e4ad2ae@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "redirect": "37c9a988-ae80-43d1-8a71-cbc74e4ad2ae@f9941"
+  }
+}

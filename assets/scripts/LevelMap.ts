@@ -126,5 +126,14 @@ export class LevelMap extends Component {
         .start()
     }
 
+    public getPictogram(name: string): SpriteFrame{
+        let frame: SpriteFrame = null
+        this.pictograms.forEach(pic => {
+            if(pic.name == name){
+                frame = pic
+            }            
+        });
+        return frame
+    }
 }
 

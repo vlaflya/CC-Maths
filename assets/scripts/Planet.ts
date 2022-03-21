@@ -16,6 +16,7 @@ export class Planet extends Component {
     @property({type: sp.Skeleton}) zebraSkeleton: sp.Skeleton
     @property({type: Node}) flag: Node
     @property({type: Label}) flagLabel: Label
+    @property({type: Sprite}) pictogram: Sprite
 
     init(id: number, state: number, planet: string, planeNumber: number){
         this.node.on(Node.EventType.TOUCH_END, this.onTouch, this)
@@ -25,6 +26,10 @@ export class Planet extends Component {
         if(state == 0 || state == 1){
             if(state == 0){
                 this.zebra.active = true
+            }
+
+            if(state == 1){
+                // this.pictogram.spriteFrame = LevelMap.Instance.getPictogram()
             }
             
             this.flag.active = true

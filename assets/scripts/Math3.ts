@@ -162,9 +162,11 @@ export class Math3 extends MathWithIcons {
             return
         if(Number(customEventData) == this.currentSum){
             this.checkWin()
+            this.rightSound.play()
             SoundManager.Instance.playMath3Right(this.currentSum)
         }
         else{
+            this.wrongSound.play()
             SoundManager.Instance.playMathWrong()
             Frame.Instance.zebraWrong()
             console.log(customEventData);
@@ -183,7 +185,6 @@ export class Math3 extends MathWithIcons {
         });
         this.currentStage++
         if(this.currentStage == this.stageCount){
-            this.rightSound.play()
             Frame.Instance.zebraWin()
             tween(this.node)
             .delay(2.5)
@@ -193,7 +194,6 @@ export class Math3 extends MathWithIcons {
             .start()
         }
         else{
-            this.wrongSound.play()
             Frame.Instance.zebraNod()
             tween(this.node)
             .delay(2.5)

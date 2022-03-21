@@ -51,7 +51,12 @@ export class WinChecker extends Component {
                     break
                 }
             }
-            GameStateMachine.Instance.winState(this.needToWin - this.winCount)
+            tween(this.node)
+            .delay(5)
+            .call(() => {
+                GameStateMachine.Instance.winState(this.needToWin - this.winCount)
+            })
+            .start()
             return
         }
         if(this.needToWin == this.winCount){   
