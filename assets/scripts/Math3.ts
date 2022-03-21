@@ -185,19 +185,23 @@ export class Math3 extends MathWithIcons {
         });
         this.currentStage++
         if(this.currentStage == this.stageCount){
+            GameStateMachine.Instance.block.active = true
             Frame.Instance.zebraWin()
             tween(this.node)
             .delay(2.5)
             .call(() => {
+                GameStateMachine.Instance.block.active = false
                 GameStateMachine.Instance.winState(this.stageCount)
             })
             .start()
         }
         else{
+            GameStateMachine.Instance.block.active = true
             Frame.Instance.zebraNod()
             tween(this.node)
             .delay(2.5)
             .call(() => {
+                GameStateMachine.Instance.block.active = false
                 this.create(this.counts1[this.currentStage], this.icons1[this.currentStage], this.counts2[this.currentStage], this.icons2[this.currentStage], this.wrong1[this.currentStage], this.wrong2[this.currentStage])
             })
             .start()

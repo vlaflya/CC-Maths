@@ -35,6 +35,8 @@ export class GameStateMachine extends Component {
     @property({type: Node}) contr: Node
     @property({type: [JsonAsset]}) configs: Array<JsonAsset> = []
     @property({type: Frame}) frame: Frame
+    @property({type: Node}) block: Node
+
 
     public getConstructorConfigs(){
         return this.configs
@@ -113,6 +115,7 @@ export class GameStateMachine extends Component {
         tween(this.key.getComponent(UIOpacity))
         .to(0.5, {opacity: 0})
         .start()
+        this.block.active = true
         this.math1.node.active = false
         this.stateMachine.setState("Math2")
     }
@@ -121,6 +124,7 @@ export class GameStateMachine extends Component {
         tween(this.math2.node)
         .delay(3)
         .call(() =>{
+            this.block.active = false
             this.math2.node.active = true
             this.math2.init(this.stage2choice)
         })
@@ -128,6 +132,7 @@ export class GameStateMachine extends Component {
     }
     onMath2Exit(fireflyCount?){
         Transition.Instance.transitionIn();
+        this.block.active = true
         tween(this.node)
         .delay(1)
         .call(() =>{
@@ -138,6 +143,7 @@ export class GameStateMachine extends Component {
     }
     
     onConstructorEnter(fireflyCount?){
+        this.block.active = false
         this.contr.active = true
         console.log("Count " + fireflyCount);
         this.grid.init(this.currentConf, fireflyCount)
@@ -183,6 +189,7 @@ export class GameStateMachine extends Component {
     exitLevel(){
         Bridge.Instance.exitLevel()
     }
+    
 }
 interface levelInfo{
     level: number

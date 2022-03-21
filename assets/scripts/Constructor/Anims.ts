@@ -17,6 +17,9 @@ export class Anims extends Component {
         this.back.setAnimation(1, "Track-fire", true)
         this.back.setAnimation(2, "Track-dude-idle", true)
 
+        this.zebra.setMix("idle-sit-to-fin", "idle-stay-fin", 0.5)
+        this.zebra.setMix("idle-sit-to-fin", "Track-hi", 0.5)
+
         this.back.setMix("idle", "Track-tap-2", 0.5)
         this.back.setMix("Track-tap-2", "idle", 0.5)
 
@@ -44,6 +47,9 @@ export class Anims extends Component {
             this.canTap = true
         })
         .start()
+    }
+    public tapCallbackZebra(){
+        this.zebra.setAnimation(1, "Track-hi", false)
     }
     public zebraWin(){
         this.zebra.setAnimation(0, "idle-sit-to-fin", false)

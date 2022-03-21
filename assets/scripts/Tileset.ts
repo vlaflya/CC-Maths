@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt, tween, Quat, Vec3, instantiate, UITransform, UIOpacity } from 'cc';
+import { _decorator, Component, Node, Button, EventHandler, math, Label, random, randomRangeInt, tween, Quat, Vec3, instantiate, UITransform, UIOpacity, Tween } from 'cc';
 import { Math1 } from './Math1';
 import { Helper } from './Helper';
 import { Frame } from './Frame';
@@ -34,12 +34,14 @@ export class Tileset extends Component {
             label.string = st
             Helper.addClickEvent(this.node, button, "Tileset", "callback", sp+1)
         });
+        this.blinkFirstPanel(this.tileCount)
     }
     
     callback(event, customEventData){
         if(this.givingHint)
             return
         let button: Node = event.target
+        Tween.stopAllByTarget(button)
         Helper.resetClickEvent(button.getComponent(Button), "checkCallback")
         if(Number(customEventData) == this.tileCount){
             this.math1.playRight()
@@ -86,15 +88,23 @@ export class Tileset extends Component {
 
     private givingHint = false
     public giveHint(){
+        if(this.currentPanel != null){
+            Tween.stopAllByTarget(this.currentPanel)
+        }
         this.givingHint = true
         this.lightPanel(this.tileCount)
     }
+
     private lightPanel(count){
         let panel: Node
         
         for(let i = 0; i < this.node.children.length; i++){
-            if(this.node.children[i].children.length == 0)
+            if(this.node.children[i].children.length == 0 || this.node.children[i] == null){
                 continue
+            }
+            if(!this.node.children[i].children[0].getComponent(Label)){
+                continue
+            }
             if(this.node.children[i].children[0].getComponent(Label).string == count.toString()){
                 panel = this.node.children[i]
             }
@@ -145,6 +155,43 @@ export class Tileset extends Component {
                     this.lightPanel(count)
                 return
             }
+        })
+        .start()
+    }
+    private blinkFirstPanel(count){
+        if(!this.reverced)
+            count = 1
+        let panel: Node
+        for(let i = 0; i < this.node.children.length; i++){
+            if(this.node.children[i].children.length == 0)
+                continue
+            if(this.node.children[i].children[0].getComponent(Label).string == count.toString()){
+                panel = this.node.children[i]
+            }
+        }
+        let colorBlock = instantiate(this.math1.colorBlock)
+        let colorTransform = colorBlock.getComponent(UITransform)
+        let panelTransform = panel.getComponent(UITransform)
+        colorBlock.parent = panel
+        colorBlock.position = new Vec3(0,0,0)
+        colorTransform.contentSize.set(panelTransform.width, panelTransform.height)
+        this.currentPanel = panel
+        this.blinkPanel(panel, colorBlock)
+    }
+
+    private currentPanel: Node = null
+    private blinkPanel(panel: Node, colorBlock: Node){
+        tween(colorBlock.getComponent(UIOpacity))
+        .to(0.4, {opacity: 150})
+        .to(0.4, {opacity: 0})
+        .start()
+
+        tween(panel)
+        .by(0.4, {scale: new Vec3(0.05, 0.05, 0.05)})
+        .by(0.4, {scale: new Vec3(-0.05, -0.05, -0.05)})
+        .delay(0.5)
+        .call(() => {
+            this.blinkPanel(panel, colorBlock)
         })
         .start()
     }

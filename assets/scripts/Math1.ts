@@ -150,6 +150,7 @@ export class Math1 extends MathWithIcons {
     }
 
     public setWin(){
+        GameStateMachine.Instance.block.active = true
         tween(this.blurKey)
         .to(0.5, {opacity: 0})
         .call(() =>{

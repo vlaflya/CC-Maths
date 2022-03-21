@@ -1,4 +1,5 @@
-import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat, AudioSource, System, SystemEvent, systemEvent } from 'cc';
+import { _decorator, Component, Node, sp, tween, Vec3, Vec2, Tween, Quat, AudioSource, System, SystemEvent, systemEvent, find } from 'cc';
+import { Frame } from './Frame';
 import { GameStateMachine } from './GameStateMachine';
 import { Math1 } from './Math1';
 import { Math2 } from './Math2';
@@ -44,6 +45,7 @@ export class Lamp extends Component {
         .by(0.1, {scale: new Vec3(0.1, 0.1, 0.1), position: new Vec3(0,10,0)})
         .by(0.1, {scale: new Vec3(-0.1, -0.1, -0.1), position: new Vec3(0,-10,0)})
         .call(() => {
+            Frame.Instance.zebraHint()
             this.canHint = false
             console.log("Give hint");
             this.block.active = true
@@ -84,6 +86,12 @@ export class Lamp extends Component {
         tween(this.lampBone)
         .to(8, {x: 0, y: 0})
         .call(() => {
+            let state = find("GameCanvas")
+            if(state != null){
+                if(!state.active){
+                    return
+                }
+            }
             console.log("Can give hint");
             this.lampFilled.play()
             this.lamp.setAnimation(0.5, "Idle_Full", true)

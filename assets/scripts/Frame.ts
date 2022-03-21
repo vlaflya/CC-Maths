@@ -44,6 +44,9 @@ export class Frame extends Component {
         this.zebra.setMix("Track-yes", "Track-yes", 0.5)
         this.zebra.setMix("Track-no", "Track-no", 0.5)
 
+        this.zebra.setMix("idle", "Track-hint", 0.5)
+        this.zebra.setMix("Track-hint", "idle", 0.5)
+
         this.zebra.setMix("Track-yes", "win", 0.5)
 
         setMixedSkin(this.zebra, "zebra", ["2-Legs", "Zebra-Shadow"])
@@ -109,6 +112,12 @@ export class Frame extends Component {
         this.zebra.setAnimation(0, "Track-yes", false)
         this.zebra.addAnimation(0, "idle", true)
     }
+
+    public zebraHint(){
+        this.zebra.setAnimation(0, "Track-hint", false)
+        this.zebra.addAnimation(0, "idle", true)
+    }
+
     public zebraWrong(){
         this.zebra.setAnimation(0, "Track-no", false)
         this.zebra.addAnimation(0, "idle", true)

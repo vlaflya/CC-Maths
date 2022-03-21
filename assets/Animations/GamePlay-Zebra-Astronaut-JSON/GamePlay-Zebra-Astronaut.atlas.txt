@@ -1,0 +1,321 @@
+
+GamePlay-Zebra-Astronaut.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2legs/Blik
+  rotate: false
+  xy: 285, 891
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+2legs/Body
+  rotate: 270
+  xy: 768, 300
+  size: 188, 176
+  orig: 215, 379
+  offset: 26, 203
+  index: -1
+2legs/Brow-L-01
+  rotate: false
+  xy: 582, 910
+  size: 40, 29
+  orig: 40, 29
+  offset: 0, 0
+  index: -1
+2legs/Brow-R-01
+  rotate: false
+  xy: 334, 996
+  size: 33, 23
+  orig: 33, 23
+  offset: 0, 0
+  index: -1
+2legs/Ear-L-01
+  rotate: false
+  xy: 563, 942
+  size: 78, 77
+  orig: 78, 77
+  offset: 0, 0
+  index: -1
+2legs/Ear-R-01
+  rotate: true
+  xy: 884, 101
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+2legs/Eye-L-01
+  rotate: false
+  xy: 111, 539
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+2legs/Eye-R-01
+  rotate: false
+  xy: 282, 6
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+2legs/Head-01
+  rotate: false
+  xy: 636, 117
+  size: 255, 195
+  orig: 275, 195
+  offset: 19, 0
+  index: -1
+2legs/Mouth-Smile-01
+  rotate: false
+  xy: 285, 904
+  size: 17, 54
+  orig: 17, 54
+  offset: 0, 0
+  index: -1
+2legs/Mouth-Smile-02
+  rotate: false
+  xy: 872, 254
+  size: 76, 57
+  orig: 78, 59
+  offset: 1, 1
+  index: -1
+2legs/Nostril-L-01
+  rotate: false
+  xy: 285, 705
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+2legs/Nostril-R-01
+  rotate: false
+  xy: 285, 682
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+2legs/Pupil-L-01
+  rotate: false
+  xy: 4, 581
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+2legs/Pupil-R-01
+  rotate: false
+  xy: 306, 944
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+2legs/Veko-Up-L-01
+  rotate: false
+  xy: 121, 272
+  size: 67, 43
+  orig: 67, 43
+  offset: 0, 0
+  index: -1
+2legs/Veko-Up-L-02
+  rotate: false
+  xy: 4, 135
+  size: 59, 33
+  orig: 59, 33
+  offset: 0, 0
+  index: -1
+2legs/Veko-Up-L-03
+  rotate: false
+  xy: 285, 608
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+GamePlay-Zebra-Shadow
+  rotate: false
+  xy: 4, 601
+  size: 278, 418
+  orig: 278, 418
+  offset: 0, 0
+  index: -1
+spacesuit-L-Boot
+  rotate: false
+  xy: 630, 262
+  size: 112, 116
+  orig: 113, 116
+  offset: 0, 0
+  index: -1
+spacesuit-L-Boot-10
+  rotate: false
+  xy: 455, 23
+  size: 121, 128
+  orig: 124, 128
+  offset: 0, 0
+  index: -1
+spacesuit-L-Leg-01-1
+  rotate: false
+  xy: 861, 624
+  size: 108, 144
+  orig: 110, 144
+  offset: 0, 0
+  index: -1
+spacesuit-L-Leg-10
+  rotate: 180
+  xy: 4, 172
+  size: 114, 163
+  orig: 114, 163
+  offset: 0, 0
+  index: -1
+spacesuit-L-arm-01
+  rotate: false
+  xy: 912, 788
+  size: 90, 95
+  orig: 90, 95
+  offset: 0, 0
+  index: -1
+spacesuit-L-arm-02
+  rotate: false
+  xy: 186, 22
+  size: 92, 87
+  orig: 92, 87
+  offset: 0, 0
+  index: -1
+spacesuit-L-arm-03
+  rotate: false
+  xy: 823, 495
+  size: 62, 68
+  orig: 62, 68
+  offset: 0, 0
+  index: -1
+spacesuit-L-arm-04
+  rotate: false
+  xy: 738, 57
+  size: 80, 81
+  orig: 80, 81
+  offset: 0, 0
+  index: -1
+spacesuit-L-arm-05
+  rotate: false
+  xy: 132, 67
+  size: 41, 40
+  orig: 41, 40
+  offset: 0, 0
+  index: -1
+spacesuit-R-Boot
+  rotate: false
+  xy: 351, 512
+  size: 102, 132
+  orig: 102, 132
+  offset: 0, 0
+  index: -1
+spacesuit-R-Leg-01
+  rotate: 180
+  xy: 887, 887
+  size: 98, 133
+  orig: 98, 133
+  offset: 0, 0
+  index: -1
+spacesuit-R-arm-01
+  rotate: true
+  xy: 4, 22
+  size: 99, 125
+  orig: 99, 125
+  offset: 0, 0
+  index: -1
+spacesuit-R-arm-03
+  rotate: true
+  xy: 282, 63
+  size: 91, 145
+  orig: 91, 145
+  offset: 0, 0
+  index: -1
+spacesuit-R-arm-04
+  rotate: false
+  xy: 659, 25
+  size: 74, 88
+  orig: 74, 88
+  offset: 0, 0
+  index: -1
+spacesuit-R-arm-05
+  rotate: false
+  xy: 428, 402
+  size: 47, 42
+  orig: 47, 42
+  offset: 0, 0
+  index: -1
+spacesuit-body
+  rotate: 270
+  xy: 351, 150
+  size: 241, 302
+  orig: 244, 304
+  offset: 1, 2
+  index: -1
+spacesuit-body-lable
+  rotate: false
+  xy: 822, 34
+  size: 77, 64
+  orig: 77, 64
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-bg
+  rotate: 180
+  xy: 457, 371
+  size: 362, 304
+  orig: 362, 304
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-blik-01
+  rotate: false
+  xy: 285, 962
+  size: 45, 57
+  orig: 45, 57
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-blik-02
+  rotate: false
+  xy: 580, 25
+  size: 75, 97
+  orig: 75, 97
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-down
+  rotate: true
+  xy: 756, 316
+  size: 339, 232
+  orig: 339, 232
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-ear
+  rotate: true
+  xy: 178, 501
+  size: 97, 158
+  orig: 97, 158
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-glass-01
+  rotate: true
+  xy: 603, 658
+  size: 362, 304
+  orig: 362, 304
+  offset: 0, 0
+  index: -1
+spacesuit-helmet-glass-02
+  rotate: true
+  xy: 285, 649
+  size: 371, 317
+  orig: 443, 391
+  offset: 72, 26
+  index: -1
+spacesuit-helmet-up
+  rotate: false
+  xy: 4, 318
+  size: 421, 278
+  orig: 421, 278
+  offset: 0, 0
+  index: -1
+spacesuit-neck-01
+  rotate: 180
+  xy: 95, 111
+  size: 252, 215
+  orig: 252, 215
+  offset: 0, 0
+  index: -1

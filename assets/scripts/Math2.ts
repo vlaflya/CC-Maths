@@ -126,6 +126,7 @@ export class Math2 extends MathWithIcons {
 
     setWin(){
         if(this.currentCycle == this.cycles.length - 1){
+            GameStateMachine.Instance.block.active = true
             tween(this.node)
             .delay(2.5)
             .call(() =>{
@@ -136,9 +137,11 @@ export class Math2 extends MathWithIcons {
             .start()
         }
         else{
+            GameStateMachine.Instance.block.active = true
             tween(this.node)
             .delay(2.8)
             .call(() => {
+                GameStateMachine.Instance.block.active = false
                 this.currentCycle++
                 this.createGame(this.cycles[this.currentCycle])
             })
