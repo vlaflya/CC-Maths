@@ -16,6 +16,7 @@ export class Planet extends Component {
     @property({type: sp.Skeleton}) zebraSkeleton: sp.Skeleton
     @property({type: Node}) flag: Node
     @property({type: Label}) flagLabel: Label
+    @property({type: Node}) pictogramBack: Node
     @property({type: Sprite}) pictogram: Sprite
 
     init(id: number, state: number, planet: string, planeNumber: number){
@@ -29,7 +30,11 @@ export class Planet extends Component {
             }
 
             if(state == 1){
-                // this.pictogram.spriteFrame = LevelMap.Instance.getPictogram()
+                this.pictogramBack.active = true
+                let frame = LevelMap.Instance.pictograms[id]
+                if(frame != null){
+                    this.pictogram.spriteFrame = frame
+                }
             }
             
             this.flag.active = true

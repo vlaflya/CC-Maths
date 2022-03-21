@@ -12,6 +12,8 @@ export class LevelMap extends Component {
     @property({type: AudioSource}) lockedTap: AudioSource
 
     @property({type: Prefab}) planetPrefab: Prefab
+    @property({type: [SpriteFrame]}) pictograms: Array<SpriteFrame> = []
+
     @property({type: UITransform}) container: UITransform
     @property({type: CCFloat}) distance: number
 
@@ -30,7 +32,6 @@ export class LevelMap extends Component {
     @property({type: Camera}) camera: Camera
     @property({type: Node}) background: Node
 
-    @property({type: [SpriteFrame]}) pictograms: Array<SpriteFrame> = []
 
     public static Instance: LevelMap;
     start(){
