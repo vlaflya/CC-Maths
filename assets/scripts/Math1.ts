@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity, Sprite, SpriteFrame, AudioSource } from 'cc';
+import { _decorator, Component, Node, CCFloat, CCInteger, Prefab, random, randomRangeInt, instantiate, Vec3, Label, color, Color, tween, Skeleton, sp, UIOpacity, Sprite, SpriteFrame, AudioSource, Tween, systemEvent, SystemEvent } from 'cc';
 import { GameStateMachine } from './GameStateMachine';
 import { Tileset } from './Tileset';
 import { Frame } from './Frame';
@@ -33,23 +33,29 @@ export class Math1 extends MathWithIcons {
     @property({type: UIOpacity}) blurKey: UIOpacity
     @property({type: AudioSource}) rightSound: AudioSource
     @property({type: AudioSource}) wrongSound: AudioSource
+    @property({type: Node}) hintEmpty: Node
 
     public static Instance: Math1
     private tile: Node
+    private reversed: boolean
+
     public init(count: number, rev: string, keyName:string){
         Math1.Instance = this
         let tileNumber: number = count
-
+        this.idleHint()
+        systemEvent.on(SystemEvent.EventType.TOUCH_START, () => {
+            Tween.stopAllByTarget(this.hintEmpty)
+            this.idleHint()
+        })
         let keyIndex = this.getKeyIndex(keyName)
         this.keySprite.spriteFrame = this.keyFrames[keyIndex]
         this.keyBlurSprite.spriteFrame = this.keyBlurFrames[keyIndex]
 
-        let reversed: boolean
         if(rev == "no")
-            reversed = false
+            this.reversed = false
         else
-            reversed = true
-        if(reversed){
+            this.reversed = true
+        if(this.reversed){
             for(let i = 0; i < count ; i++){
                 let st = "number-" + (count - i).toString() + "-off"
                 setMixedSkin(this.numberSkeletons[i], "numMix", ["Slot-numbers", st])
@@ -115,12 +121,12 @@ export class Math1 extends MathWithIcons {
         this.tile.setParent(this.container)
         this.tile.setPosition(new Vec3(0,0,0))
         this.tile.setScale(new Vec3(1,1,1))
-        this.tile.getComponent(Tileset).init(this, reversed)
+        this.tile.getComponent(Tileset).init(this, this.reversed)
         if(Bridge.Instance.levelCount == 0){
             SoundManager.Instance.playMath1Tutorial()
         }
         else{
-            SoundManager.Instance.playMath1Start(reversed)
+            SoundManager.Instance.playMath1Start(this.reversed)
         }
     }
 
@@ -176,6 +182,19 @@ export class Math1 extends MathWithIcons {
     
     public giveHint(){
         this.tile.getComponent(Tileset).giveHint()
+    }
+
+    idleDelay = 0 
+    public idleHint(delay = 0){
+        if(delay != 0)
+            this.idleDelay = delay
+        console.log("Hint delay start");
+        tween(this.hintEmpty)
+        .delay(10 + this.idleDelay)
+        .call(() => {
+            SoundManager.Instance.playMath1Hint(!this.reversed)
+        })
+        .start()
     }
 }
 

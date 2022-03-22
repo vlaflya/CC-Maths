@@ -28,7 +28,6 @@ export class Bridge extends Component {
             this.planetNumbers.push(lvl.planetnumber)
         }
         console.log("Bridge load");
-        
         game.addPersistRootNode(this.node)
         Bridge.Instance = this
     }

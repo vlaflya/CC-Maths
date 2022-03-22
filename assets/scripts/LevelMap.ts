@@ -80,7 +80,7 @@ export class LevelMap extends Component {
             let planet: Node = instantiate(this.planetPrefab)
             planet.parent = this.container.node
             planet.position = new Vec3((i + 1) * this.distance)
-            planet.position.add(new Vec3(0, (m * 50) + 30))
+            planet.position.add(new Vec3(0, (m * 20)))
             console.log("oke");
             let state: number
             if(i == levelsUnlocked)
