@@ -206,163 +206,163 @@
     },
     "configs": [
       {
-        "__uuid__": "65ab63a9-6784-4438-a4ce-394938161970",
+        "__uuid__": "4f3f7acc-5834-44d2-a4db-db9bc2a813ee",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "9461f653-e53e-4f32-a60f-a9e70ae5cc64",
+        "__uuid__": "841add59-aaca-481d-9902-c03eaec8fe39",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "23d80a5d-0df7-4fa9-a5fc-d8f0ec3f45a2",
+        "__uuid__": "df74f74a-fc30-495e-bb30-9f8fb00b5c08",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "e48c9cca-66b9-44fb-af52-83fcf6b30a2a",
+        "__uuid__": "28c95390-02a0-424d-a486-b40f0d00a33d",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "52f479bf-14e2-4caf-8ef5-ddc5b5c7fb39",
+        "__uuid__": "6b32546e-7f3f-4470-b184-c68bf94f577b",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "08a2a7aa-dc1f-473b-932f-90b9ebcaeaa8",
+        "__uuid__": "1b0e5ac2-a7f5-4084-8491-9d9e3c016784",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "96d91d94-3495-4ccb-bd36-1975e4b6a724",
+        "__uuid__": "40f0c677-835d-4288-9e71-848135c6dc9c",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "572dfb16-8c44-489a-82eb-cb1989fdea66",
+        "__uuid__": "07e2e66d-f0f5-4e7d-997e-052735e735ae",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "9d8bbb63-c8da-4dfd-86e2-ea14b37e68c8",
+        "__uuid__": "dfd1fb83-1b25-4867-ad77-0ce886e40be8",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "797ec6fd-0b24-4e2e-8022-70eb8bf44f50",
+        "__uuid__": "1ad8747c-568e-4b2e-9dd5-dde7bb12d5d8",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "8a81f518-49bb-46cb-a8f4-6603f7ac4df5",
+        "__uuid__": "9141c73f-a237-4b1a-ad54-41c0dfe4c30a",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "7d3f8152-108f-4bd3-9c84-43c2747c9fd8",
+        "__uuid__": "248e9061-d531-46ae-818b-aaa072bb9e67",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "0728e69d-d565-4a1c-8624-9aff8140a624",
+        "__uuid__": "b677121d-916b-452d-9ee5-20255499fc68",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "6bedde1a-c510-4946-b89f-6f6d3816a772",
+        "__uuid__": "8ad066b8-c119-4720-ba22-a4d9f089a340",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "664b37c3-0f11-42ea-abc9-d9ca7aca4429",
+        "__uuid__": "517db816-ea82-48cc-b0a0-74f3bb4f0174",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "ab1abffd-94b2-44f7-b12d-da22376a5cab",
+        "__uuid__": "b1879cb3-2218-4cb9-b659-8ba907c5c5d9",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "1ff1567d-982b-4d9e-a7b9-c1c137b0b741",
+        "__uuid__": "e44a5eb0-ed2c-4dad-93ac-7e5059481ee3",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "959088d5-b293-4110-9da5-435d89aa4f55",
+        "__uuid__": "00dafa4d-a3ea-4bb6-b40b-c17828cbd419",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "d63e7d4c-8847-419e-ac01-f77ff945802c",
+        "__uuid__": "51abedb2-a5a1-4b0c-9a10-f1185fbe601d",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "465b98bc-558e-4a66-8c61-b61326006dd3",
+        "__uuid__": "59ed9c77-422e-443b-92f2-c48e736ddb48",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "66a6988c-6e89-4e5c-aeb9-234ae7c94b4e",
+        "__uuid__": "47341465-ef85-47a1-81e9-7a2f4a2541bb",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "928ea760-20e6-4ba6-9956-1b3662c24612",
+        "__uuid__": "1a9a7ed1-56c3-45fa-b812-cf914620558c",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "c9bb4cee-abc2-485c-aa12-8b1eebbe1d34",
+        "__uuid__": "b6446331-56c7-4180-b626-2ff2318ca2cd",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "84a1b49f-0170-45fd-b8cd-ecd4e6bd7b80",
+        "__uuid__": "50c84d02-ca12-4105-abbf-f1ad1eb7c5b9",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "6cae7243-e8dc-48c5-b21c-b8195d77fb51",
+        "__uuid__": "8a5ce910-bbf6-4f60-924b-3e9a12b274ae",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "fafa9b3c-0013-4afa-8af6-26837710dda5",
+        "__uuid__": "29b33fb6-d68b-4d3b-9d4a-a210a4f1df58",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "2a130151-516b-48bb-af79-c5ff0e19fb56",
+        "__uuid__": "dc69e8f5-24c7-499f-8ff7-3fbabbacfbb5",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "71155a7c-012a-4d26-b32b-fae58a7856d8",
+        "__uuid__": "646b3249-1920-4ac8-a41f-77fe36a544e2",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "7003fbd4-2a08-4f4a-b65e-38accdbe36b0",
+        "__uuid__": "30b52011-7735-4310-b0b0-4647e186edcf",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "ffd02a1c-70bd-49bd-9614-ddf4d56e808b",
+        "__uuid__": "d38582c0-60dc-4ab0-961b-42c5543cb0c2",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "a8113edb-4e04-4121-a5f5-c0a7d6aac92c",
+        "__uuid__": "c9b6ce2e-47ed-4756-99b3-5bb67004599c",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "3f051a86-40b4-44af-80f4-a0ae241f0a6e",
+        "__uuid__": "1c5a8e8c-3e83-4aff-8b17-50f2b8dd0222",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "e320cb8b-7c95-4166-9740-de38b089f4c2",
+        "__uuid__": "352f75d5-e65f-4b55-9577-2decc8afa029",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "ddd93970-23ee-41f2-be3d-b1c1501e1185",
+        "__uuid__": "96e47ff1-c671-4716-b3aa-d630d135ea4d",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "ea24ed2a-b272-4fb4-a993-32522876fcad",
+        "__uuid__": "285ccd59-4fd6-4ecf-aef3-d7c49c5b3d73",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "2fcc4553-b6de-45ae-9dcf-12ee936f702d",
+        "__uuid__": "0600c4ee-c006-43d0-9ed9-17aece5abcd4",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "61f68d68-6e39-43e9-abcc-0a1423a8c103",
+        "__uuid__": "34a03538-074e-4649-8889-2a39c7fca4e9",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "330ed295-600a-4b29-b85c-02708863469e",
+        "__uuid__": "a2fc1464-b268-4409-bddc-04f15c31a53b",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "8df0e74b-e473-44cf-a418-863f104cec42",
+        "__uuid__": "2439c159-69de-4363-9cf3-5f83902123de",
         "__expectedType__": "cc.JsonAsset"
       },
       {
-        "__uuid__": "a77f735a-8a0e-47db-8c64-9594b6ab1311",
+        "__uuid__": "f7543488-c87e-4ce4-a4bc-a8591f2122ce",
         "__expectedType__": "cc.JsonAsset"
       }
     ],
