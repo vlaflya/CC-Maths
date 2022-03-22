@@ -83,6 +83,7 @@ export class SoundManager extends Component {
     public static Instance: SoundManager
 
     onLoad(){
+        
         this.giveHint()
         SoundManager.Instance = this
         systemEvent.on(SystemEvent.EventType.TOUCH_START, () => {
@@ -145,35 +146,35 @@ export class SoundManager extends Component {
     }
     private prevRandomMath2 = 0
     public playMath2Right(count){
-        this.playIconCount(count, true, true)
-        let tmp = this.Math2Right.slice(this.prevRandomMath2, 1)
+        this.playIconCount(count)
+        let tmp = this.Math2Right.splice(this.prevRandomMath2, 1)
         let r = randomRangeInt(0, tmp.length)
         this.prevRandomMath2 = r
-        this.playVoice(tmp[r], false, true)
+        this.playVoice(tmp[r], true, false)
     }
     public playMath3Tutorial(){
         this.playVoice(this.Math2Tutorial)
     }
     public playMath3Start(){
         let r = randomRangeInt(0, this.Math3Start.length)
-        this.playVoice(this.Math3Start[r])
+        this.playVoice(this.Math3Start[r], false, true)
     }
     private prevRandomMath3 = 0
     public playMath3Right(count){
-        this.playIconCount(count, true, true)
-        let tmp = this.Math2Right.slice(this.prevRandomMath3, 1)
+        this.playIconCount(count)
+        let tmp = this.Math3Right.splice(this.prevRandomMath3, 1)
         let r = randomRangeInt(0, tmp.length)
         this.prevRandomMath3 = r
-        this.playVoice(tmp[r], false, true)
+        this.playVoice(tmp[r], true, false)
     }
     public playHintNotAvalible(){
         let r = randomRangeInt(0, this.HintNotAvalible.length)
         this.playVoice(this.HintNotAvalible[r])
     }
-    public playIconCount(count = 0,  addToQeue = false, interapt = false){
+    public playIconCount(count = 0){
         count--
         console.log("Icon " + count);
-        this.playVoice(this.IconCounts[count], addToQeue, interapt)
+        this.playVoice(this.IconCounts[count], false, true)
     }
 
     public playConstructorTutorial(){
@@ -183,8 +184,9 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.ConstructorPhase1Start.length)
         this.playVoice(this.ConstructorPhase1Start[r]) 
     }
-    public playConstructorEndPhase1(count){
+    public playConstructorEndPhase1(count): number{
         this.playVoice(this.ConstructorPhase1End[count])
+        return this.ConstructorPhase1End[count].getDuration()
     }
     public playConstructorStartPhase2(){
         let r = randomRangeInt(0, this.ConstructorPhase2Start.length)

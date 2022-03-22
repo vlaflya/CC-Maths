@@ -37,22 +37,23 @@ export class WinChecker extends Component {
         if(this.interCount == this.winCount){
             console.log("inter win");
             let level = Bridge.Instance.levelCount
+            let delay = 0
             switch(level){
                 case 17:{
-                    SoundManager.Instance.playConstructorEndPhase1(0)
+                    delay = SoundManager.Instance.playConstructorEndPhase1(0)
                     break
                 }
                 case 18:{
-                    SoundManager.Instance.playConstructorEndPhase1(1)
+                    delay = SoundManager.Instance.playConstructorEndPhase1(1)
                     break
                 }
                 case 19:{
-                    SoundManager.Instance.playConstructorEndPhase1(2)
+                    delay = SoundManager.Instance.playConstructorEndPhase1(2)
                     break
                 }
             }
             tween(this.node)
-            .delay(5)
+            .delay(delay)
             .call(() => {
                 GameStateMachine.Instance.winState(this.needToWin - this.winCount)
             })

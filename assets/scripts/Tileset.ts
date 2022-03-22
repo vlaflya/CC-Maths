@@ -126,7 +126,7 @@ export class Tileset extends Component {
         tween(panel)
         .by(0.4, {scale: new Vec3(0.1, 0.1, 0.1)})
         .call(() =>{
-            SoundManager.Instance.playIconCount(count, false, true)
+            SoundManager.Instance.playIconCount(count)
         })
         .by(0.4, {scale: new Vec3(-0.1, -0.1, -0.1)})
         .delay(0.1)
