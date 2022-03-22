@@ -46,7 +46,7 @@ export class Math1 extends MathWithIcons {
         systemEvent.on(SystemEvent.EventType.TOUCH_START, () => {
             Tween.stopAllByTarget(this.hintEmpty)
             this.idleHint()
-        })
+        }, this.hintEmpty)
         let keyIndex = this.getKeyIndex(keyName)
         this.keySprite.spriteFrame = this.keyFrames[keyIndex]
         this.keyBlurSprite.spriteFrame = this.keyBlurFrames[keyIndex]
@@ -156,7 +156,11 @@ export class Math1 extends MathWithIcons {
     }
 
     public setWin(){
+        Tween.stopAllByTarget(this.hintEmpty)
+        systemEvent.off(SystemEvent.EventType.TOUCH_START)
+        this.hintEmpty.active = false
         GameStateMachine.Instance.block.active = true
+
         tween(this.blurKey)
         .to(0.5, {opacity: 0})
         .call(() =>{
@@ -184,10 +188,13 @@ export class Math1 extends MathWithIcons {
         this.tile.getComponent(Tileset).giveHint()
     }
 
-    idleDelay = 0 
+    idleDelay = 0
     public idleHint(delay = 0){
         if(delay != 0)
             this.idleDelay = delay
+        if(!this.hintEmpty.active)
+            return
+        console.log(this.hintEmpty.active);
         console.log("Hint delay start");
         tween(this.hintEmpty)
         .delay(10 + this.idleDelay)

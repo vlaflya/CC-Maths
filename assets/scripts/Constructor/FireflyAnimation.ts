@@ -1,9 +1,11 @@
 
-import { _decorator, Component, Node, sp, Color, tween, Vec3, random, randomRange, Prefab, instantiate, math, ParticleSystem, ParticleSystem2D } from 'cc';
+import { _decorator, Component, Node, sp, Color, tween, Vec3, random, randomRange, Prefab, instantiate, math, ParticleSystem, ParticleSystem2D, AudioSource } from 'cc';
+import { WinChecker } from './WinChecker';
 const { ccclass, property } = _decorator;
 
 @ccclass('FireflyAnimation')
 export class FireflyAnimation extends Component {
+    @property({type: AudioSource}) blinkSound: AudioSource
     @property({type: sp.Skeleton}) animation: sp.Skeleton
     @property({type: Prefab}) fireworks: Prefab
     private color
@@ -15,6 +17,7 @@ export class FireflyAnimation extends Component {
         this.setMix("1_Loop_free", "7_Color", 1)
         this.setMix("6_Incorrectly", "1_Loop_free", 0.5)
         this.setMix("5_Sing", "3_Loop_inserted", 0.5)
+        this.setMix("5_Sing", "1_Loop_free", 0.5)
     }
 
     public SetColor(color: Color){
@@ -47,6 +50,7 @@ export class FireflyAnimation extends Component {
 
     public sing(count){
         this.animation.setAnimation(0, "5_Sing", false)
+        this.animation.addAnimation(0, "1_Loop_free", true)
         let startPos = this.node.worldPosition
         let newScale = new Vec3(this.node.scale.x * 6, this.node.scale.y * 6, this.node.scale.z * 6)
         let newPosition = new Vec3(this.node.position.x + 1000 * Math.sign(this.animation.node.scale.x), this.node.position.y, this.node.position.z)
@@ -56,6 +60,8 @@ export class FireflyAnimation extends Component {
         tween(this.node)
         .delay(delay)
         .call(()=>{
+            this.blinkSound.clip = WinChecker.Instance.getClip(count)
+            this.blinkSound.play()
             let particle = this.spawnFireworks(startPos)
             particle.enabled = true
         })

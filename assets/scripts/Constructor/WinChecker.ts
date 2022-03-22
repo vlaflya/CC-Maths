@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, tween, Sprite, Color, find, Vec3, easing } from 'cc';
+import { _decorator, Component, Node, tween, Sprite, Color, find, Vec3, easing, AudioSource, AudioClip } from 'cc';
 import { FireflyController } from './FireflyController';
 import { GameStateMachine } from './../GameStateMachine';
 import { Anims } from './Anims';
@@ -12,7 +12,11 @@ const { ccclass, property } = _decorator;
 @ccclass('WinChecker')
 export class WinChecker extends Component {
     @property({type: FireflyController}) controller: FireflyController
-    @property({type: Node}) finalParticle: Node
+    @property({type: AudioSource}) singSound: AudioSource
+    @property({type: AudioSource}) blinkSound: AudioSource
+    @property({type: AudioSource}) apploseSound: AudioSource
+    @property({type: [AudioClip]}) blinkNoise: Array<AudioClip> = []
+
     @property({type: Node}) container: Node
     needToWin: number
     winCount: number = 0
@@ -22,6 +26,13 @@ export class WinChecker extends Component {
     onLoad(){
         WinChecker.Instance = this
     }
+
+    public getClip(count): AudioClip{
+        if(count >= this.blinkNoise.length)
+            count = count % this.blinkNoise.length
+        return this.blinkNoise[count]
+    }
+
     public Initialize(needWin: number, inter: number){
         console.log("Need win " + needWin);
         console.log("Inter win " + inter);
@@ -71,13 +82,16 @@ export class WinChecker extends Component {
         tween(this.node)
         .delay(1)
         .call(() => {
+            this.singSound.play()
             this.controller.sing()
+            this.apploseSound.play()
         })
         .delay(1)
         .call(() => {
+            this.blinkSound.play()
             this.controller.blinkLines()
         })
-        .delay(5)
+        .delay(4)
         .call(() =>{
             console.log("exit level");
             GameStateMachine.Instance.winState()

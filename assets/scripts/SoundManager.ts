@@ -110,16 +110,34 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math1Start.length)
         this.playVoice(this.Math1Start[r], false, true)
     }
+    prevhint1 = ""
     public playMath1Hint(reverce = false){
         if(reverce){
-            let r = randomRangeInt(0, this.Math1Hint.length)
-            this.playVoice(this.Math1Hint[r])
-            Math1.Instance.idleHint(this.Math1Hint[r].getDuration())
+            let tmp = this.Math1Hint.slice()
+            for(let i = 0; i < tmp.length; i++){
+                if(tmp[i].name == this.prevhint1){
+                    tmp.splice(i, 1)
+                    break
+                }
+            }
+            let r = randomRangeInt(0, tmp.length)
+            this.prevhint1 = tmp[r].name
+            this.playVoice(tmp[r])
+            Math1.Instance.idleHint(tmp[r].getDuration())
             return;
         }
-        let r = randomRangeInt(0, this.Math1HintReverce.length)
-        this.playVoice(this.Math1HintReverce[r])
-        Math1.Instance.idleHint(this.Math1HintReverce[r].getDuration())
+        let tmp = this.Math1HintReverce.slice()
+        for(let i = 0; i < tmp.length; i++){
+            if(tmp[i].name == this.prevhint1){
+                tmp.splice(i, 1)
+                break
+            }
+        }
+        let r = randomRangeInt(0, tmp.length)
+        this.prevhint1 = tmp[r].name
+        this.playVoice(tmp[r])
+        Math1.Instance.idleHint(tmp[r].getDuration())
+        Math1.Instance.idleHint(tmp[r].getDuration())
     }
     public playMathWrong(){
         let isTutorial: boolean = Bridge.Instance.levelCount == 0
@@ -144,18 +162,24 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math2Start.length)
         this.playVoice(this.Math2Start[r])
     }
-    private prevRandomMath2 = 0
+    private prevRandomMath2 = ""
     public playMath2Right(count){
-        let tmp = this.Math2Right.splice(this.prevRandomMath2, 1)
+        let tmp = this.Math2Right.slice()
+        for(let i = 0; i < tmp.length; i++){
+            if(tmp[i].name == this.prevRandomMath2){
+                tmp.splice(i, 1)
+                break
+            }
+        }
         let r = randomRangeInt(0, tmp.length)
-        this.prevRandomMath2 = r
+        this.prevRandomMath2 = tmp[r].name
         this.playIconCount(count)
-        tween(this.node)
-        .delay(1)
-        .call(() =>{
-            this.playVoice(tmp[r], true, false)
-        })
-        .start()
+        // tween(this.node)
+        // .delay(1)
+        // .call(() =>{
+        //     this.playVoice(tmp[r], true, false)
+        // })
+        // .start()
     }
     public playMath3Tutorial(){
         this.playVoice(this.Math2Tutorial)
@@ -164,18 +188,24 @@ export class SoundManager extends Component {
         let r = randomRangeInt(0, this.Math3Start.length)
         this.playVoice(this.Math3Start[r], false, true)
     }
-    private prevRandomMath3 = 0
+    private prevRandomMath3 = ""
     public playMath3Right(count){
-        let tmp = this.Math3Right.splice(this.prevRandomMath3, 1)
+        let tmp = this.Math3Right.slice()
+        for(let i = 0; i < tmp.length; i++){
+            if(tmp[i].name == this.prevRandomMath3){
+                tmp.splice(i, 1)
+                break
+            }
+        }
         let r = randomRangeInt(0, tmp.length)
-        this.prevRandomMath3 = r
+        this.prevRandomMath3 = tmp[r].name
         this.playIconCount(count)
-        tween(this.node)
-        .delay(1)
-        .call(() =>{
-            this.playVoice(tmp[r], true, false)
-        })
-        .start()
+        // tween(this.node)
+        // .delay(1)
+        // .call(() =>{
+        //     this.playVoice(tmp[r], true, false)
+        // })
+        // .start()
     }
     public playHintNotAvalible(){
         let r = randomRangeInt(0, this.HintNotAvalible.length)

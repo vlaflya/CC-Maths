@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, sp, randomRange, randomRangeInt, tween, AudioSource } from 'cc';
+import { _decorator, Component, Node, sp, randomRange, randomRangeInt, tween, AudioSource, AudioClip } from 'cc';
 const { ccclass, property } = _decorator;
  
 @ccclass('Anims')
@@ -9,7 +9,9 @@ export class Anims extends Component {
     @property({type: sp.Skeleton}) back: sp.Skeleton
     @property({type: sp.Skeleton}) zebra: sp.Skeleton
     @property({type: AudioSource}) dudeSound: AudioSource
-    private canTap = true;
+    @property({type: AudioSource}) zebraSound: AudioSource
+    @property({type: [AudioClip]}) zebraTapClips: Array<AudioClip> = []
+    private canTap = true
 
     onLoad () {
         Anims.Instance = this
@@ -48,8 +50,34 @@ export class Anims extends Component {
         })
         .start()
     }
+
+    canTapZebra = true
+    prevZebraSound = ""
     public tapCallbackZebra(){
+        if(!this.canTapZebra)
+            return
+        let tmp = this.zebraTapClips.slice()
+        console.log(tmp.splice(0,1));
+        for(let i = 0; i < tmp.length; i++){
+            if(tmp[i].name == this.prevZebraSound){
+                tmp.splice(i, 1)
+                break
+            }
+        }
+        console.log(tmp);
+        let r = randomRangeInt(0, tmp.length)
+        this.prevZebraSound = tmp[r].name
+        // console.log(tmp[r].name);
+        this.zebraSound.clip = tmp[r]
+        this.zebraSound.play()
         this.zebra.setAnimation(1, "Track-hi", false)
+        this.canTapZebra = false
+        tween(this.zebra.node)
+        .delay(2)
+        .call(() => {
+            this.canTapZebra = true
+        })
+        .start()
     }
     public zebraWin(){
         this.zebra.setAnimation(0, "idle-sit-to-fin", false)

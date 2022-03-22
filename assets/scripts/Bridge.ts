@@ -9,7 +9,7 @@ const { ccclass, property } = _decorator;
 export class Bridge extends Component {
     public static Instance: Bridge = null
     private curLevel = 0
-    public levelCount: number = 17
+    public levelCount: number = 0
     private maxLevels : number = 0
     private planets: Array<string> = []
     private planetNumbers: Array<number> = []
