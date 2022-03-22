@@ -43,8 +43,8 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 2,
+      "y": 2,
       "z": 1
     },
     "_layer": 33554432,
@@ -111,7 +111,7 @@
     "lifeVar": 0.3,
     "angle": 90,
     "angleVar": 360,
-    "startSize": 5,
+    "startSize": 10,
     "startSizeVar": 3,
     "endSize": 0,
     "endSizeVar": 0,
