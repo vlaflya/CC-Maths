@@ -48,6 +48,7 @@ export class GameStateMachine extends Component {
 
     start () {
         GameStateMachine.Instance = this
+        Bridge.Instance.inGame = true
         this.stateMachine = new GeneralStateMachine(this, "Game")
         this.stateMachine
         .addState("Math1", {onEnter: this.onMath1Enter, onExit: this.onMath1Exit})

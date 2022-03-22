@@ -36,7 +36,8 @@ export class LevelMap extends Component {
     public static Instance: LevelMap;
     start(){
         LevelMap.Instance = this
-        Bridge.Instance.mapLoaded()
+        if(!window.Unity)
+            Bridge.Instance.mapLoaded()
     }
     scrollCallback(){
         let viewpos = new Vec3(this.view.position)
