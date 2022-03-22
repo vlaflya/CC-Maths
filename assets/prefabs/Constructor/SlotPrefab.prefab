@@ -209,10 +209,10 @@
     ],
     "value": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 255,
-      "b": 92,
-      "a": 123
+      "b": 255,
+      "a": 196
     }
   },
   {
@@ -229,7 +229,10 @@
     "propertyPath": [
       "_spriteFrame"
     ],
-    "value": null
+    "value": {
+      "__uuid__": "9f6ede0c-892f-4052-812b-60fe8b2a7264@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    }
   },
   {
     "__type__": "CCPropertyOverrideInfo",

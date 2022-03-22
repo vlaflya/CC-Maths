@@ -213,7 +213,7 @@
       "r": 255,
       "g": 255,
       "b": 255,
-      "a": 123
+      "a": 255
     },
     "_spriteFrame": {
       "__uuid__": "9f6ede0c-892f-4052-812b-60fe8b2a7264@f9941",
@@ -527,7 +527,7 @@
     "angleVar": 180,
     "startSize": 0,
     "startSizeVar": 0,
-    "endSize": 20,
+    "endSize": 30,
     "endSizeVar": 2,
     "startSpin": -952,
     "startSpinVar": 364,
