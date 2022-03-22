@@ -2,17 +2,17 @@
     {
         "availablecolors": "none",
         "levelnum": 36,
-        "fireflycolors": "blue,blue,green,green,green,yellow,yellow,red,red",
+        "fireflycolors": "yellow,blue,blue,red,red,green,green,violet,violet",
         "slotcount": 9
     },
     {
         "slot": "1,0,gray,0,50,32"
     },
     {
-        "slot": "2,0,gray,0,5,18"
+        "slot": "2,0,gray,0,24,20"
     },
     {
-        "slot": "3,0,gray,0,95,18"
+        "slot": "3,0,gray,0,76,20"
     },
     {
         "slot": "4,0,gray,0,7,37"
@@ -21,10 +21,10 @@
         "slot": "5,0,gray,0,93,37"
     },
     {
-        "slot": "6,0,gray,0,13,63"
+        "slot": "6,0,gray,0,27,50"
     },
     {
-        "slot": "7,0,gray,0,87,63"
+        "slot": "7,0,gray,0,73,50"
     },
     {
         "slot": "8,0,gray,0,23,81"

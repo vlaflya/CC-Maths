@@ -1,8 +1,8 @@
 [
     {
         "availablecolors": "none",
-        "levelnum": 32,
-        "fireflycolors": "blue,blue,blue,green,green,yellow,yellow,red,red",
+        "levelnum": 35,
+        "fireflycolors": "blue,blue,blue,green,green,red,red,yellow,violet",
         "slotcount": 9
     },
     {
