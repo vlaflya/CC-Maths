@@ -136,5 +136,11 @@ export class LevelMap extends Component {
         });
         return frame
     }
+    public unlockOne(){
+        Bridge.Instance.unlockOne()
+    }
+    public unlockAll(){
+        Bridge.Instance.unlockAll()
+    }
 }
 

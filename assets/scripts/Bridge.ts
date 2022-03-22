@@ -67,6 +67,16 @@ export class Bridge extends Component {
         this.exitLevel()
     }
 
+    public unlockOne(){
+        this.levelCount++
+        this.exitLevel()
+    }
+
+    public unlockAll(){
+        this.levelCount = 39
+        this.exitLevel()
+    }
+
 }
 interface levelInfo{
     level: number
